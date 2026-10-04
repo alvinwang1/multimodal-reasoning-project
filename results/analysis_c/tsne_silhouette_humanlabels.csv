@@ -1,0 +1,10 @@
+view,grouping,silhouette_cosine
+question,task_type_humanlabels,0.11615108698606491
+question,audio_type_humanlabels,0.06364302337169647
+question,text_sufficient_humanlabels,-0.014171485789120197
+q_cap_trans,task_type_humanlabels,0.03726501390337944
+q_cap_trans,audio_type_humanlabels,0.07013007998466492
+q_cap_trans,text_sufficient_humanlabels,-0.020495766773819923
+transcript,task_type_humanlabels,-0.0881851390004158
+transcript,audio_type_humanlabels,0.19458870589733124
+transcript,text_sufficient_humanlabels,-0.010022464208304882

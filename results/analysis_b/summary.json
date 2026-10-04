@@ -1,0 +1,55 @@
+{
+  "n_annotations": 80,
+  "sufficiency_prediction": {
+    "n_with_text_only_answer": 76,
+    "accuracy": 0.5526315789473685,
+    "confusion[true][pred]": [
+      [
+        20,
+        27
+      ],
+      [
+        7,
+        22
+      ]
+    ],
+    "text_only_acc_when_said_yes": 0.4489795918367347,
+    "text_only_acc_when_said_no": 0.25925925925925924,
+    "said_text_enough_rate": 0.625
+  },
+  "cost": {
+    "final_acc": 0.45,
+    "mean_reveals": 1.9875,
+    "mean_tokens": 1408.225,
+    "mean_cost_vs_full": 1.2616621910869579,
+    "tokens_per_correct": 3129.3888888888887,
+    "cost_per_correct": 2.8036937579710175,
+    "reveal_patterns": {
+      "+both": 79,
+      "+image": 1
+    }
+  },
+  "fleiss_kappa": {
+    "n_items": 10,
+    "text_enough": 0.07928388746803082,
+    "final_answer": 0.21568627450980385,
+    "final_answer_all_agree_rate": 0.1
+  },
+  "human_vs_model": {
+    "n": 50,
+    "agreement": 0.4,
+    "cohen_kappa": 0.003984063745019806,
+    "confusion[human][model]": [
+      [
+        14,
+        3
+      ],
+      [
+        27,
+        6
+      ]
+    ],
+    "human_yes_rate": 0.66,
+    "model_yes_rate": 0.18
+  }
+}

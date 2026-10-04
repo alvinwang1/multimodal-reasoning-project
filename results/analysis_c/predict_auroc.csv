@@ -1,0 +1,9 @@
+predictor,view,auroc_mean,auroc_std,folds
+(a) SBERT + LogReg,question,0.5417568542568543,0.1161151966889399,5
+(b) Empath + LogReg,question,0.5787518037518037,0.05738237145997673,5
+(a) SBERT + LogReg,q_cap_trans,0.5536796536796537,0.07433747668222508,5
+(b) Empath + LogReg,q_cap_trans,0.46937229437229433,0.06486261390251637,5
+(a) SBERT + LogReg,transcript,0.6962121212121212,0.13420535990772406,5
+(b) Empath + LogReg,transcript,0.603030303030303,0.06587376166978627,5
+(c) Omni max prob (cap+trans),-,0.7298701298701299,0.10653982449049648,5
+(d) Majority class,-,0.5,0.0,5

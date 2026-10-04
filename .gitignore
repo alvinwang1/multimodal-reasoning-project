@@ -1,0 +1,19 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+.gradio/
+
+# Dataset / model caches (never commit)
+data/cache/
+*.safetensors
+*.bin
+
+# Large / raw model outputs
+results/analysis_a/raw*.jsonl
+results/analysis_a/smoke*.jsonl
+results/analysis_a/feasibility*.jsonl
+results/analysis_c/*.npz
+*.log

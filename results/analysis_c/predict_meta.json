@@ -1,0 +1,7 @@
+{
+  "labels": "model",
+  "n": 90,
+  "positive_rate": 0.35555555555555557,
+  "folds": 5,
+  "seed": 42
+}

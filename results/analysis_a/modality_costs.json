@@ -1,0 +1,641 @@
+{
+  "mean": {
+    "base_text": 131.56666666666666,
+    "caption": 267.8777777777778,
+    "transcript": 27.255555555555556,
+    "image": 700.0,
+    "audio": 269.9111111111111
+  },
+  "per_example": {
+    "64": {
+      "base_text": 119,
+      "caption": 101,
+      "transcript": 21,
+      "image": 720,
+      "audio": 146
+    },
+    "66": {
+      "base_text": 112,
+      "caption": 229,
+      "transcript": 43,
+      "image": 740,
+      "audio": 180
+    },
+    "70": {
+      "base_text": 120,
+      "caption": 252,
+      "transcript": 36,
+      "image": 495,
+      "audio": 107
+    },
+    "97": {
+      "base_text": 110,
+      "caption": 217,
+      "transcript": 24,
+      "image": 480,
+      "audio": 135
+    },
+    "139": {
+      "base_text": 107,
+      "caption": 222,
+      "transcript": 57,
+      "image": 756,
+      "audio": 329
+    },
+    "151": {
+      "base_text": 116,
+      "caption": 248,
+      "transcript": 26,
+      "image": 748,
+      "audio": 88
+    },
+    "282": {
+      "base_text": 112,
+      "caption": 360,
+      "transcript": 22,
+      "image": 748,
+      "audio": 141
+    },
+    "309": {
+      "base_text": 109,
+      "caption": 105,
+      "transcript": 11,
+      "image": 725,
+      "audio": 45
+    },
+    "323": {
+      "base_text": 107,
+      "caption": 297,
+      "transcript": 14,
+      "image": 744,
+      "audio": 40
+    },
+    "326": {
+      "base_text": 116,
+      "caption": 121,
+      "transcript": 11,
+      "image": 735,
+      "audio": 29
+    },
+    "341": {
+      "base_text": 122,
+      "caption": 182,
+      "transcript": 35,
+      "image": 731,
+      "audio": 161
+    },
+    "342": {
+      "base_text": 118,
+      "caption": 335,
+      "transcript": 14,
+      "image": 748,
+      "audio": 319
+    },
+    "381": {
+      "base_text": 123,
+      "caption": 226,
+      "transcript": 30,
+      "image": 544,
+      "audio": 240
+    },
+    "389": {
+      "base_text": 128,
+      "caption": 209,
+      "transcript": 46,
+      "image": 760,
+      "audio": 214
+    },
+    "395": {
+      "base_text": 120,
+      "caption": 248,
+      "transcript": 26,
+      "image": 760,
+      "audio": 118
+    },
+    "419": {
+      "base_text": 121,
+      "caption": 239,
+      "transcript": 49,
+      "image": 528,
+      "audio": 225
+    },
+    "487": {
+      "base_text": 97,
+      "caption": 96,
+      "transcript": 20,
+      "image": 726,
+      "audio": 104
+    },
+    "493": {
+      "base_text": 115,
+      "caption": 106,
+      "transcript": 21,
+      "image": 500,
+      "audio": 51
+    },
+    "522": {
+      "base_text": 94,
+      "caption": 111,
+      "transcript": 46,
+      "image": 495,
+      "audio": 143
+    },
+    "542": {
+      "base_text": 92,
+      "caption": 386,
+      "transcript": 24,
+      "image": 759,
+      "audio": 290
+    },
+    "554": {
+      "base_text": 97,
+      "caption": 182,
+      "transcript": 21,
+      "image": 448,
+      "audio": 126
+    },
+    "574": {
+      "base_text": 140,
+      "caption": 201,
+      "transcript": 75,
+      "image": 760,
+      "audio": 414
+    },
+    "575": {
+      "base_text": 87,
+      "caption": 185,
+      "transcript": 84,
+      "image": 741,
+      "audio": 439
+    },
+    "595": {
+      "base_text": 97,
+      "caption": 233,
+      "transcript": 42,
+      "image": 726,
+      "audio": 148
+    },
+    "598": {
+      "base_text": 104,
+      "caption": 116,
+      "transcript": 32,
+      "image": 374,
+      "audio": 155
+    },
+    "632": {
+      "base_text": 128,
+      "caption": 191,
+      "transcript": 53,
+      "image": 576,
+      "audio": 246
+    },
+    "638": {
+      "base_text": 108,
+      "caption": 182,
+      "transcript": 35,
+      "image": 264,
+      "audio": 202
+    },
+    "641": {
+      "base_text": 123,
+      "caption": 195,
+      "transcript": 21,
+      "image": 731,
+      "audio": 147
+    },
+    "722": {
+      "base_text": 103,
+      "caption": 121,
+      "transcript": 7,
+      "image": 759,
+      "audio": 80
+    },
+    "729": {
+      "base_text": 108,
+      "caption": 267,
+      "transcript": 9,
+      "image": 759,
+      "audio": 163
+    },
+    "736": {
+      "base_text": 102,
+      "caption": 104,
+      "transcript": 8,
+      "image": 728,
+      "audio": 47
+    },
+    "745": {
+      "base_text": 96,
+      "caption": 231,
+      "transcript": 9,
+      "image": 748,
+      "audio": 82
+    },
+    "750": {
+      "base_text": 105,
+      "caption": 183,
+      "transcript": 10,
+      "image": 760,
+      "audio": 39
+    },
+    "761": {
+      "base_text": 108,
+      "caption": 154,
+      "transcript": 9,
+      "image": 494,
+      "audio": 39
+    },
+    "782": {
+      "base_text": 118,
+      "caption": 279,
+      "transcript": 11,
+      "image": 720,
+      "audio": 340
+    },
+    "786": {
+      "base_text": 91,
+      "caption": 129,
+      "transcript": 9,
+      "image": 729,
+      "audio": 34
+    },
+    "787": {
+      "base_text": 102,
+      "caption": 213,
+      "transcript": 16,
+      "image": 740,
+      "audio": 64
+    },
+    "791": {
+      "base_text": 100,
+      "caption": 113,
+      "transcript": 9,
+      "image": 728,
+      "audio": 97
+    },
+    "794": {
+      "base_text": 108,
+      "caption": 247,
+      "transcript": 11,
+      "image": 740,
+      "audio": 62
+    },
+    "803": {
+      "base_text": 100,
+      "caption": 308,
+      "transcript": 10,
+      "image": 728,
+      "audio": 84
+    },
+    "816": {
+      "base_text": 110,
+      "caption": 198,
+      "transcript": 8,
+      "image": 726,
+      "audio": 110
+    },
+    "819": {
+      "base_text": 116,
+      "caption": 135,
+      "transcript": 11,
+      "image": 754,
+      "audio": 33
+    },
+    "823": {
+      "base_text": 104,
+      "caption": 103,
+      "transcript": 9,
+      "image": 756,
+      "audio": 44
+    },
+    "847": {
+      "base_text": 112,
+      "caption": 102,
+      "transcript": 12,
+      "image": 756,
+      "audio": 129
+    },
+    "865": {
+      "base_text": 119,
+      "caption": 290,
+      "transcript": 12,
+      "image": 740,
+      "audio": 49
+    },
+    "868": {
+      "base_text": 111,
+      "caption": 265,
+      "transcript": 10,
+      "image": 741,
+      "audio": 88
+    },
+    "875": {
+      "base_text": 112,
+      "caption": 112,
+      "transcript": 11,
+      "image": 520,
+      "audio": 139
+    },
+    "876": {
+      "base_text": 126,
+      "caption": 210,
+      "transcript": 8,
+      "image": 720,
+      "audio": 275
+    },
+    "881": {
+      "base_text": 93,
+      "caption": 206,
+      "transcript": 9,
+      "image": 714,
+      "audio": 31
+    },
+    "887": {
+      "base_text": 107,
+      "caption": 272,
+      "transcript": 7,
+      "image": 740,
+      "audio": 43
+    },
+    "900": {
+      "base_text": 91,
+      "caption": 121,
+      "transcript": 10,
+      "image": 756,
+      "audio": 85
+    },
+    "907": {
+      "base_text": 98,
+      "caption": 96,
+      "transcript": 9,
+      "image": 735,
+      "audio": 118
+    },
+    "920": {
+      "base_text": 97,
+      "caption": 120,
+      "transcript": 22,
+      "image": 740,
+      "audio": 155
+    },
+    "922": {
+      "base_text": 126,
+      "caption": 209,
+      "transcript": 7,
+      "image": 736,
+      "audio": 91
+    },
+    "924": {
+      "base_text": 91,
+      "caption": 316,
+      "transcript": 13,
+      "image": 740,
+      "audio": 412
+    },
+    "936": {
+      "base_text": 96,
+      "caption": 108,
+      "transcript": 8,
+      "image": 740,
+      "audio": 209
+    },
+    "947": {
+      "base_text": 112,
+      "caption": 140,
+      "transcript": 41,
+      "image": 756,
+      "audio": 136
+    },
+    "973": {
+      "base_text": 99,
+      "caption": 253,
+      "transcript": 40,
+      "image": 740,
+      "audio": 317
+    },
+    "1012": {
+      "base_text": 110,
+      "caption": 283,
+      "transcript": 9,
+      "image": 736,
+      "audio": 26
+    },
+    "1019": {
+      "base_text": 107,
+      "caption": 98,
+      "transcript": 7,
+      "image": 726,
+      "audio": 177
+    },
+    "1038": {
+      "base_text": 162,
+      "caption": 697,
+      "transcript": 97,
+      "image": 750,
+      "audio": 575
+    },
+    "1039": {
+      "base_text": 171,
+      "caption": 253,
+      "transcript": 28,
+      "image": 529,
+      "audio": 550
+    },
+    "1042": {
+      "base_text": 147,
+      "caption": 295,
+      "transcript": 21,
+      "image": 720,
+      "audio": 562
+    },
+    "1044": {
+      "base_text": 153,
+      "caption": 605,
+      "transcript": 44,
+      "image": 754,
+      "audio": 750
+    },
+    "1054": {
+      "base_text": 150,
+      "caption": 181,
+      "transcript": 41,
+      "image": 735,
+      "audio": 225
+    },
+    "1057": {
+      "base_text": 179,
+      "caption": 285,
+      "transcript": 47,
+      "image": 748,
+      "audio": 750
+    },
+    "1060": {
+      "base_text": 167,
+      "caption": 122,
+      "transcript": 49,
+      "image": 728,
+      "audio": 750
+    },
+    "1063": {
+      "base_text": 180,
+      "caption": 216,
+      "transcript": 36,
+      "image": 735,
+      "audio": 750
+    },
+    "1064": {
+      "base_text": 200,
+      "caption": 550,
+      "transcript": 51,
+      "image": 754,
+      "audio": 750
+    },
+    "1069": {
+      "base_text": 181,
+      "caption": 4104,
+      "transcript": 47,
+      "image": 650,
+      "audio": 325
+    },
+    "1070": {
+      "base_text": 189,
+      "caption": 115,
+      "transcript": 49,
+      "image": 741,
+      "audio": 750
+    },
+    "1074": {
+      "base_text": 192,
+      "caption": 178,
+      "transcript": 30,
+      "image": 735,
+      "audio": 750
+    },
+    "1077": {
+      "base_text": 153,
+      "caption": 364,
+      "transcript": 46,
+      "image": 729,
+      "audio": 450
+    },
+    "1078": {
+      "base_text": 192,
+      "caption": 204,
+      "transcript": 28,
+      "image": 725,
+      "audio": 750
+    },
+    "1082": {
+      "base_text": 226,
+      "caption": 89,
+      "transcript": 50,
+      "image": 667,
+      "audio": 750
+    },
+    "1085": {
+      "base_text": 158,
+      "caption": 300,
+      "transcript": 37,
+      "image": 722,
+      "audio": 475
+    },
+    "1086": {
+      "base_text": 231,
+      "caption": 267,
+      "transcript": 40,
+      "image": 741,
+      "audio": 575
+    },
+    "1088": {
+      "base_text": 172,
+      "caption": 419,
+      "transcript": 33,
+      "image": 736,
+      "audio": 475
+    },
+    "1092": {
+      "base_text": 230,
+      "caption": 107,
+      "transcript": 15,
+      "image": 748,
+      "audio": 250
+    },
+    "1093": {
+      "base_text": 256,
+      "caption": 208,
+      "transcript": 19,
+      "image": 740,
+      "audio": 150
+    },
+    "1102": {
+      "base_text": 101,
+      "caption": 655,
+      "transcript": 34,
+      "image": 738,
+      "audio": 250
+    },
+    "1107": {
+      "base_text": 215,
+      "caption": 150,
+      "transcript": 29,
+      "image": 726,
+      "audio": 150
+    },
+    "1110": {
+      "base_text": 107,
+      "caption": 156,
+      "transcript": 28,
+      "image": 748,
+      "audio": 375
+    },
+    "1116": {
+      "base_text": 123,
+      "caption": 224,
+      "transcript": 43,
+      "image": 735,
+      "audio": 750
+    },
+    "1124": {
+      "base_text": 202,
+      "caption": 125,
+      "transcript": 31,
+      "image": 735,
+      "audio": 575
+    },
+    "1125": {
+      "base_text": 260,
+      "caption": 120,
+      "transcript": 29,
+      "image": 756,
+      "audio": 375
+    },
+    "1126": {
+      "base_text": 241,
+      "caption": 193,
+      "transcript": 29,
+      "image": 741,
+      "audio": 400
+    },
+    "1133": {
+      "base_text": 147,
+      "caption": 322,
+      "transcript": 31,
+      "image": 760,
+      "audio": 275
+    },
+    "1138": {
+      "base_text": 139,
+      "caption": 477,
+      "transcript": 38,
+      "image": 714,
+      "audio": 500
+    },
+    "1139": {
+      "base_text": 97,
+      "caption": 367,
+      "transcript": 33,
+      "image": 693,
+      "audio": 500
+    }
+  }
+}

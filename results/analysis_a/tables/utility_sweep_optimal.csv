@@ -1,0 +1,4 @@
+config,lambda_from,lambda_to
+img_trans,0.0,0.04
+cap_trans,0.05,0.68
+q_only,0.69,1.0

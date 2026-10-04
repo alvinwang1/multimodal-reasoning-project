@@ -1,0 +1,91 @@
+id,oracle_config,oracle_cost,oracle_correct,audio_type
+64,none,0.12032355915065723,False,speech
+66,none,0.10810810810810811,False,speech
+70,img_trans,0.8994490358126722,True,speech
+97,cap_aud,0.6364883401920439,True,speech
+139,img_only,0.7232441471571907,True,speech
+151,none,0.12133891213389121,False,speech
+282,aud_only,0.2537313432835821,True,speech
+309,img_trans,0.9592298980747452,True,speech
+323,q_only,0.11955307262569832,True,speech
+326,cap_trans,0.28054298642533937,True,speech
+341,none,0.11984282907662082,False,speech
+342,none,0.0992430613961312,False,speech
+381,none,0.1350164654226125,False,speech
+389,none,0.11573236889692586,False,speech
+395,img_only,0.8802395209580839,True,speech
+419,none,0.1378132118451025,False,speech
+487,cap_trans,0.22878625134264233,True,speech
+493,none,0.17164179104477612,False,speech
+522,img_only,0.8029891304347826,True,speech
+542,none,0.08034934497816594,False,speech
+554,aud_only,0.3333333333333333,True,speech
+574,cap_trans,0.3156297420333839,True,speech
+575,none,0.06845003933910307,False,speech
+595,none,0.09948717948717949,False,speech
+598,cap_trans,0.3956043956043956,True,speech
+632,cap_trans,0.389937106918239,True,speech
+638,none,0.18685121107266436,False,speech
+641,none,0.12238805970149254,False,speech
+722,none,0.10887949260042283,False,sound event
+729,cap_trans,0.3723404255319149,True,sound event
+736,aud_only,0.1713961407491487,True,sound event
+745,cap_aud,0.44193548387096776,True,sound event
+750,none,0.11563876651982379,False,sound event
+761,q_only,0.16744186046511628,True,sound event
+782,q_only,0.09983079526226735,True,sound event
+786,cap_trans,0.2680652680652681,True,sound event
+787,none,0.11208791208791209,False,sound event
+791,none,0.10764262648008611,False,sound event
+794,none,0.11816192560175055,False,sound event
+803,aud_only,0.20305676855895197,True,sound event
+816,cap_trans,0.3336842105263158,True,sound event
+819,none,0.1278941565600882,False,sound event
+823,none,0.1145374449339207,False,sound event
+847,aud_only,0.24275724275724275,True,sound event
+865,aud_only,0.18640350877192982,True,sound event
+868,none,0.11758474576271187,False,sound event
+875,none,0.14451612903225808,False,sound event
+876,none,0.112,False,sound event
+881,cap_trans,0.3669833729216152,True,sound event
+887,none,0.11968680089485459,False,sound event
+900,aud_only,0.19017094017094016,True,sound event
+907,none,0.10261780104712041,False,sound event
+920,cap_trans,0.24096385542168675,True,sound event
+922,none,0.13166144200626959,False,sound event
+924,cap_trans,0.3376102646351243,True,sound event
+936,img_trans,0.8074356530028599,True,sound event
+947,none,0.1111111111111111,False,speech
+973,aud_only,0.3603448275862069,True,speech
+1012,none,0.12557077625570776,False,sound event
+1019,aud_only,0.28205128205128205,True,sound event
+1038,q_only,0.10865191146881288,True,music
+1039,q_only,0.13636363636363635,True,music
+1042,q_only,0.10258199581297976,True,music
+1044,q_only,0.09211318482841661,True,music
+1054,cap_trans,0.3339317773788151,True,music
+1057,cap_trans,0.3039857227840571,True,music
+1060,none,0.1012734990903578,False,music
+1063,img_only,0.5494307968843619,True,music
+1064,none,0.117096018735363,False,music
+1069,aud_only,0.4379310344827586,True,music
+1070,cap_trans,0.20961995249406176,True,music
+1074,cap_trans,0.2379535990481856,True,music
+1077,none,0.11452095808383234,False,music
+1078,q_only,0.11490125673249552,True,music
+1082,none,0.13721918639951428,False,music
+1085,q_only,0.11626195732155997,True,music
+1086,none,0.14893617021276595,False,music
+1088,cap_trans,0.44989185291997114,True,music
+1092,cap_trans,0.2857142857142857,True,music
+1093,none,0.22260869565217392,False,music
+1102,none,0.09240622140896615,False,music
+1107,none,0.1963470319634703,False,music
+1110,aud_only,0.39222042139384117,True,music
+1116,img_only,0.533498759305211,True,music
+1124,cap_trans,0.23614775725593667,True,music
+1125,cap_trans,0.2931899641577061,True,music
+1126,cap_trans,0.33405483405483405,True,music
+1133,cap_trans,0.42158516020236086,True,music
+1138,q_only,0.10243183492999262,True,music
+1139,none,0.07496136012364761,False,music

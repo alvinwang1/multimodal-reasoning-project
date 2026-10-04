@@ -1,0 +1,41 @@
+# All paths are relative to the repo root.
+seed: 42
+
+dataset:
+  hf_id: m-a-p/OmniBench
+  split: train
+  audio_sr: 16000          # Qwen2.5-Omni audio encoder expects 16 kHz mono
+
+subset:
+  n: 90                    # 30 speech / 30 sound event / 30 music; Analysis B needs 90 distinct items
+  path: data/subset_ids.json
+
+model:
+  hf_id: Qwen/Qwen2.5-Omni-3B
+  device: auto             # auto = cuda > mps > cpu
+  dtype: bfloat16          # fallback order if outputs break: float16, float32
+  attn_implementation: sdpa
+  min_pixels: 3136         # 4 * 28 * 28
+  max_pixels: 602112       # 768 * 28 * 28 -> at most ~768 image tokens per image
+
+analysis_a:
+  out: results/analysis_a/raw.jsonl
+  configs: [full, img_trans, cap_aud, cap_trans, img_only, aud_only, q_only]
+  perm_configs: [full, img_trans, cap_aud, cap_trans, img_only, aud_only, q_only]  # all configs: averages out answer-position bias
+  n_perms: 3
+  warmup: 3
+
+analysis_b:
+  annotators: [nikkita, arjun, alvin, lindy]
+  n_shared: 10
+  n_unique: 10
+  assignments: results/analysis_b/assignments.json
+  results_dir: results/analysis_b
+  media_dir: data/cache/analysis_b_media
+
+analysis_c:
+  sbert_model: sentence-transformers/all-mpnet-base-v2
+  features: results/analysis_c/features.npz
+  out_dir: results/analysis_c
+  tsne_perplexity: 15
+  cv_folds: 5

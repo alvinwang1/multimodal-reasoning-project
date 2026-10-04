@@ -1,0 +1,7 @@
+{
+  "labels": "human",
+  "n": 50,
+  "positive_rate": 0.66,
+  "folds": 5,
+  "seed": 42
+}
