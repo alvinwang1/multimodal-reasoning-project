@@ -19,8 +19,11 @@
 #SBATCH -o idea3_%j.out
 set -euo pipefail
 
-REPO="${SLURM_SUBMIT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+# The script's own repo; under sbatch the script runs from a spool copy, so fall back to the submit dir.
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+[ -f "$REPO/requirements.txt" ] || REPO="${SLURM_SUBMIT_DIR:-$PWD}"
 cd "$REPO"
+[ -f requirements.txt ] || { echo ">> run this from the repo root (no requirements.txt in $REPO)"; exit 1; }
 
 STORE="${PROJECT:-$HOME}"                       # $PROJECT has the quota; $HOME on Bridges-2 is small
 ENV_DIR="$STORE/envs/mmr"
@@ -32,7 +35,10 @@ activate() {
     if [ ! -x "$ENV_DIR/bin/python" ]; then
         echo ">> creating env at $ENV_DIR"
         conda create -y -q -p "$ENV_DIR" python=3.12
+    fi
+    if [ ! -f "$ENV_DIR/.requirements_ok" ]; then   # marker: a failed install is retried next run
         "$ENV_DIR/bin/pip" install -q -r requirements.txt
+        touch "$ENV_DIR/.requirements_ok"
     fi
     export PATH="$ENV_DIR/bin:$PATH"
 }
