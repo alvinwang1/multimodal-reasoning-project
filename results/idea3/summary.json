@@ -3,7 +3,20 @@
     "dev": 90,
     "test": 90
   },
-  "agreement_with_analysis_a": null,
+  "agreement_with_analysis_a": {
+    "n": 1890,
+    "pred_agree": 0.9746031746031746,
+    "acc_a": 0.41534391534391535,
+    "acc_idea3": 0.4201058201058201,
+    "devices": [
+      "cuda",
+      "mps"
+    ],
+    "dtypes": [
+      "bfloat16",
+      "float32"
+    ]
+  },
   "shapley_logp": {
     "all": {
       "aud_given_img": 0.596,

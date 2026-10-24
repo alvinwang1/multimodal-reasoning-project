@@ -166,13 +166,14 @@ def plot_marginal(cells, split, out_dir, icfg):
         for (lab, cl), (col, ls) in zip(sweeps.items(), styles):
             cl = [x for x in cl if x in c.index]
             ax.plot(c.tokens[cl], c.acc[cl] * 100, ls, color=col, marker="o", ms=2.5, label=lab)
-        for s in SURROGATE_CELLS:
-            if s in c.index:
-                ax.plot(c.tokens[s], c.acc[s] * 100, "D", color=PALETTE[2], ms=3)
+        s = [x for x in SURROGATE_CELLS if x in c.index]
+        ax.plot(c.tokens[s], c.acc[s] * 100, "D", color=PALETTE[2], ms=3, ls="none", label="Text surrogate cells")
         ax.set_title(at.capitalize())
         ax.set_xlabel("Mean input tokens")
     axes[0].set_ylabel("Accuracy (%)")
-    axes[0].legend(loc="upper left", fontsize=5.5)
+    h, lab = axes[0].get_legend_handles_labels()
+    fig.legend(h, lab, loc="upper center", ncol=5, bbox_to_anchor=(0.5, -0.02), handlelength=2.2,
+               columnspacing=1.2)
     return save_fig(fig, out_dir, f"marginal_curves_{split}")
 
 
