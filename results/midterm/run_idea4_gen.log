@@ -1,0 +1,171 @@
+120 items, 0 done, 120 to run -> /home/ec2-user/multimodal-reasoning-project/results/midterm/generated_surrogates.json
+Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+Loading weights:   0%|          | 0/1442 [00:00<?, ?it/s]Loading weights:  40%|████      | 579/1442 [00:00<00:00, 5771.32it/s]Loading weights:  80%|████████  | 1157/1442 [00:00<00:00, 5720.66it/s]Loading weights: 100%|██████████| 1442/1442 [00:00<00:00, 5744.15it/s]
+Loading weights:   0%|          | 0/587 [00:00<?, ?it/s]Loading weights:  96%|█████████▋| 565/587 [00:00<00:00, 5635.79it/s]Loading weights: 100%|██████████| 587/587 [00:00<00:00, 5719.91it/s]
+models on cuda
+[transformers] Passing `generation_config` together with generation-related arguments=({'begin_suppress_tokens', 'suppress_tokens'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer WhisperTokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+1/120 id=13 [speech] cap 125tok 5.2s | desc 63tok 3.2s | asr 9tok 0.2s | ETA 17.3 min
+2/120 id=29 [speech] cap 134tok 5.5s | desc 53tok 2.8s | asr 24tok 0.3s | ETA 17.3 min
+3/120 id=33 [speech] cap 92tok 4.2s | desc 60tok 3.0s | asr 4tok 0.1s | ETA 16.3 min
+4/120 id=95 [speech] cap 114tok 4.9s | desc 54tok 3.1s | asr 6tok 0.2s | ETA 16.1 min
+5/120 id=105 [speech] cap 89tok 4.0s | desc 140tok 5.4s | asr 48tok 0.6s | ETA 16.7 min
+6/120 id=135 [speech] cap 137tok 5.5s | desc 89tok 3.9s | asr 27tok 0.3s | ETA 16.9 min
+7/120 id=187 [speech] cap 133tok 5.4s | desc 98tok 4.2s | asr 43tok 0.6s | ETA 17.2 min
+8/120 id=193 [speech] cap 146tok 5.8s | desc 83tok 3.8s | asr 18tok 0.3s | ETA 17.2 min
+9/120 id=194 [speech] cap 93tok 4.2s | desc 103tok 4.3s | asr 13tok 0.2s | ETA 17.0 min
+[transformers] You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+10/120 id=200 [speech] cap 106tok 4.6s | desc 56tok 2.9s | asr 29tok 0.4s | ETA 16.7 min
+11/120 id=225 [speech] cap 127tok 5.3s | desc 67tok 3.2s | asr 23tok 0.3s | ETA 16.5 min
+12/120 id=255 [speech] cap 196tok 7.3s | desc 85tok 3.8s | asr 21tok 0.3s | ETA 16.7 min
+13/120 id=275 [speech] cap 142tok 5.7s | desc 101tok 4.3s | asr 81tok 0.8s | ETA 16.8 min
+14/120 id=276 [speech] cap 165tok 6.4s | desc 69tok 3.3s | asr 45tok 0.5s | ETA 16.8 min
+15/120 id=290 [speech] cap 134tok 5.4s | desc 70tok 3.3s | asr 32tok 0.4s | ETA 16.6 min
+16/120 id=302 [speech] cap 116tok 4.9s | desc 50tok 2.7s | asr 7tok 0.2s | ETA 16.3 min
+17/120 id=304 [speech] cap 122tok 5.1s | desc 59tok 3.0s | asr 10tok 0.2s | ETA 16.0 min
+18/120 id=319 [speech] cap 115tok 4.8s | desc 70tok 3.4s | asr 17tok 0.3s | ETA 15.8 min
+19/120 id=324 [speech] cap 101tok 4.5s | desc 37tok 2.3s | asr 6tok 0.2s | ETA 15.5 min
+20/120 id=345 [speech] cap 109tok 4.7s | desc 87tok 3.8s | asr 16tok 0.2s | ETA 15.3 min
+21/120 id=346 [speech] cap 139tok 5.6s | desc 42tok 2.5s | asr 2tok 0.1s | ETA 15.1 min
+22/120 id=351 [speech] cap 125tok 5.2s | desc 74tok 3.5s | asr 32tok 0.4s | ETA 14.9 min
+23/120 id=394 [speech] cap 138tok 5.6s | desc 98tok 4.2s | asr 61tok 0.6s | ETA 14.9 min
+24/120 id=401 [speech] cap 161tok 6.2s | desc 98tok 4.2s | asr 10tok 0.2s | ETA 14.8 min
+25/120 id=405 [speech] cap 99tok 4.4s | desc 94tok 4.1s | asr 21tok 0.3s | ETA 14.7 min
+26/120 id=427 [speech] cap 121tok 5.0s | desc 61tok 3.0s | asr 26tok 0.4s | ETA 14.5 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+27/120 id=436 [speech] cap 125tok 5.2s | desc 122tok 4.9s | asr 444tok 3.6s | ETA 14.6 min
+28/120 id=441 [speech] cap 129tok 5.3s | desc 43tok 2.5s | asr 15tok 0.2s | ETA 14.4 min
+29/120 id=459 [speech] cap 77tok 3.8s | desc 37tok 2.3s | asr 3tok 0.1s | ETA 14.0 min
+30/120 id=535 [speech] cap 94tok 4.3s | desc 19tok 1.8s | asr 5tok 0.1s | ETA 13.7 min
+31/120 id=592 [speech] cap 137tok 5.4s | desc 73tok 3.4s | asr 21tok 0.3s | ETA 13.6 min
+32/120 id=604 [speech] cap 107tok 4.7s | desc 45tok 2.6s | asr 16tok 0.2s | ETA 13.4 min
+33/120 id=613 [speech] cap 119tok 5.0s | desc 37tok 2.3s | asr 4tok 0.1s | ETA 13.2 min
+34/120 id=646 [speech] cap 153tok 6.0s | desc 47tok 2.6s | asr 8tok 0.2s | ETA 13.0 min
+35/120 id=647 [speech] cap 213tok 7.8s | desc 64tok 3.2s | asr 32tok 0.4s | ETA 13.0 min
+36/120 id=654 [speech] cap 154tok 6.1s | desc 140tok 5.4s | asr 92tok 1.0s | ETA 12.9 min
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ec2-user/multimodal-reasoning-project/src/midterm/surrogates.py", line 116, in <module>
+    main()
+  File "/home/ec2-user/multimodal-reasoning-project/src/midterm/surrogates.py", line 95, in main
+    ex=data[idx]
+       ~~~~^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/src/data.py", line 95, in __getitem__
+    r["audio"] = decode_audio(row["audio"], self.cfg["dataset"]["audio_sr"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/src/data.py", line 69, in decode_audio
+    wav, _ = librosa.load(io.BytesIO(audio_field["bytes"]), sr=sr, mono=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/librosa/core/audio.py", line 156, in load
+    y, sr_native = __soundfile_load(path, offset, duration, dtype)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/librosa/core/audio.py", line 179, in __soundfile_load
+    context = sf.SoundFile(path)
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening <_io.BytesIO object at 0x7f4c04ffb600>: Format not recognised.
+120 items, 36 done, 84 to run -> /home/ec2-user/multimodal-reasoning-project/results/midterm/generated_surrogates.json
+Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+Loading weights:   0%|          | 0/1442 [00:00<?, ?it/s]Loading weights:  41%|████      | 593/1442 [00:00<00:00, 5919.36it/s]Loading weights:  82%|████████▏ | 1185/1442 [00:00<00:00, 5815.52it/s]Loading weights: 100%|██████████| 1442/1442 [00:00<00:00, 5828.61it/s]
+Loading weights:   0%|          | 0/587 [00:00<?, ?it/s]Loading weights:  67%|██████▋   | 392/587 [00:00<00:00, 3919.46it/s]Loading weights: 100%|██████████| 587/587 [00:00<00:00, 3142.86it/s]
+models on cuda
+[transformers] Passing `generation_config` together with generation-related arguments=({'suppress_tokens', 'begin_suppress_tokens'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer WhisperTokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+1/84 id=685 [speech] cap 162tok 6.1s | desc 18tok 1.8s | asr 17tok 0.3s | ETA 11.5 min
+2/84 id=690 [speech] cap 58tok 3.0s | desc 44tok 2.5s | asr 25tok 0.3s | ETA 9.8 min
+3/84 id=717 [sound event] cap 96tok 4.5s | desc 65tok 3.2s | asr 3tok 0.1s | ETA 10.0 min
+4/84 id=734 [sound event] cap 107tok 4.6s | desc 90tok 4.0s | asr 7tok 0.2s | ETA 10.4 min
+5/84 id=754 [sound event] cap 100tok 4.4s | desc 60tok 3.0s | asr 3tok 0.1s | ETA 10.3 min
+6/84 id=756 [sound event] cap 159tok 6.1s | desc 95tok 4.0s | asr 3tok 0.1s | ETA 10.7 min
+7/84 id=769 [sound event] cap 113tok 4.7s | desc 71tok 3.3s | asr 3tok 0.1s | ETA 10.6 min
+8/84 id=770 [sound event] cap 121tok 5.0s | desc 77tok 3.5s | asr 3tok 0.1s | ETA 10.5 min
+9/84 id=772 [sound event] cap 87tok 4.0s | desc 68tok 3.2s | asr 5tok 0.1s | ETA 10.3 min
+[transformers] You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+10/84 id=802 [sound event] cap 209tok 7.6s | desc 69tok 3.3s | asr 3tok 0.1s | ETA 10.5 min
+11/84 id=808 [sound event] cap 103tok 4.5s | desc 70tok 3.3s | asr 1tok 0.1s | ETA 10.3 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+12/84 id=821 [sound event] cap 102tok 4.5s | desc 44tok 2.5s | asr 444tok 3.6s | ETA 10.4 min
+13/84 id=827 [sound event] cap 95tok 4.3s | desc 84tok 3.7s | asr 24tok 0.3s | ETA 10.3 min
+14/84 id=833 [sound event] cap 94tok 4.2s | desc 105tok 4.3s | asr 3tok 0.1s | ETA 10.1 min
+15/84 id=836 [sound event] cap 103tok 4.5s | desc 40tok 2.4s | asr 1tok 0.2s | ETA 9.9 min
+16/84 id=844 [sound event] cap 152tok 5.9s | desc 67tok 3.2s | asr 5tok 0.1s | ETA 9.8 min
+17/84 id=853 [sound event] cap 100tok 4.3s | desc 52tok 2.8s | asr 7tok 0.2s | ETA 9.6 min
+18/84 id=858 [sound event] cap 140tok 5.6s | desc 41tok 2.5s | asr 3tok 0.1s | ETA 9.4 min
+19/84 id=859 [sound event] cap 119tok 5.0s | desc 47tok 2.6s | asr 19tok 0.3s | ETA 9.3 min
+20/84 id=860 [sound event] cap 155tok 6.1s | desc 95tok 4.0s | asr 2tok 0.1s | ETA 9.2 min
+21/84 id=871 [sound event] cap 94tok 4.2s | desc 71tok 3.4s | asr 7tok 0.2s | ETA 9.0 min
+22/84 id=873 [sound event] cap 127tok 5.2s | desc 107tok 4.4s | asr 10tok 0.3s | ETA 9.0 min
+23/84 id=883 [sound event] cap 148tok 5.7s | desc 83tok 3.7s | asr 3tok 0.1s | ETA 8.9 min
+24/84 id=888 [sound event] cap 117tok 4.9s | desc 82tok 3.7s | asr 73tok 3.8s | ETA 8.9 min
+25/84 id=894 [sound event] cap 102tok 4.5s | desc 114tok 4.6s | asr 5tok 0.1s | ETA 8.7 min
+26/84 id=895 [sound event] cap 85tok 4.0s | desc 89tok 3.9s | asr 5tok 0.1s | ETA 8.6 min
+27/84 id=896 [sound event] cap 97tok 4.3s | desc 90tok 4.0s | asr 9tok 0.2s | ETA 8.4 min
+28/84 id=902 [sound event] cap 110tok 4.7s | desc 67tok 3.2s | asr 3tok 0.1s | ETA 8.3 min
+29/84 id=904 [sound event] cap 144tok 5.7s | desc 102tok 4.2s | asr 1tok 0.1s | ETA 8.1 min
+30/84 id=913 [sound event] cap 129tok 5.2s | desc 77tok 3.5s | asr 4tok 0.2s | ETA 8.0 min
+31/84 id=916 [sound event] cap 103tok 4.4s | desc 88tok 3.9s | asr 10tok 0.2s | ETA 7.9 min
+32/84 id=921 [sound event] cap 98tok 4.4s | desc 69tok 3.3s | asr 32tok 0.3s | ETA 7.7 min
+33/84 id=925 [sound event] cap 153tok 6.0s | desc 90tok 3.9s | asr 21tok 0.3s | ETA 7.6 min
+34/84 id=929 [sound event] cap 110tok 4.8s | desc 99tok 4.2s | asr 16tok 0.2s | ETA 7.4 min
+35/84 id=931 [sound event] cap 115tok 4.9s | desc 98tok 4.2s | asr 10tok 0.2s | ETA 7.3 min
+36/84 id=934 [sound event] cap 91tok 4.2s | desc 70tok 3.4s | asr 3tok 0.1s | ETA 7.1 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+37/84 id=942 [sound event] cap 98tok 4.4s | desc 73tok 3.4s | asr 444tok 3.5s | ETA 7.0 min
+38/84 id=944 [speech] cap 52tok 2.8s | desc 68tok 3.3s | asr 9tok 0.2s | ETA 6.8 min
+39/84 id=988 [speech] cap 123tok 5.0s | desc 78tok 3.6s | asr 12tok 0.2s | ETA 6.7 min
+40/84 id=1015 [sound event] cap 106tok 4.6s | desc 131tok 5.1s | asr 4tok 0.1s | ETA 6.6 min
+41/84 id=1020 [sound event] cap 131tok 5.4s | desc 65tok 3.2s | asr 3tok 0.1s | ETA 6.4 min
+42/84 id=1027 [sound event] cap 121tok 5.1s | desc 69tok 3.3s | asr 3tok 0.1s | ETA 6.3 min
+43/84 id=1028 [sound event] cap 123tok 5.1s | desc 43tok 2.5s | asr 3tok 0.1s | ETA 6.1 min
+44/84 id=1032 [sound event] cap 106tok 4.6s | desc 76tok 3.5s | asr 3tok 0.1s | ETA 5.9 min
+45/84 id=1037 [music] cap 133tok 5.4s | desc 108tok 4.5s | asr 4tok 0.2s | ETA 5.8 min
+46/84 id=1041 [music] cap 164tok 6.3s | desc 68tok 3.6s | asr 8tok 0.2s | ETA 5.7 min
+47/84 id=1045 [music] cap 191tok 7.1s | desc 115tok 4.8s | asr 3tok 0.1s | ETA 5.6 min
+48/84 id=1047 [music] cap 117tok 5.0s | desc 69tok 3.4s | asr 8tok 0.2s | ETA 5.4 min
+49/84 id=1049 [music] cap 117tok 4.9s | desc 195tok 7.2s | asr 3tok 0.2s | ETA 5.3 min
+50/84 id=1051 [music] cap 79tok 3.8s | desc 75tok 3.6s | asr 7tok 0.2s | ETA 5.1 min
+51/84 id=1052 [music] cap 92tok 4.2s | desc 108tok 4.6s | asr 3tok 0.1s | ETA 5.0 min
+52/84 id=1055 [music] cap 105tok 4.6s | desc 104tok 4.4s | asr 3tok 0.1s | ETA 4.8 min
+53/84 id=1058 [music] cap 98tok 4.4s | desc 46tok 2.7s | asr 4tok 0.1s | ETA 4.7 min
+54/84 id=1059 [music] cap 109tok 4.7s | desc 117tok 4.8s | asr 5tok 0.1s | ETA 4.5 min
+55/84 id=1061 [music] cap 107tok 4.7s | desc 112tok 4.7s | asr 6tok 0.2s | ETA 4.4 min
+56/84 id=1062 [music] cap 256tok 9.1s | desc 83tok 3.8s | asr 3tok 0.1s | ETA 4.3 min
+57/84 id=1066 [music] cap 186tok 7.0s | desc 27tok 2.1s | asr 3tok 0.1s | ETA 4.1 min
+58/84 id=1067 [music] cap 170tok 6.4s | desc 55tok 3.0s | asr 3tok 0.2s | ETA 4.0 min
+59/84 id=1068 [music] cap 256tok 9.1s | desc 154tok 6.0s | asr 61tok 0.7s | ETA 3.9 min
+60/84 id=1071 [music] cap 148tok 5.9s | desc 81tok 3.7s | asr 3tok 0.1s | ETA 3.7 min
+61/84 id=1072 [music] cap 149tok 5.9s | desc 102tok 4.4s | asr 6tok 0.2s | ETA 3.6 min
+62/84 id=1075 [music] cap 185tok 7.0s | desc 105tok 4.5s | asr 6tok 0.2s | ETA 3.4 min
+63/84 id=1081 [music] cap 165tok 6.3s | desc 36tok 2.4s | asr 3tok 0.2s | ETA 3.3 min
+64/84 id=1089 [music] cap 112tok 4.8s | desc 86tok 3.8s | asr 26tok 0.3s | ETA 3.1 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+65/84 id=1095 [music] cap 86tok 3.9s | desc 45tok 2.6s | asr 444tok 3.6s | ETA 3.0 min
+66/84 id=1096 [music] cap 97tok 4.3s | desc 65tok 3.2s | asr 15tok 0.2s | ETA 2.8 min
+67/84 id=1100 [music] cap 256tok 9.1s | desc 52tok 3.0s | asr 8tok 0.2s | ETA 2.7 min
+68/84 id=1103 [music] cap 72tok 3.6s | desc 49tok 2.7s | asr 32tok 0.5s | ETA 2.5 min
+69/84 id=1104 [music] cap 88tok 4.1s | desc 66tok 3.2s | asr 1tok 0.1s | ETA 2.3 min
+70/84 id=1108 [music] cap 119tok 5.0s | desc 96tok 4.1s | asr 52tok 0.6s | ETA 2.2 min
+71/84 id=1111 [music] cap 193tok 7.2s | desc 78tok 3.7s | asr 14tok 0.4s | ETA 2.0 min
+72/84 id=1112 [music] cap 177tok 6.7s | desc 86tok 3.8s | asr 2tok 0.1s | ETA 1.9 min
+73/84 id=1114 [music] cap 103tok 4.5s | desc 31tok 2.2s | asr 8tok 0.2s | ETA 1.7 min
+74/84 id=1115 [music] cap 256tok 9.1s | desc 81tok 3.7s | asr 8tok 0.2s | ETA 1.6 min
+75/84 id=1117 [music] cap 77tok 3.8s | desc 97tok 4.3s | asr 143tok 1.5s | ETA 1.4 min
+76/84 id=1119 [music] cap 217tok 7.9s | desc 41tok 2.6s | asr 3tok 0.1s | ETA 1.3 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+77/84 id=1120 [music] cap 146tok 5.8s | desc 113tok 4.8s | asr 444tok 3.7s | ETA 1.1 min
+78/84 id=1121 [music] cap 130tok 5.3s | desc 54tok 2.9s | asr 27tok 0.8s | ETA 0.9 min
+79/84 id=1122 [music] cap 146tok 5.8s | desc 79tok 3.7s | asr 88tok 0.9s | ETA 0.8 min
+80/84 id=1127 [music] cap 103tok 4.6s | desc 102tok 4.3s | asr 8tok 0.2s | ETA 0.6 min
+81/84 id=1128 [music] cap 118tok 5.0s | desc 88tok 4.1s | asr 40tok 0.6s | ETA 0.5 min
+82/84 id=1130 [music] cap 92tok 4.2s | desc 66tok 3.2s | asr 13tok 0.2s | ETA 0.3 min
+83/84 id=1137 [music] cap 145tok 5.8s | desc 99tok 4.2s | asr 4tok 0.2s | ETA 0.2 min
+[transformers] Whisper did not predict an ending timestamp, which can happen if audio is cut off in the middle of a word. Also make sure WhisperTimeStampLogitsProcessor was used during generation.
+84/84 id=1141 [music] cap 249tok 8.9s | desc 65tok 3.3s | asr 444tok 3.6s | ETA 0.0 min
+done -> /home/ec2-user/multimodal-reasoning-project/results/midterm/generated_surrogates.json
