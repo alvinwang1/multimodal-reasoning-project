@@ -17,3 +17,9 @@ results/analysis_a/smoke*.jsonl
 results/analysis_a/feasibility*.jsonl
 results/analysis_c/*.npz
 *.log
+data/omnibench/data/
+data/omnibench/.cache/
+_local_backup/
+
+# Slurm logs
+idea3_*.out
