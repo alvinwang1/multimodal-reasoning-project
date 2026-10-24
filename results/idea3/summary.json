@@ -1,0 +1,299 @@
+{
+  "n_items": {
+    "dev": 90,
+    "test": 90
+  },
+  "agreement_with_analysis_a": null,
+  "shapley_logp": {
+    "all": {
+      "aud_given_img": 0.596,
+      "img_given_aud": 0.015,
+      "interaction": 0.584,
+      "phi_aud": 0.304,
+      "phi_img": -0.277
+    },
+    "music": {
+      "aud_given_img": 0.112,
+      "img_given_aud": 0.133,
+      "interaction": 0.161,
+      "phi_aud": 0.032,
+      "phi_img": 0.052
+    },
+    "sound event": {
+      "aud_given_img": 1.065,
+      "img_given_aud": -0.245,
+      "interaction": 1.037,
+      "phi_aud": 0.547,
+      "phi_img": -0.763
+    },
+    "speech": {
+      "aud_given_img": 0.61,
+      "img_given_aud": 0.158,
+      "interaction": 0.554,
+      "phi_aud": 0.333,
+      "phi_img": -0.119
+    }
+  },
+  "shapley_acc": {
+    "all": {
+      "aud_given_img": 0.117,
+      "img_given_aud": 0.096,
+      "interaction": 0.037,
+      "phi_aud": 0.098,
+      "phi_img": 0.078
+    },
+    "music": {
+      "aud_given_img": 0.017,
+      "img_given_aud": 0.056,
+      "interaction": -0.039,
+      "phi_aud": 0.036,
+      "phi_img": 0.075
+    },
+    "sound event": {
+      "aud_given_img": 0.2,
+      "img_given_aud": 0.05,
+      "interaction": 0.089,
+      "phi_aud": 0.156,
+      "phi_img": 0.006
+    },
+    "speech": {
+      "aud_given_img": 0.133,
+      "img_given_aud": 0.183,
+      "interaction": 0.061,
+      "phi_aud": 0.103,
+      "phi_img": 0.153
+    }
+  },
+  "policies": [
+    {
+      "candidates": "raw grid",
+      "beta": 0.25,
+      "policy": "global",
+      "test_acc": 0.3296,
+      "test_cost": 0.2313,
+      "test_tokens": 268.9889,
+      "test_logp": -1.6466,
+      "picks": "{\"all\": \"v0_a0.5\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.25,
+      "policy": "per audio type",
+      "test_acc": 0.3185,
+      "test_cost": 0.1886,
+      "test_tokens": 201.6667,
+      "test_logp": -1.6984,
+      "picks": "{\"speech\": \"v0_a0.25\", \"sound event\": \"v0_a1\", \"music\": \"v64_a0\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.4,
+      "policy": "global",
+      "test_acc": 0.4704,
+      "test_cost": 0.3983,
+      "test_tokens": 465.7778,
+      "test_logp": -1.4991,
+      "picks": "{\"all\": \"v64_a1\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.4,
+      "policy": "per audio type",
+      "test_acc": 0.3741,
+      "test_cost": 0.2937,
+      "test_tokens": 320.3444,
+      "test_logp": -1.6761,
+      "picks": "{\"speech\": \"v0_a1\", \"sound event\": \"v64_a1\", \"music\": \"v256_a0\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.6,
+      "policy": "global",
+      "test_acc": 0.4741,
+      "test_cost": 0.5757,
+      "test_tokens": 649.8333,
+      "test_logp": -1.6274,
+      "picks": "{\"all\": \"v256_a1\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.6,
+      "policy": "per audio type",
+      "test_acc": 0.463,
+      "test_cost": 0.3826,
+      "test_tokens": 401.0556,
+      "test_logp": -1.5665,
+      "picks": "{\"speech\": \"v256_a1\", \"sound event\": \"v64_a1\", \"music\": \"v256_a0\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.8,
+      "policy": "global",
+      "test_acc": 0.4741,
+      "test_cost": 0.5757,
+      "test_tokens": 649.8333,
+      "test_logp": -1.6274,
+      "picks": "{\"all\": \"v256_a1\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 0.8,
+      "policy": "per audio type",
+      "test_acc": 0.4741,
+      "test_cost": 0.4918,
+      "test_tokens": 553.5778,
+      "test_logp": -1.5657,
+      "picks": "{\"speech\": \"v256_a1\", \"sound event\": \"v64_a1\", \"music\": \"v768_a0\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 1.0,
+      "policy": "global",
+      "test_acc": 0.4741,
+      "test_cost": 0.5757,
+      "test_tokens": 649.8333,
+      "test_logp": -1.6274,
+      "picks": "{\"all\": \"v256_a1\"}"
+    },
+    {
+      "candidates": "raw grid",
+      "beta": 1.0,
+      "policy": "per audio type",
+      "test_acc": 0.4778,
+      "test_cost": 0.6396,
+      "test_tokens": 697.3667,
+      "test_logp": -1.6011,
+      "picks": "{\"speech\": \"v768_a1\", \"sound event\": \"v64_a1\", \"music\": \"v768_a0\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.25,
+      "policy": "global",
+      "test_acc": 0.3296,
+      "test_cost": 0.2313,
+      "test_tokens": 268.9889,
+      "test_logp": -1.6466,
+      "picks": "{\"all\": \"v0_a0.5\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.25,
+      "policy": "per audio type",
+      "test_acc": 0.3185,
+      "test_cost": 0.1886,
+      "test_tokens": 201.6667,
+      "test_logp": -1.6984,
+      "picks": "{\"speech\": \"v0_a0.25\", \"sound event\": \"v0_a1\", \"music\": \"v64_a0\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.4,
+      "policy": "global",
+      "test_acc": 0.4333,
+      "test_cost": 0.3378,
+      "test_tokens": 364.0556,
+      "test_logp": -1.6554,
+      "picks": "{\"all\": \"vcap_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.4,
+      "policy": "per audio type",
+      "test_acc": 0.4296,
+      "test_cost": 0.3216,
+      "test_tokens": 340.6222,
+      "test_logp": -1.6001,
+      "picks": "{\"speech\": \"vcap_atrans\", \"sound event\": \"v64_a1\", \"music\": \"v256_a0\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.6,
+      "policy": "global",
+      "test_acc": 0.4333,
+      "test_cost": 0.3378,
+      "test_tokens": 364.0556,
+      "test_logp": -1.6554,
+      "picks": "{\"all\": \"vcap_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.6,
+      "policy": "per audio type",
+      "test_acc": 0.5074,
+      "test_cost": 0.3989,
+      "test_tokens": 425.4444,
+      "test_logp": -1.4589,
+      "picks": "{\"speech\": \"v256_a1\", \"sound event\": \"v64_a1\", \"music\": \"vcap_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.8,
+      "policy": "global",
+      "test_acc": 0.4333,
+      "test_cost": 0.3378,
+      "test_tokens": 364.0556,
+      "test_logp": -1.6554,
+      "picks": "{\"all\": \"vcap_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 0.8,
+      "policy": "per audio type",
+      "test_acc": 0.5185,
+      "test_cost": 0.5002,
+      "test_tokens": 565.4889,
+      "test_logp": -1.4324,
+      "picks": "{\"speech\": \"v256_a1\", \"sound event\": \"v64_a1\", \"music\": \"v768_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 1.0,
+      "policy": "global",
+      "test_acc": 0.5185,
+      "test_cost": 0.7981,
+      "test_tokens": 849.4667,
+      "test_logp": -1.442,
+      "picks": "{\"all\": \"v768_atrans\"}"
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": 1.0,
+      "policy": "per audio type",
+      "test_acc": 0.5222,
+      "test_cost": 0.6027,
+      "test_tokens": 666.3222,
+      "test_logp": -1.4145,
+      "picks": "{\"speech\": \"v768_atrans\", \"sound event\": \"v64_a1\", \"music\": \"v768_atrans\"}"
+    },
+    {
+      "candidates": "-",
+      "beta": 1.0,
+      "policy": "full input",
+      "test_acc": 0.5,
+      "test_cost": 1.0,
+      "test_tokens": 1104.3556,
+      "test_logp": -1.6192,
+      "picks": NaN
+    },
+    {
+      "candidates": "-",
+      "beta": NaN,
+      "policy": "always D",
+      "test_acc": 0.2519,
+      "test_cost": NaN,
+      "test_tokens": NaN,
+      "test_logp": NaN,
+      "picks": NaN
+    },
+    {
+      "candidates": "grid + surrogates",
+      "beta": NaN,
+      "policy": "oracle (robust)",
+      "test_acc": 0.5222,
+      "test_cost": 0.2205,
+      "test_tokens": NaN,
+      "test_logp": NaN,
+      "picks": NaN
+    }
+  ]
+}
