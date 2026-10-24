@@ -112,8 +112,9 @@ class OmniScorer:
         for m in messages:
             for c in m["content"]:
                 if c["type"] == "image":
+                    max_px = min(c.get("max_pixels", self.max_pixels), self.max_pixels)
                     images.append(fetch_image({"image": c["image"], "min_pixels": self.min_pixels,
-                                               "max_pixels": self.max_pixels}))
+                                               "max_pixels": max(max_px, self.min_pixels)}))
                 elif c["type"] == "audio":
                     audios.append(c["audio"])
         text = self.processor.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)

@@ -203,9 +203,9 @@ def plot_oracle(orc, audio_type, out):
         ax.text(xi, b + 0.3, f"{int(b)}", ha="center", va="bottom", fontsize=5.5, color=INK_2)
     ax.set_xticks(x, [SHORT.get(c, "None correct") for c in order], rotation=25, ha="right")
     ax.set_ylabel("Examples")
-    ax.set_title("Cheapest configuration correct under all option orders")
+    ax.set_title("Cheapest config correct under all option orders")
     ax.grid(axis="x", visible=False)
-    ax.legend(loc="upper right")
+    ax.legend(loc="upper left")
     save_fig(fig, out, "oracle_routing")
 
 

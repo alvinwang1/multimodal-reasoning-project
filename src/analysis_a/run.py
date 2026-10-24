@@ -7,6 +7,7 @@ Resumable: entries already in --out are skipped, so the job can be killed and re
     python -m src.analysis_a.run --n-perms 3 --configs full cap_trans
 """
 import argparse
+import json
 import logging
 import time
 from datetime import datetime, timezone
@@ -14,7 +15,7 @@ from datetime import datetime, timezone
 import numpy as np
 
 from src.analysis_a.model import OmniScorer, map_back
-from src.analysis_a.prompts import CONFIGS, build_messages, permutation, surrogate_texts
+from src.analysis_a.prompts import build_messages, config_spec, permutation, surrogate_texts
 from src.common import append_jsonl, load_config, read_jsonl, repo_path, seed_everything
 from src.data import OmniBenchSubset
 
@@ -27,9 +28,13 @@ def parse_args():
     ap.add_argument("--out", default=None, help="output JSONL (default from config)")
     ap.add_argument("--limit", type=int, default=None, help="only the first N subset examples")
     ap.add_argument("--ids", type=int, nargs="*", default=None, help="explicit OmniBench indices")
-    ap.add_argument("--configs", nargs="*", default=None, choices=list(CONFIGS))
+    ap.add_argument("--split", choices=["train", "test", "all"], default=None,
+                    help="use the midterm train/test split instead of the Assignment-2 subset")
+    ap.add_argument("--surrogates", default=None, help="JSON of generated surrogates (midterm Idea 4)")
+    ap.add_argument("--configs", nargs="*", default=None,
+                    help="config names: base configs, gen_* configs, or bud_i{r}_a{r}")
     ap.add_argument("--n-perms", type=int, default=None, help="option permutations (incl. original)")
-    ap.add_argument("--perm-configs", nargs="*", default=None, choices=list(CONFIGS))
+    ap.add_argument("--perm-configs", nargs="*", default=None, help="configs run under all perms ('all')")
     ap.add_argument("--warmup", type=int, default=None)
     ap.add_argument("--device", default="auto")
     ap.add_argument("--dtype", default=None, help="bfloat16 / float16 / float32")
@@ -54,12 +59,20 @@ def main():
 
     out = repo_path(args.out or acfg["out"])
     configs = args.configs or acfg["configs"]
+    for c in configs:
+        config_spec(c)  # fail fast on typos
     perm_configs = args.perm_configs if args.perm_configs is not None else acfg["perm_configs"]
+    if perm_configs == ["all"]:
+        perm_configs = list(configs)
     n_perms = args.n_perms or acfg["n_perms"]
     warmup = acfg["warmup"] if args.warmup is None else args.warmup
 
     data = OmniBenchSubset(cfg)
     ids = args.ids or data.ids
+    if args.split:
+        split = json.loads(repo_path(cfg["midterm"]["split"]).read_text())
+        ids = split["train"] + split["test"] if args.split == "all" else split[args.split]
+    surrogates = json.loads(repo_path(args.surrogates).read_text()) if args.surrogates else {}
     if args.limit:
         ids = ids[: args.limit]
 
@@ -89,6 +102,7 @@ def main():
     t_start, n_run = time.time(), 0
     for idx, jobs in by_example.items():
         ex = data[idx]
+        ex.update(surrogates.get(str(idx), {}))
         perms = {}
         for p in range(n_perms):
             perms[p] = permutation(idx, p, seed, prior=[perms[q] for q in range(p)])
@@ -103,6 +117,7 @@ def main():
             pred = int(np.argmax(probs))
             rec = {
                 "id": idx, "config": config, "perm": p, "perm_order": perm,
+                "img_ratio": config_spec(config)["img_ratio"], "aud_ratio": config_spec(config)["aud_ratio"],
                 "audio_type": ex["audio type"], "task_type": ex["task type"],
                 "answer_idx": ex["answer_idx"], "pred_idx": pred,
                 "correct": pred == ex["answer_idx"], "probs": probs,

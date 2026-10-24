@@ -39,3 +39,12 @@ analysis_c:
   out_dir: results/analysis_c
   tsne_perplexity: 15
   cv_folds: 5
+
+midterm:
+  split: data/midterm_split.json
+  n_train_per_type: 60     # includes the 30/type Assignment-2 subset (already scored)
+  n_test_per_type: 40      # all new items, never inspected in Assignment 2
+  budget_out: results/midterm/raw_budget.jsonl
+  surrogate_out: results/midterm/raw_surrogate.jsonl
+  surrogates: results/midterm/generated_surrogates.json
+  out_dir: results/midterm

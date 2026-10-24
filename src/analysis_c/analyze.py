@@ -67,19 +67,22 @@ def main():
     full = pd.concat(all_rows)
     full.to_csv(out_dir / f"empath_associations{suffix}.csv", index=False)
 
-    # Plot: richest view (question+caption+transcript), top +/- categories.
-    df = full[full.view == "q_cap_trans"].sort_values("r_pb")
-    sel = pd.concat([df.head(args.top), df.tail(args.top)]).drop_duplicates("category")
-    fig, ax = plt.subplots(figsize=(COL_W, 0.13 * len(sel) + 0.5))
-    colors = [BINARY_COLORS[1] if r > 0 else BINARY_COLORS[0] for r in sel.r_pb]
-    ax.barh(range(len(sel)), sel.r_pb, color=colors, height=0.7)
-    ax.set_yticks(range(len(sel)))
-    ax.set_yticklabels([f"{c}{'*' if q < 0.05 else ''}" for c, q in zip(sel.category, sel.q_bh)])
-    ax.axvline(0, color="#52514e", lw=0.6)
-    ax.set_xlabel("Point-biserial r with text-sufficient label")
-    ax.set_title(f"Empath categories (Question+Caption+Transcript){tag}")
-    ax.grid(axis="y", visible=False)
-    save_fig(fig, out_dir, f"empath_top{suffix}")
+    # One bar chart per view: top +/- categories, * = BH-adjusted q < 0.05.
+    for v in VIEWS:
+        df = full[full.view == v].sort_values("r_pb")
+        if df.empty:
+            continue
+        sel = pd.concat([df.head(args.top), df.tail(args.top)]).drop_duplicates("category")
+        fig, ax = plt.subplots(figsize=(COL_W, 0.13 * len(sel) + 0.5))
+        colors = [BINARY_COLORS[1] if r > 0 else BINARY_COLORS[0] for r in sel.r_pb]
+        ax.barh(range(len(sel)), sel.r_pb, color=colors, height=0.7)
+        ax.set_yticks(range(len(sel)))
+        ax.set_yticklabels([f"{c}{'*' if q < 0.05 else ''}" for c, q in zip(sel.category, sel.q_bh)])
+        ax.axvline(0, color="#52514e", lw=0.6)
+        ax.set_xlabel("Point-biserial r with text-sufficient label")
+        ax.set_title(f"Empath categories ({VIEW_LABELS[v]}){tag}")
+        ax.grid(axis="y", visible=False)
+        save_fig(fig, out_dir, f"empath_top_{v}{suffix}")
     print(f"\n* = BH-adjusted q < 0.05. Wrote {out_dir / f'empath_associations{suffix}.csv'}")
 
 
