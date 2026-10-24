@@ -6,7 +6,10 @@
 #
 # Interactive:  interact -p GPU-shared --gres=gpu:h100-80:1 -t 04:00:00
 # Batch:        sbatch scripts/idea3_psc.sh
-# Use H100 (or another sm_80+ GPU): current PyTorch CUDA wheels no longer ship V100 (sm_70) kernels.
+# V100:         sbatch --gpus=v100-32:1 -t 08:00:00 scripts/idea3_psc.sh   (interact: --gres=gpu:v100-32:1)
+#   The default PyTorch wheel has no V100 (sm_70) kernels, so the script swaps in the cu126 build of the
+#   same version. V100 has no bf16 and fp16 can overflow, so it runs in fp32 (~3x slower than H100 bf16).
+#   Override with DTYPE=float16 bash scripts/idea3_psc.sh.
 # Resumable: if the job dies, run it again and it continues where it stopped.
 #
 #SBATCH -J idea3
@@ -56,10 +59,21 @@ if [ "${1:-}" = "setup" ]; then
 fi
 
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
-python -c "import torch; torch.ones(8, device='cuda').sum().item()" \
-    || { echo ">> this PyTorch build has no kernels for this GPU; request an H100 (h100-80)"; exit 1; }
-# bf16 needs compute capability >= 8 (A100/H100); older GPUs fall back to fp16
-DTYPE=$(python -c "import torch; print('bfloat16' if torch.cuda.get_device_capability()[0] >= 8 else 'float16')")
+# is this GPU's architecture compiled into the installed torch? (no on V100 with the default wheel)
+has_arch() {
+    python -c "import torch; c = torch.cuda.get_device_capability(); \
+assert f'sm_{c[0]}{c[1]}' in torch.cuda.get_arch_list(); torch.ones(8, device='cuda').sum().item()" 2>/dev/null
+}
+if ! has_arch; then
+    TV=$(python -c "import torch; print(torch.__version__.split('+')[0])")
+    VV=$(python -c "import torchvision; print(torchvision.__version__.split('+')[0])")
+    echo ">> torch $TV lacks kernels for this GPU; installing the cu126 build"
+    pip install -q "torch==$TV+cu126" "torchvision==$VV+cu126" \
+        --index-url https://download.pytorch.org/whl/cu126 --extra-index-url https://pypi.org/simple
+    has_arch || { echo ">> still no kernels for this GPU; request an H100 (h100-80)"; exit 1; }
+fi
+# bf16 needs compute capability >= 8 (A100/H100); older GPUs (V100) run fp32
+DTYPE=${DTYPE:-$(python -c "import torch; print('bfloat16' if torch.cuda.get_device_capability()[0] >= 8 else 'float32')")}
 echo ">> dtype $DTYPE"
 
 # compute nodes may lack internet: use the cache from `setup` when it is there
