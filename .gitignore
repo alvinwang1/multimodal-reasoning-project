@@ -22,3 +22,9 @@ results/analysis_c/*.npz
 results/midterm/raw*.jsonl
 results/midterm/*.npz
 results/midterm_arjun/raw*.jsonl
+
+# Idea 3 (PSC): local dataset copy, backups, Slurm logs
+data/omnibench/data/
+data/omnibench/.cache/
+_local_backup/
+idea3_*.out

@@ -1,0 +1,170 @@
+split,id,audio_type,task_type,img_given_aud,aud_given_img,interaction,acc_v0_a0,acc_v0_a1,acc_v768_a0,acc_v768_a1,acc_v768_atrans,acc_vcap_a1,acc_vcap_atrans,question,options,answer,image content,audio content
+test,846,sound event,Story Description,-5.289799556815924,-0.3292414018219283,-1.4856347097061144,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,Why is he soaked?,"[""Because it's raining."", 'Because he is in the shower.', 'Because he just accidentally fell into the pond.', 'Because someone poured a basin of water on the roof.']",Because he is in the shower.,"The image depicts a scene with two individuals. The person on the left is a man wearing glasses and a dark-colored, button-up shirt. He appears to be wet, with water droplets visible on his face and shirt, suggesting that he might have been splashed or is in the rain. His expression seems somewhat serious or contemplative.
+
+The person on the right is a woman with her back to the camera, making it difficult to see her face. She has short hair and is wearing a light-colored shirt. The background shows a blurred natural landscape with hills and some greenery, indicating that the scene is likely taking place outdoors.
+
+There is a metal pole or structure visible behind the man, which might be part of a fence or outdoor fixture. The overall atmosphere of the image suggests a moment of interaction or conversation between the two individuals in an outdoor setting.",Continuous sound of water falling to the ground
+dev,736,sound event,Action and Activity,-4.427900663071078,0.8534762636598536,-0.07060021807349037,0.0,1.0,0.0,0.0,0.0,1.0,1.0,What is this man doing?,"['Using handcuffs.', 'Showcasing handcuffs.', 'Using the knob on the car.', 'Using the knob on the camera.']",Using handcuffs.,"The image shows a man holding a pair of handcuffs in his right hand. He is standing outdoors, with buildings and a clear sky in the background. The man has short, dark hair and is wearing a dark jacket with a pattern on the sleeves. He appears to be focused on the handcuffs, which are metallic and have a circular design. There is another person in the background, slightly bent over, but their face is not visible. The setting appears to be an urban area with residential buildings.",Mechanical knob sound
+dev,1019,sound event,Action and Activity,-4.028125798976237,1.1686707839673058,-0.41125939543755274,0.0,1.0,0.0,0.0,0.0,0.0,0.0,What happens now?,"['Someone is writing on the table.', 'Someone is manipulating the box to move.', 'Someone is writing on the box.', 'Someone is putting the box on the table.']",Someone is writing on the box.,"The image shows a white box placed on a surface with a grid-like pattern. The box appears to be a piece of electronic equipment, possibly a gaming console or a similar device. The front of the box has a small, square-shaped opening or port. Below the box, there are several black cables or connectors protruding out, suggesting that the device is connected to other components or peripherals. The background surface has a woven texture, adding to the overall setting of the image.",Writing sound
+dev,1012,sound event,Action and Activity,-2.78759210566228,3.3627966061634607,2.66253313623118,0.3333333333333333,0.6666666666666666,0.0,0.0,0.0,0.0,0.6666666666666666,What is this person doing?,"['The person in black is eating.', 'The person in white is eating.', 'The person in black is sneezing.', 'The person in white is sneezing.']",The person in white is sneezing.,"The image depicts a dining scene in a restaurant with a focus on a variety of Chinese dishes. The table is set with several bowls and plates, each containing different types of food. 
+
+1. **Foreground (Left to Right)**:
+   - **Bowl of Soup**: A bowl of soup with a creamy, yellowish broth garnished with green onions.
+   - **Steamed Fish**: A whole steamed fish topped with a spicy sauce and garnished with red chili peppers and green onions.
+   - **Bowl of Vegetables**: A bowl containing stir-fried vegetables, including green beans and eggplant, with a savory sauce.
+
+2. **Background (Left to Right)**:
+   - **Roast Duck**: A plate of roast duck, sliced and garnished with green onions.
+   - **Bamboo Steamer**: A bamboo steamer containing a bowl of soup or porridge, garnished with green onions.
+   - **Beverage**: A cup of milk tea with a straw.
+
+3. **Person**:
+   - A person with long, dark hair is seated at the table, holding chopsticks and a spoon. They are wearing a white blouse with a floral pattern and a smartwatch on their left wrist.
+
+The table and chairs are made of wood, and the chairs have red cushions. The overall setting suggests a casual dining experience in a Chinese restaurant.",Sneezing sound
+test,842,sound event,Story Description,-2.7035754192838475,3.7714622335531183,3.696377978343893,1.0,1.0,0.0,0.3333333333333333,0.0,0.3333333333333333,0.6666666666666666,What happened to the little animal?,"['Pigeons fly freely in the sky', ""The little dinosaur didn't fly, it fell down"", 'The dove is chased by the eagle', 'The little dinosaur is flying happily in the sky']","The little dinosaur didn't fly, it fell down","The image depicts a cartoon-style dragon character flying in the sky. The dragon has a friendly and cheerful appearance, with a round body and a smiling face. It has orange skin with a lighter, almost yellow underbelly. The dragon's wings are outstretched, and it appears to be gliding or flying through the air. The background is a clear blue sky with a few wispy clouds, giving the impression of a bright and sunny day. The overall tone of the image is playful and whimsical.","Startled scream ""Ah"""
+test,168,speech,Story Description,-2.5559303116967556,0.5277906651072897,0.3019592577757264,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,Why is this woman here?,"['She comes to do the laundry.', 'She comes to delay picking up the courier.', 'She comes here to exchange change.', 'She wants to postpone picking up the clothes.']",She wants to postpone picking up the clothes.,"The image depicts a scene inside what appears to be a laundromat. There are three people in the image: a woman, a young girl, and a man. 
+
+The woman, who is standing in the center, has blonde hair and is wearing a black leather jacket. She appears to be in a conversation with the man, who is partially visible on the right side of the image. The man is wearing a gray shirt and a brown scarf.
+
+The young girl, who is standing to the left of the woman, has dark hair and is wearing a black jacket with red floral patterns. She has a pair of blue headphones around her neck and is carrying a backpack.
+
+In the background, there are several washing machines lined up against the wall. The laundromat has large windows that allow natural light to enter, and through the windows, you can see a street with cars and buildings. There are also a few red chairs placed near the windows. 
+
+The overall atmosphere of the image suggests a casual, everyday interaction between the characters in a public setting.","Female voice + male voice
+A: Please. Please. Please.
+B: Tomorrow morning.Or they go in the bin. 
+A: Thank you."
+dev,782,sound event,Action and Activity,-2.4972676732898944,0.7763041939878073,0.9030635750919607,1.0,0.6666666666666666,0.0,0.0,0.0,1.0,1.0,What is the girl doing?,"['She is walking her dog in the forest.', 'She is walking her dog in the urban area.', 'she is waiting for the man in black to go home with her.', 'She is waiting for the bus.']",She is walking her dog in the urban area.,"The image depicts a scene on a street in what appears to be a quaint, possibly European town. The setting is outdoors, with a clear sky and a few buildings in the background. The buildings are painted in pastel colors, including shades of blue and yellow, and have a charming, old-world architectural style.
+
+In the foreground, there are two main characters. On the left, a man is standing near the open door of a white van. He is wearing a dark jacket, a gray shirt, and dark pants. He has headphones on and appears to be looking at the woman on the right.
+
+The woman on the right is standing with her back partially turned towards the camera. She has short, curly hair and is wearing a sleeveless, light blue top and brown pants. She is holding a black kettlebell in her right hand and has a small, rectangular, woven bag in her left hand. She seems to be looking at something or someone in the distance.
+
+In the middle of the image, there is a large, wooden planter filled with an assortment of colorful flowers, including white, pink, and purple blooms. Behind the planter, there are blue umbrellas, suggesting the presence of outdoor seating areas, possibly for a café or restaurant.
+
+The overall atmosphere of the image is calm and pleasant, with a sense of everyday life in a picturesque town setting.",Dog barking + walking sound
+test,1118,music,Action and Activity,-2.303725119443895,1.7046128323395386,3.0485917243083804e-05,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,"What technique is the performer using on his string instrument in the scenario depicted?
+","['Tapping on the bass.', 'Plucking the strings of a violin.', 'Tapping on the viola.', 'Using a bow on the cello.']",Tapping on the viola.,"The image depicts a musician playing a violin in an orchestral setting. The musician is dressed in formal attire, consisting of a black suit, white shirt, and black tie. He is seated and holding the violin with his left hand while using the bow with his right hand. The violinist appears to be deeply focused on his performance, with his eyes directed towards the sheet music placed on a music stand in front of him.
+
+In the background, there is a large harp positioned to the left of the violinist. The harp has a rich, golden-brown color with intricate designs and a curved structure. The strings of the harp are visible, extending vertically from the top to the bottom of the instrument.
+
+The setting appears to be a concert hall or a similar venue, as indicated by the presence of other musical instruments and equipment. There are microphones positioned near the violinist and the harp, suggesting that the performance is being recorded or amplified for an audience. The background also includes a piano, which is partially visible, and other orchestral instruments, indicating that this is a live orchestral performance.
+
+The overall atmosphere of the image conveys a sense of professionalism and dedication to classical music, with the musicians fully engaged in their performance.","Sound of tapping wood in a distance to create rhythmic, uncommon percussive sounds."
+test,726,sound event,Action and Activity,-2.2601006798779224,1.4383468713953205,0.7339967430410459,0.0,0.0,0.0,0.0,0.0,0.0,0.0,What is the car doing?,"['The police car is honking its horn.', 'The fire truck is honking its horn.', 'The police car is in motion.', 'The fire truck is in motion.']",The fire truck is honking its horn.,"The image depicts a scene involving two fire trucks driving on a city street. The fire trucks are red and prominently feature the word ""SCANIA"" on their fronts, indicating the make of the vehicles. The trucks are equipped with various firefighting equipment and have emergency lights activated on their roofs. 
+
+The lead fire truck has a white cloth or cover draped over its front bumper. The street is marked with white pedestrian crosswalk lines, and there are buildings visible in the background, suggesting an urban environment. An elevated structure, possibly a bridge or overpass, is seen above the fire trucks. The sky appears to be clear, indicating good weather conditions.",Car horn sound
+dev,876,sound event,Plot Inference,-2.241487539261195,-0.39447124319171145,-0.7351017438093066,0.0,0.0,0.0,0.0,0.0,0.0,0.0,What is the man going to do?,"['He will finish brushing his teeth and turn off his electric toothbrush.', 'He will pick up his phone from the table and check messages.', 'He will pick up his phone from the box.', 'He will wash all the bowls and cups.']",He will pick up his phone from the box.,"The image depicts a man standing in a kitchen, facing a window. He is wearing a dark jacket and has dark hair. The kitchen appears to be somewhat cluttered. 
+
+On the left side of the image, there is a countertop with a stainless steel electric kettle and a white mug. Below the countertop, there is a washing machine with a control panel visible.
+
+In the center of the image, the man is standing near the sink. The sink is filled with dirty dishes, including plates, cups, and a teapot. There is a dish rack next to the sink with more dishes and a red container. 
+
+To the right of the sink, there is a window with sheer white curtains that allow some light to filter through. On the windowsill, there are various items, including a bottle of soda, a yellow thermos, and a blue plastic container. 
+
+The overall atmosphere of the kitchen suggests a lived-in, somewhat disorganized space. The man appears to be looking out the window or perhaps contemplating something.",Buzzing sound
+test,869,sound event,Plot Inference,-2.1274987913163605,-0.013100978326741952,-0.1525298188497306,0.0,0.0,0.0,0.0,0.0,0.0,0.0,What will this man say?,"['Who poured the water?', 'This coffee is really good.', 'Oh my T-shirt.', 'bad luck.']",bad luck.,"The image depicts a scene inside an elevator. The elevator has metallic walls with a reflective surface, giving it a sleek and modern appearance. The lighting inside the elevator is cool and blue, contributing to a somewhat sterile and corporate atmosphere.
+
+In the foreground, there is a man who appears to be in his late 20s or early 30s. He is dressed in business attire, wearing a white dress shirt, a dark tie, and dark trousers. He is holding a jacket over his left arm and a disposable coffee cup in his right hand. His expression seems somewhat neutral or contemplative.
+
+In the background, another man is visible. He is also dressed in business attire, wearing a dark suit and holding a briefcase. He is standing near the elevator doors, which are closed, and appears to be looking down or at something in his hand.
+
+The overall scene suggests a typical office setting, with the two men likely being colleagues or business professionals. The image captures a moment of everyday life in a corporate environment.",Walking + water spilling
+dev,66,speech,Action and Activity,-1.958497225117684,0.9971311794288882,1.9333563483057197,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,What happened in this room?,"['The balloon burst and the girl was terrified', 'The man made little girl laugh.', 'The man fainted next to hospital bed.', ""The video recorder recorded the man's death.""]",The video recorder recorded the man's death.,"The image depicts a scene inside a room with light blue walls. A man in a dark suit is sitting at a table, blowing up a purple balloon. He is focused on the task, and his reflection is visible on the glass surface of the table. 
+
+To the right of the man, there is a young girl sitting on a bed covered with a colorful floral blanket. She is watching the man blow up the balloon. The bed is positioned against a wall with a window that has white frames and a partially drawn curtain.
+
+Behind the man, there is a wooden bookshelf filled with various items, including books, a purple box, and some stuffed animals. On the wall above the bookshelf, there is a framed picture featuring multiple smaller images arranged in a grid pattern.
+
+In the background, there is an open doorway leading to another room. A person in a blue shirt is visible through the doorway, standing in the adjacent room. The room appears to be well-lit, with natural light coming in through the windows. 
+
+The overall atmosphere of the room is cozy and cheerful, with a mix of colorful and playful elements.","Girl' yell: Daddy!
+Man: Shit, what's happened?
+Girl: He fell.
+Man: Jan! 
+Man2: What do you mean?
+Man: He fell."
+dev,1139,music,Action and Activity,-1.9371681417058966,1.3858919203150224,2.961582918839589,1.0,0.0,0.0,0.0,0.3333333333333333,0.0,0.0,What is the activity being performed in the playground ?,"['Live ammunition exercise', 'Parade display', 'Musical performance', 'Attacking an enemy']",Musical performance,"The image depicts a military parade or demonstration taking place in an open area, likely an airfield or a large parade ground. The scene is set outdoors under an overcast sky. Here are the details:
+
+1. **Foreground:**
+   - There are several rows of black folding chairs, some of which are occupied by spectators. The spectators are dressed in casual clothing, with a few wearing hats.
+   - A uniformed soldier stands at attention in the foreground, facing the parade ground. He is wearing a formal military uniform, including a helmet.
+
+2. **Midground:**
+   - A wide, paved area, possibly a runway or a parade route, stretches across the image. It is marked with white lines.
+   - On the right side of the paved area, there are several large artillery pieces or cannons, each manned by soldiers in uniform. The soldiers appear to be operating the artillery, as smoke is billowing from the barrels, indicating that they have just been fired.
+
+3. **Background:**
+   - A large crowd of spectators is seated on bleachers, watching the event. The bleachers are filled to capacity, suggesting that this is a significant or popular event.
+   - Behind the crowd, there are trees and some structures, including what appears to be a control tower or a building with a red and white tower, possibly for air traffic control or as a landmark.
+
+4. **Additional Elements:**
+   - Power lines and poles are visible in the background, indicating that the location is near an urban or developed area.
+   - The overall atmosphere is one of formality and ceremony, typical of military parades or demonstrations.
+
+The image captures a moment of military display, with the artillery firing being the central focus, drawing the attention of both the spectators and the uniformed personnel present.","A performance of Tchaikovsky's ""1812 Overture"" incorporating cannon fire with orchestra as part of the musical score."
+test,293,speech,Plot Inference,-1.8405818114912376,0.7609086920373196,0.9455707649342069,0.3333333333333333,0.3333333333333333,0.0,0.0,0.3333333333333333,0.0,0.3333333333333333,What will happen next?,"['The child will race against the man.', 'The child will ride away on horseback.', 'The child will say thank you.', 'The horse and the car will race.']",The horse and the car will race.,"The image depicts a scenic landscape viewed from inside a vehicle. The foreground shows a person riding a brown horse across a lush green field. The rider is dressed in traditional attire, including a white shirt and a dark vest. The horse appears to be in motion, with its legs extended as it walks or trots.
+
+In the background, there is a vast expanse of green meadows dotted with grazing animals, possibly cows or horses. Further back, there are several white yurts, which are traditional portable round tents used in Central Asia. The yurts are scattered across the field, suggesting a nomadic or rural setting.
+
+Beyond the meadows, the landscape is dominated by rolling hills and majestic mountains. The mountains have patches of snow on their peaks, indicating a high altitude or a cooler climate. The sky is mostly clear with a few scattered clouds, contributing to the overall serene and picturesque atmosphere of the scene.
+
+The view is framed by the interior of a vehicle, with the window providing a natural border to the image. The window frame and part of the vehicle's interior are visible, adding a sense of perspective and depth to the photograph.",man: Can you catch up with me?
+test,901,sound event,Object Identification and Description,-1.839572049076303,-0.05558269279313022,0.031618852448607626,0.0,0.0,0.0,0.0,0.0,0.6666666666666666,0.0,What could he be holding in his hand,"['Purple onion', 'Hand shell', 'Mutant FIG', 'tomato']",Mutant FIG,"The image depicts a scene from the movie ""Avatar."" The central figure is a Na'vi, a humanoid species with blue skin, large yellow eyes, and pointed ears. The Na'vi is standing in a lush, tropical garden filled with various plants and trees. The vegetation includes large, blue-tinged leaves and trees bearing clusters of yellowish fruits.
+
+The Na'vi is holding a purple, spherical fruit in their hands, examining it closely. They are wearing a simple, light-colored tunic that contrasts with their blue skin. The background features more greenery and hints of a wooden structure, possibly part of a Na'vi dwelling or communal area. The overall atmosphere is serene and vibrant, highlighting the rich biodiversity of the Na'vi's home planet, Pandora.",Sound like biting into a tomato with juice bursting + exclamation
+test,205,speech,Story Description,-1.8336455032830188,0.9984091068816019,0.045996257160828335,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,Why does the old man have this expression?,"['Because he choked on some food.', 'Because he saw a mouse, which he is most afraid of.', 'Because the family of the old man wearing square glasses won a prize.', 'Because the family of the old man wearing a black hat won a prize.']",Because the family of the old man wearing a black hat won a prize.,"The image depicts an elderly man with a surprised or shocked expression. He is wearing a black beanie and round glasses. His mouth is wide open, and his tongue is sticking out slightly. He is dressed in a brown coat and a scarf. The background features a colorful, geometric-patterned blanket or quilt draped over what appears to be a couch or chair. The overall setting suggests a cozy, indoor environment.","A child's voice:
+I found it! The last golden ticket! It's mine!"
+test,864,sound event,Plot Inference,-1.6863527418663515,2.224732862866081,1.6414841556615403,0.0,0.0,0.0,0.0,0.0,0.0,0.0,What would the woman say,"[""So let's get started with today's lesson"", 'Please come in.', 'Please wait.', 'We will study geography today']",Please come in.,"The image depicts a classroom scene with a teacher and several students. The teacher, a woman with blonde hair and glasses, is standing at the front of the classroom. She is wearing a red dress and black shoes. The classroom has a green chalkboard behind the teacher, and there is a globe on a stand to her left. On the desk in front of the chalkboard, there are some markers and a computer monitor.
+
+The students are seated at wooden desks arranged in rows. There are six students visible, with three in the front row and three in the back row. The students have different hair colors and styles, and they are wearing various colored shirts.
+
+On the wall to the left, there is a brown bulletin board with several pieces of paper pinned to it. To the right of the chalkboard, there is a clock showing the time as 10:10. Next to the clock, there is an easel with a map and some papers attached to it.
+
+The floor of the classroom is wooden, and the walls are painted yellow. The overall atmosphere of the classroom appears to be orderly and conducive to learning.",Knocking sound
+test,834,sound event,Action and Activity,-1.6652862957242618,0.6448427452249446,-0.02566134382525176,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,What is this person doing?,"['This person in black is drinking something.', 'The person in white is drinking something.', 'This person in black is shouting softly.', 'This person in white is shouting softly.']",This person in white is shouting softly.,"The image shows a young woman sitting on a red couch, drinking from a wine glass. She is wearing a white, knitted sweater and has her eyes closed as she takes a sip. Her hair is dark and tied back with a red hair clip. The background features shelves stocked with various bottles of wine and champagne, indicating that the setting might be a wine cellar or a wine tasting room. The lighting is warm, creating a cozy atmosphere.",Woman's low moaning sound
+test,292,speech,Plot Inference,-1.5487101762787079,0.8745751116268359,1.2997220483487777,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,What will happen next?,"['He will eat something.', 'He will wipe his hands with a paper.', 'He will drink some ice water.', 'He will take off his hat.']",He will take off his hat.,"The image depicts a man sitting at a table outdoors, pouring a creamy liquid from a large plastic container onto a plate of food. He is wearing a black baseball cap with the words ""Wild Card Boxing Hollywood"" printed on it, a light-colored, short-sleeved shirt, and dark shorts. The man appears to be focused on pouring the liquid carefully.
+
+The plate in front of him contains a variety of food items. There is a half-moon-shaped, golden-brown pastry, possibly a taco or empanada, along with some shredded vegetables, including cabbage and possibly some diced tomatoes or onions. The creamy liquid being poured is likely a sauce or dressing, which the man is adding to the dish.
+
+The table has a colorful, circular patterned tablecloth. In the background, there is a silver minivan parked on the street, and some greenery, including palm trees, can be seen. The setting appears to be a casual outdoor dining area, possibly at a street food stall or a small local eatery.",man: It's so hot!
+test,481,speech,Object Identification and Description,-1.5461178080038829,0.36607270863364905,-0.5184638592972799,0.0,0.0,0.0,0.0,0.0,0.6666666666666666,0.3333333333333333,What is it?,"['A house.', 'A djembe.', 'A hat with a red ribbon.', 'A hat with a rose-color ribbon.']",A hat with a red ribbon.,"The image appears to be a blurry and low-resolution shot of a person in the water. The person is wearing a red life jacket and is partially submerged. The background is dark and indistinct, making it difficult to discern any specific details. The overall quality of the image is poor, with significant motion blur, making it challenging to identify any additional features or context.","Dialogue between a man and a woman.
+A: Your carriage, m'lady.
+B: The hat?
+A: Of course!
+B: Anyone can go by horse or rail. "
+dev,542,speech,Object Identification and Description,-1.3039380589289409,0.1901785346731346,-0.14784131311480397,0.0,0.0,0.0,0.0,0.0,0.0,0.0,What are they touching?,"['A large rock.', 'A section of pipe.', 'A drone.', 'An airplane.']",A drone.,"The image depicts three individuals outdoors, seemingly engaged in an activity involving a large, cylindrical object that appears to be a missile or rocket. The setting is a grassy field under a clear blue sky with a few scattered clouds.
+
+1. **Foreground Activity**:
+   - **Person 1**: A man in a brown jacket and dark pants is kneeling on the ground, working on the cylindrical object. He appears to be focused on a task, possibly inspecting or repairing the object.
+   - **Person 2**: A younger individual, wearing a maroon hoodie and dark pants, is also kneeling and working on the same object. This person seems to be assisting the man in the brown jacket.
+
+2. **Background Activity**:
+   - **Person 3**: A woman, standing slightly behind the other two individuals, is observing the activity. She is dressed in a light-colored jacket and dark pants. Her posture suggests she is either supervising or waiting for her turn to participate.
+
+3. **Object Description**:
+   - The cylindrical object is large and metallic, with a conical nose at one end. It is positioned horizontally on the ground. The surface of the object appears smooth and reflective, indicating it might be made of metal or a similar material.
+
+4. **Environment**:
+   - The scene takes place in an open field with grass covering the ground. The sky is clear, suggesting good weather conditions. There are no other significant objects or structures visible in the background, indicating a remote or rural location.
+
+5. **Interactions**:
+   - The individuals seem to be working together, with the man in the brown jacket possibly leading the activity. The younger person is actively involved, while the woman in the background appears to be monitoring the situation.
+
+This detailed description provides a comprehensive overview of the image, capturing the key elements and interactions among the individuals and the object they are working on.","Sound of a man:
+Let's lay her down right there at the edge of the reservoir."
+test,731,sound event,Action and Activity,-1.2528819981780845,-0.5097103151605862,-0.8816185753543304,0.3333333333333333,0.0,0.0,0.0,0.0,0.6666666666666666,0.6666666666666666,What's happening?,"['Someone is setting off firecrackers.', 'Someone is shoveling snow.', 'The bamboo has been broken.', 'The children are having a snowball fight.']",The bamboo has been broken.,"The image depicts a serene and picturesque winter scene in a bamboo forest. The ground is covered with a thick layer of snow, creating a pristine white pathway that meanders through the forest. The bamboo stalks, tall and slender, are partially obscured by the snowfall, with some bamboo leaves and branches heavily laden with snow, bending slightly under its weight.
+
+The forest is dense, with bamboo growing closely together on both sides of the path, forming a natural tunnel-like effect. The snowflakes are gently falling, adding a sense of tranquility and calmness to the scene. The overall color palette is dominated by cool tones of white and blue, with the green of the bamboo leaves peeking through the snow.
+
+The atmosphere is peaceful and quiet, evoking a sense of solitude and natural beauty. The image captures the stillness and quietude of a winter morning in a bamboo forest, with the snow enhancing the serene and almost magical quality of the landscape.",Continuous crackling sound
+dev,823,sound event,Action and Activity,-1.2500859799561752,1.038148424400974,1.2114965174958,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,What is this cat doing?,"['The gray cat is eating.', 'The white cat is eating.', 'The gray cat is meowing.', 'The white cat is meowing.']",The white cat is meowing.,"The image shows a fluffy white cat with large, expressive blue eyes and a pink nose. The cat is sitting on a wooden floor and looking upwards with its mouth slightly open, revealing a small pink tongue. Above the cat, a hand is holding a piece of food, which appears to be a small, light-colored treat. The background includes a white wall and a wooden cabinet or door. The cat's fur is thick and well-groomed, and its overall appearance is cute and endearing.",Cat meowing sound
+test,780,sound event,Action and Activity,-1.2465317053980467,1.8961861549067764,4.510189925383089,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,What is this person doing?,"['Grinding this kitchen knife.', 'Riding a motorcycle.', 'Chatting.', 'Grinding this sword.']",Grinding this sword.,"The image depicts a person riding a motorcycle at night. The rider is dressed in all black, including a black helmet, jacket, and gloves. The motorcycle is also black, and the rider is holding onto the handlebars. The rider appears to be carrying a long object, possibly a stick or a bat, which is resting on the motorcycle.
+
+The scene is set on a street with buildings on either side. The buildings have multiple stories and are illuminated by streetlights. There are also some signs and advertisements visible on the buildings. The street is relatively empty, with only a few cars visible in the background. The lighting suggests it is nighttime, and the overall atmosphere is calm and quiet.",Knife sharpening sound
+dev,881,sound event,Plot Inference,-1.1472911904165228,0.32876997149493814,1.1191772473621686,0.6666666666666666,0.0,0.0,0.0,0.0,1.0,1.0,What will happen next?,"['Push cart.', 'Remove the helmet.', 'Chat.', 'Pull the chair with pulleys.']",Chat.,"The image depicts a scene inside a bedroom. A child is sitting on a bed, wearing a NASA astronaut helmet. The helmet is white with the NASA logo on the front. The child is also wearing a striped shirt. The bed has a space-themed comforter and a pillow with a space design.
+
+Next to the bed, there is a small round table with a lamp on it. The lamp has a beige lampshade. On the table, there is a book titled ""Universe"" and a small toy dinosaur.
+
+A woman is sitting on a chair next to the bed, facing the child. She is wearing a dark-colored shirt and appears to be engaged in a conversation with the child. The room has a cozy and warm atmosphere, with a dark blue wall behind the bed and a giraffe mural on the wall near the woman. There is also a teddy bear sitting on the bed's headboard. The floor has a patterned rug, and there are some toys and items scattered around the room.",Sound of wheels sliding

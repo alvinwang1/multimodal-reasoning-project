@@ -25,6 +25,17 @@ analysis_a:
   n_perms: 3
   warmup: 3
 
+idea3:
+  # Budget grid: image tokens (max_pixels = b * 28 * 28) x leading fraction of the audio clip.
+  image_budgets: [0, 64, 256, 768]
+  audio_fracs: [0.0, 0.25, 0.5, 1.0]
+  min_audio_sec: 1.0       # truncated clips keep at least this much audio (or the whole clip)
+  n_perms: 3
+  warmup: 3
+  test_subset: data/idea3_test_ids.json   # held-out 90 items, disjoint from subset.path
+  test_seed: 43
+  out_dir: results/idea3   # raw_dev.jsonl / raw_test.jsonl + analysis outputs
+
 analysis_b:
   annotators: [nikkita, arjun, alvin, lindy]
   n_shared: 10
