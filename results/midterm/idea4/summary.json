@@ -1,0 +1,220 @@
+{
+  "n_items": 120,
+  "n_perms": 3,
+  "configs": {
+    "full": {
+      "acc": 0.4639,
+      "ci_lo": 0.3861,
+      "ci_hi": 0.5417,
+      "answer_ms": 355.8623,
+      "total_ms": 355.8623,
+      "total_tok": 1139.7917
+    },
+    "img_trans": {
+      "acc": 0.5333,
+      "ci_lo": 0.4528,
+      "ci_hi": 0.6112,
+      "answer_ms": 300.1611,
+      "total_ms": 300.1611,
+      "total_tok": 855.8917
+    },
+    "cap_aud": {
+      "acc": 0.3972,
+      "ci_lo": 0.3222,
+      "ci_hi": 0.475,
+      "answer_ms": 129.9008,
+      "total_ms": 129.9008,
+      "total_tok": 678.9333
+    },
+    "cap_trans": {
+      "acc": 0.4472,
+      "ci_lo": 0.3722,
+      "ci_hi": 0.5278,
+      "answer_ms": 69.1894,
+      "total_ms": 69.1894,
+      "total_tok": 395.0333
+    },
+    "img_only": {
+      "acc": 0.3444,
+      "ci_lo": 0.2722,
+      "ci_hi": 0.4167,
+      "answer_ms": 296.761,
+      "total_ms": 296.761,
+      "total_tok": 828.1333
+    },
+    "aud_only": {
+      "acc": 0.3889,
+      "ci_lo": 0.3167,
+      "ci_hi": 0.4583,
+      "answer_ms": 100.0792,
+      "total_ms": 100.0792,
+      "total_tok": 440.475
+    },
+    "q_only": {
+      "acc": 0.3083,
+      "ci_lo": 0.2472,
+      "ci_hi": 0.3722,
+      "answer_ms": 40.2874,
+      "total_ms": 40.2874,
+      "total_tok": 128.8167
+    },
+    "gen_cap_desc": {
+      "acc": 0.3722,
+      "ci_lo": 0.3,
+      "ci_hi": 0.4472,
+      "answer_ms": 58.9599,
+      "total_ms": 8892.9802,
+      "total_tok": 1751.55
+    },
+    "gen_cap_asr": {
+      "acc": 0.3306,
+      "ci_lo": 0.2639,
+      "ci_hi": 0.4,
+      "answer_ms": 56.7525,
+      "total_ms": 5789.6287,
+      "total_tok": 1248.075
+    },
+    "img_gendesc": {
+      "acc": 0.3917,
+      "ci_lo": 0.3194,
+      "ci_hi": 0.4694,
+      "answer_ms": 305.927,
+      "total_ms": 3862.7134,
+      "total_tok": 1407.9167
+    },
+    "img_asr": {
+      "acc": 0.4111,
+      "ci_lo": 0.3389,
+      "ci_hi": 0.4806,
+      "answer_ms": 301.7736,
+      "total_ms": 757.4159,
+      "total_tok": 904.4417
+    },
+    "gencap_aud": {
+      "acc": 0.4333,
+      "ci_lo": 0.3583,
+      "ci_hi": 0.5111,
+      "answer_ms": 114.574,
+      "total_ms": 5391.8078,
+      "total_tok": 1483.425
+    }
+  },
+  "paired_all": [
+    {
+      "gold": "cap_trans",
+      "generated": "gen_cap_desc",
+      "scope": "all",
+      "n_items": 120,
+      "acc_gold": 0.4472,
+      "acc_generated": 0.3722,
+      "gap": 0.075,
+      "ci_lo": 0.0083,
+      "ci_hi": 0.1444,
+      "p_signflip": 0.0425,
+      "n_gold_only": 17,
+      "n_generated_only": 8
+    },
+    {
+      "gold": "cap_trans",
+      "generated": "gen_cap_asr",
+      "scope": "all",
+      "n_items": 120,
+      "acc_gold": 0.4472,
+      "acc_generated": 0.3306,
+      "gap": 0.1167,
+      "ci_lo": 0.0444,
+      "ci_hi": 0.1861,
+      "p_signflip": 0.0019,
+      "n_gold_only": 21,
+      "n_generated_only": 6
+    },
+    {
+      "gold": "img_trans",
+      "generated": "img_asr",
+      "scope": "all",
+      "n_items": 120,
+      "acc_gold": 0.5333,
+      "acc_generated": 0.4111,
+      "gap": 0.1222,
+      "ci_lo": 0.0638,
+      "ci_hi": 0.1806,
+      "p_signflip": 0.0002,
+      "n_gold_only": 20,
+      "n_generated_only": 4
+    },
+    {
+      "gold": "img_trans",
+      "generated": "img_gendesc",
+      "scope": "all",
+      "n_items": 120,
+      "acc_gold": 0.5333,
+      "acc_generated": 0.3917,
+      "gap": 0.1417,
+      "ci_lo": 0.0861,
+      "ci_hi": 0.2,
+      "p_signflip": 0.0,
+      "n_gold_only": 23,
+      "n_generated_only": 1
+    },
+    {
+      "gold": "cap_aud",
+      "generated": "gencap_aud",
+      "scope": "all",
+      "n_items": 120,
+      "acc_gold": 0.3972,
+      "acc_generated": 0.4333,
+      "gap": -0.0361,
+      "ci_lo": -0.0833,
+      "ci_hi": 0.0083,
+      "p_signflip": 0.1613,
+      "n_gold_only": 6,
+      "n_generated_only": 9
+    }
+  ],
+  "asr_status": {
+    "speech": {
+      "ok": 39,
+      "empty": 0,
+      "filler": 0,
+      "loop": 1
+    },
+    "sound event": {
+      "ok": 17,
+      "empty": 2,
+      "filler": 16,
+      "loop": 5
+    },
+    "music": {
+      "ok": 11,
+      "empty": 9,
+      "filler": 15,
+      "loop": 5
+    }
+  },
+  "hit_token_limit": {
+    "gen_caption": {
+      "speech": 0,
+      "sound event": 0,
+      "music": 4
+    },
+    "gen_audio_desc": {
+      "speech": 0,
+      "sound event": 0,
+      "music": 0
+    }
+  },
+  "generation_cost": {
+    "gen_caption": {
+      "mean_ms": 5277.233823849978,
+      "mean_out_tok": 128.78333333333333
+    },
+    "gen_audio_desc": {
+      "mean_ms": 3556.7864221583363,
+      "mean_out_tok": 76.56666666666666
+    },
+    "asr": {
+      "mean_ms": 455.6423734749842,
+      "mean_out_tok": 37.59166666666667
+    }
+  }
+}

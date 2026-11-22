@@ -1,0 +1,315 @@
+Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+19:54:12 Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+19:54:12 Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+19:54:12 120 examples x ['full', 'img_trans', 'cap_aud', 'cap_trans', 'img_only', 'aud_only', 'q_only'] | perms=3 on ['full', 'img_trans', 'cap_aud', 'cap_trans', 'img_only', 'aud_only', 'q_only'] | 0 done, 2520 to run -> /home/ec2-user/multimodal-reasoning-project/results/midterm/raw_base_test.jsonl
+Loading weights:   0%|          | 0/1442 [00:00<?, ?it/s]Loading weights:  41%|████▏     | 597/1442 [00:00<00:00, 5965.34it/s]Loading weights:  83%|████████▎ | 1194/1442 [00:00<00:00, 5866.68it/s]Loading weights: 100%|██████████| 1442/1442 [00:00<00:00, 5869.95it/s]
+19:54:17 model on cuda (torch.bfloat16); letter ids [32, 33, 34, 35]
+19:54:17   tokenize 'A'   -> [32] ['A']
+19:54:17   tokenize 'B'   -> [33] ['B']
+19:54:17   tokenize 'C'   -> [34] ['C']
+19:54:17   tokenize 'D'   -> [35] ['D']
+19:54:17   tokenize ' A'  -> [362] [' A']
+19:54:17   tokenize ' B'  -> [425] [' B']
+19:54:17   tokenize 'A.'  -> [32, 13] ['A', '.']
+19:54:17   tokenize '(A)' -> [4346, 8] ['(A', ')']
+19:54:19 warmup 1/3: 1239 ms
+19:54:20 warmup 2/3: 408 ms
+19:54:20 warmup 3/3: 421 ms
+19:54:24 10/2520  0.4s/pass  elapsed 0.1 min  ETA 15.4 min
+19:54:26 20/2520  0.3s/pass  elapsed 0.1 min  ETA 11.8 min
+19:54:29 30/2520  0.3s/pass  elapsed 0.2 min  ETA 12.5 min
+19:54:31 40/2520  0.3s/pass  elapsed 0.2 min  ETA 11.2 min
+19:54:34 50/2520  0.3s/pass  elapsed 0.2 min  ETA 11.2 min
+19:54:35 60/2520  0.3s/pass  elapsed 0.3 min  ETA 10.5 min
+19:54:38 70/2520  0.3s/pass  elapsed 0.3 min  ETA 10.6 min
+19:54:40 80/2520  0.3s/pass  elapsed 0.3 min  ETA 10.2 min
+19:54:42 90/2520  0.2s/pass  elapsed 0.4 min  ETA 10.0 min
+19:54:44 100/2520  0.2s/pass  elapsed 0.4 min  ETA 9.6 min
+19:54:47 110/2520  0.2s/pass  elapsed 0.4 min  ETA 9.7 min
+19:54:49 120/2520  0.2s/pass  elapsed 0.5 min  ETA 9.6 min
+19:54:51 130/2520  0.2s/pass  elapsed 0.5 min  ETA 9.6 min
+19:54:53 140/2520  0.2s/pass  elapsed 0.6 min  ETA 9.5 min
+19:54:56 150/2520  0.2s/pass  elapsed 0.6 min  ETA 9.6 min
+19:54:59 160/2520  0.2s/pass  elapsed 0.6 min  ETA 9.5 min
+19:55:01 170/2520  0.2s/pass  elapsed 0.7 min  ETA 9.5 min
+19:55:03 180/2520  0.2s/pass  elapsed 0.7 min  ETA 9.4 min
+19:55:05 190/2520  0.2s/pass  elapsed 0.8 min  ETA 9.3 min
+19:55:08 200/2520  0.2s/pass  elapsed 0.8 min  ETA 9.3 min
+19:55:10 210/2520  0.2s/pass  elapsed 0.8 min  ETA 9.2 min
+19:55:13 220/2520  0.2s/pass  elapsed 0.9 min  ETA 9.3 min
+19:55:15 230/2520  0.2s/pass  elapsed 0.9 min  ETA 9.1 min
+19:55:18 240/2520  0.2s/pass  elapsed 1.0 min  ETA 9.2 min
+19:55:20 250/2520  0.2s/pass  elapsed 1.0 min  ETA 9.1 min
+19:55:24 260/2520  0.2s/pass  elapsed 1.1 min  ETA 9.2 min
+19:55:26 270/2520  0.2s/pass  elapsed 1.1 min  ETA 9.2 min
+19:55:29 280/2520  0.2s/pass  elapsed 1.2 min  ETA 9.2 min
+19:55:31 290/2520  0.2s/pass  elapsed 1.2 min  ETA 9.2 min
+19:55:34 300/2520  0.2s/pass  elapsed 1.2 min  ETA 9.2 min
+19:55:37 310/2520  0.2s/pass  elapsed 1.3 min  ETA 9.1 min
+19:55:39 320/2520  0.2s/pass  elapsed 1.3 min  ETA 9.1 min
+19:55:41 330/2520  0.2s/pass  elapsed 1.4 min  ETA 9.0 min
+19:55:44 340/2520  0.2s/pass  elapsed 1.4 min  ETA 8.9 min
+19:55:46 350/2520  0.2s/pass  elapsed 1.4 min  ETA 8.9 min
+19:55:48 360/2520  0.2s/pass  elapsed 1.5 min  ETA 8.8 min
+19:55:50 370/2520  0.2s/pass  elapsed 1.5 min  ETA 8.7 min
+19:55:52 380/2520  0.2s/pass  elapsed 1.5 min  ETA 8.6 min
+19:55:54 390/2520  0.2s/pass  elapsed 1.6 min  ETA 8.6 min
+19:55:56 400/2520  0.2s/pass  elapsed 1.6 min  ETA 8.5 min
+19:55:59 410/2520  0.2s/pass  elapsed 1.7 min  ETA 8.5 min
+19:56:01 420/2520  0.2s/pass  elapsed 1.7 min  ETA 8.4 min
+19:56:04 430/2520  0.2s/pass  elapsed 1.7 min  ETA 8.5 min
+19:56:06 440/2520  0.2s/pass  elapsed 1.8 min  ETA 8.4 min
+19:56:09 450/2520  0.2s/pass  elapsed 1.8 min  ETA 8.4 min
+19:56:11 460/2520  0.2s/pass  elapsed 1.9 min  ETA 8.3 min
+19:56:15 470/2520  0.2s/pass  elapsed 1.9 min  ETA 8.3 min
+19:56:17 480/2520  0.2s/pass  elapsed 1.9 min  ETA 8.3 min
+19:56:20 490/2520  0.2s/pass  elapsed 2.0 min  ETA 8.3 min
+19:56:22 500/2520  0.2s/pass  elapsed 2.0 min  ETA 8.2 min
+19:56:24 510/2520  0.2s/pass  elapsed 2.1 min  ETA 8.2 min
+19:56:27 520/2520  0.2s/pass  elapsed 2.1 min  ETA 8.1 min
+19:56:29 530/2520  0.2s/pass  elapsed 2.2 min  ETA 8.1 min
+19:56:31 540/2520  0.2s/pass  elapsed 2.2 min  ETA 8.0 min
+19:56:34 550/2520  0.2s/pass  elapsed 2.2 min  ETA 8.0 min
+19:56:36 560/2520  0.2s/pass  elapsed 2.3 min  ETA 8.0 min
+19:56:39 570/2520  0.2s/pass  elapsed 2.3 min  ETA 7.9 min
+19:56:41 580/2520  0.2s/pass  elapsed 2.4 min  ETA 7.9 min
+19:56:44 590/2520  0.2s/pass  elapsed 2.4 min  ETA 7.8 min
+19:56:46 600/2520  0.2s/pass  elapsed 2.4 min  ETA 7.8 min
+19:56:48 610/2520  0.2s/pass  elapsed 2.5 min  ETA 7.7 min
+19:56:51 620/2520  0.2s/pass  elapsed 2.5 min  ETA 7.7 min
+19:56:52 630/2520  0.2s/pass  elapsed 2.5 min  ETA 7.6 min
+19:56:55 640/2520  0.2s/pass  elapsed 2.6 min  ETA 7.6 min
+19:56:56 650/2520  0.2s/pass  elapsed 2.6 min  ETA 7.5 min
+19:57:00 660/2520  0.2s/pass  elapsed 2.7 min  ETA 7.5 min
+19:57:01 670/2520  0.2s/pass  elapsed 2.7 min  ETA 7.4 min
+19:57:04 680/2520  0.2s/pass  elapsed 2.7 min  ETA 7.4 min
+19:57:06 690/2520  0.2s/pass  elapsed 2.8 min  ETA 7.3 min
+19:57:09 700/2520  0.2s/pass  elapsed 2.8 min  ETA 7.3 min
+19:57:11 710/2520  0.2s/pass  elapsed 2.9 min  ETA 7.3 min
+19:57:14 720/2520  0.2s/pass  elapsed 2.9 min  ETA 7.3 min
+19:57:17 730/2520  0.2s/pass  elapsed 2.9 min  ETA 7.2 min
+19:57:19 740/2520  0.2s/pass  elapsed 3.0 min  ETA 7.2 min
+19:57:22 750/2520  0.2s/pass  elapsed 3.0 min  ETA 7.2 min
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ec2-user/multimodal-reasoning-project/src/analysis_a/run.py", line 148, in <module>
+    main()
+  File "/home/ec2-user/multimodal-reasoning-project/src/analysis_a/run.py", line 104, in main
+    ex = data[idx]
+         ~~~~^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/src/data.py", line 95, in __getitem__
+    r["audio"] = decode_audio(row["audio"], self.cfg["dataset"]["audio_sr"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/src/data.py", line 69, in decode_audio
+    wav, _ = librosa.load(io.BytesIO(audio_field["bytes"]), sr=sr, mono=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/librosa/core/audio.py", line 156, in load
+    y, sr_native = __soundfile_load(path, offset, duration, dtype)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/librosa/core/audio.py", line 179, in __soundfile_load
+    context = sf.SoundFile(path)
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/multimodal-reasoning-project/.venv/lib/python3.12/site-packages/soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening <_io.BytesIO object at 0x7f4798613150>: Format not recognised.
+Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+21:13:18 Using the latest cached version of the dataset since m-a-p/OmniBench couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+21:13:18 Found the latest cached dataset configuration 'default' at /home/ec2-user/.cache/huggingface/datasets/m-a-p___omni_bench/default/0.0.0/84dc3923e0f64b3c5926b32d2b08066cf67b3d15 (last modified on Sat Oct 24 19:29:32 2026).
+21:13:18 120 examples x ['full', 'img_trans', 'cap_aud', 'cap_trans', 'img_only', 'aud_only', 'q_only'] | perms=3 on ['full', 'img_trans', 'cap_aud', 'cap_trans', 'img_only', 'aud_only', 'q_only'] | 756 done, 1764 to run -> /home/ec2-user/multimodal-reasoning-project/results/midterm/raw_base_test.jsonl
+Loading weights:   0%|          | 0/1442 [00:00<?, ?it/s]Loading weights:  33%|███▎      | 470/1442 [00:00<00:00, 4595.85it/s]Loading weights:  72%|███████▏  | 1042/1442 [00:00<00:00, 5249.69it/s]Loading weights: 100%|██████████| 1442/1442 [00:00<00:00, 5309.87it/s]
+21:13:24 model on cuda (torch.bfloat16); letter ids [32, 33, 34, 35]
+21:13:24   tokenize 'A'   -> [32] ['A']
+21:13:24   tokenize 'B'   -> [33] ['B']
+21:13:24   tokenize 'C'   -> [34] ['C']
+21:13:24   tokenize 'D'   -> [35] ['D']
+21:13:24   tokenize ' A'  -> [362] [' A']
+21:13:24   tokenize ' B'  -> [425] [' B']
+21:13:24   tokenize 'A.'  -> [32, 13] ['A', '.']
+21:13:24   tokenize '(A)' -> [4346, 8] ['(A', ')']
+21:13:25 warmup 1/3: 1087 ms
+21:13:25 warmup 2/3: 228 ms
+21:13:26 warmup 3/3: 233 ms
+21:13:28 10/1764  0.3s/pass  elapsed 0.0 min  ETA 7.5 min
+21:13:30 20/1764  0.2s/pass  elapsed 0.1 min  ETA 5.8 min
+21:13:32 30/1764  0.2s/pass  elapsed 0.1 min  ETA 5.9 min
+21:13:33 40/1764  0.2s/pass  elapsed 0.1 min  ETA 5.4 min
+21:13:36 50/1764  0.2s/pass  elapsed 0.2 min  ETA 6.0 min
+21:13:38 60/1764  0.2s/pass  elapsed 0.2 min  ETA 5.9 min
+21:13:41 70/1764  0.2s/pass  elapsed 0.3 min  ETA 6.2 min
+21:13:43 80/1764  0.2s/pass  elapsed 0.3 min  ETA 6.1 min
+21:13:46 90/1764  0.2s/pass  elapsed 0.3 min  ETA 6.3 min
+21:13:48 100/1764  0.2s/pass  elapsed 0.4 min  ETA 6.2 min
+21:13:51 110/1764  0.2s/pass  elapsed 0.4 min  ETA 6.3 min
+21:13:53 120/1764  0.2s/pass  elapsed 0.5 min  ETA 6.2 min
+21:13:55 130/1764  0.2s/pass  elapsed 0.5 min  ETA 6.2 min
+21:13:57 140/1764  0.2s/pass  elapsed 0.5 min  ETA 6.1 min
+21:14:00 150/1764  0.2s/pass  elapsed 0.6 min  ETA 6.1 min
+21:14:02 160/1764  0.2s/pass  elapsed 0.6 min  ETA 6.0 min
+21:14:04 170/1764  0.2s/pass  elapsed 0.6 min  ETA 6.0 min
+21:14:06 180/1764  0.2s/pass  elapsed 0.7 min  ETA 6.0 min
+21:14:09 190/1764  0.2s/pass  elapsed 0.7 min  ETA 5.9 min
+21:14:11 200/1764  0.2s/pass  elapsed 0.8 min  ETA 6.0 min
+21:14:13 210/1764  0.2s/pass  elapsed 0.8 min  ETA 5.9 min
+21:14:16 220/1764  0.2s/pass  elapsed 0.8 min  ETA 5.9 min
+21:14:18 230/1764  0.2s/pass  elapsed 0.9 min  ETA 5.8 min
+21:14:21 240/1764  0.2s/pass  elapsed 0.9 min  ETA 5.9 min
+21:14:23 250/1764  0.2s/pass  elapsed 1.0 min  ETA 5.8 min
+21:14:26 260/1764  0.2s/pass  elapsed 1.0 min  ETA 5.8 min
+21:14:28 270/1764  0.2s/pass  elapsed 1.0 min  ETA 5.7 min
+21:14:31 280/1764  0.2s/pass  elapsed 1.1 min  ETA 5.7 min
+21:14:33 290/1764  0.2s/pass  elapsed 1.1 min  ETA 5.7 min
+21:14:35 300/1764  0.2s/pass  elapsed 1.2 min  ETA 5.7 min
+21:14:37 310/1764  0.2s/pass  elapsed 1.2 min  ETA 5.6 min
+21:14:40 320/1764  0.2s/pass  elapsed 1.2 min  ETA 5.6 min
+21:14:42 330/1764  0.2s/pass  elapsed 1.3 min  ETA 5.5 min
+21:14:44 340/1764  0.2s/pass  elapsed 1.3 min  ETA 5.5 min
+21:14:46 350/1764  0.2s/pass  elapsed 1.3 min  ETA 5.4 min
+21:14:49 360/1764  0.2s/pass  elapsed 1.4 min  ETA 5.4 min
+21:14:51 370/1764  0.2s/pass  elapsed 1.4 min  ETA 5.3 min
+21:14:53 380/1764  0.2s/pass  elapsed 1.5 min  ETA 5.3 min
+21:14:55 390/1764  0.2s/pass  elapsed 1.5 min  ETA 5.3 min
+21:14:58 400/1764  0.2s/pass  elapsed 1.5 min  ETA 5.2 min
+21:15:00 410/1764  0.2s/pass  elapsed 1.6 min  ETA 5.2 min
+21:15:02 420/1764  0.2s/pass  elapsed 1.6 min  ETA 5.1 min
+21:15:05 430/1764  0.2s/pass  elapsed 1.7 min  ETA 5.1 min
+21:15:07 440/1764  0.2s/pass  elapsed 1.7 min  ETA 5.1 min
+21:15:10 450/1764  0.2s/pass  elapsed 1.7 min  ETA 5.1 min
+21:15:12 460/1764  0.2s/pass  elapsed 1.8 min  ETA 5.0 min
+21:15:14 470/1764  0.2s/pass  elapsed 1.8 min  ETA 5.0 min
+21:15:15 480/1764  0.2s/pass  elapsed 1.8 min  ETA 4.9 min
+21:15:18 490/1764  0.2s/pass  elapsed 1.9 min  ETA 4.9 min
+21:15:20 500/1764  0.2s/pass  elapsed 1.9 min  ETA 4.8 min
+21:15:23 510/1764  0.2s/pass  elapsed 2.0 min  ETA 4.8 min
+21:15:25 520/1764  0.2s/pass  elapsed 2.0 min  ETA 4.8 min
+21:15:28 530/1764  0.2s/pass  elapsed 2.0 min  ETA 4.7 min
+21:15:30 540/1764  0.2s/pass  elapsed 2.1 min  ETA 4.7 min
+21:15:33 550/1764  0.2s/pass  elapsed 2.1 min  ETA 4.7 min
+21:15:35 560/1764  0.2s/pass  elapsed 2.2 min  ETA 4.6 min
+21:15:38 570/1764  0.2s/pass  elapsed 2.2 min  ETA 4.6 min
+21:15:40 580/1764  0.2s/pass  elapsed 2.2 min  ETA 4.6 min
+21:15:42 590/1764  0.2s/pass  elapsed 2.3 min  ETA 4.5 min
+21:15:44 600/1764  0.2s/pass  elapsed 2.3 min  ETA 4.5 min
+21:15:46 610/1764  0.2s/pass  elapsed 2.3 min  ETA 4.4 min
+21:15:48 620/1764  0.2s/pass  elapsed 2.4 min  ETA 4.4 min
+21:15:50 630/1764  0.2s/pass  elapsed 2.4 min  ETA 4.3 min
+21:15:53 640/1764  0.2s/pass  elapsed 2.4 min  ETA 4.3 min
+21:15:54 650/1764  0.2s/pass  elapsed 2.5 min  ETA 4.2 min
+21:15:58 660/1764  0.2s/pass  elapsed 2.5 min  ETA 4.2 min
+21:15:59 670/1764  0.2s/pass  elapsed 2.6 min  ETA 4.2 min
+21:16:03 680/1764  0.2s/pass  elapsed 2.6 min  ETA 4.2 min
+21:16:05 690/1764  0.2s/pass  elapsed 2.7 min  ETA 4.1 min
+21:16:08 700/1764  0.2s/pass  elapsed 2.7 min  ETA 4.1 min
+21:16:10 710/1764  0.2s/pass  elapsed 2.7 min  ETA 4.1 min
+21:16:12 720/1764  0.2s/pass  elapsed 2.8 min  ETA 4.0 min
+21:16:14 730/1764  0.2s/pass  elapsed 2.8 min  ETA 4.0 min
+21:16:17 740/1764  0.2s/pass  elapsed 2.9 min  ETA 4.0 min
+21:16:20 750/1764  0.2s/pass  elapsed 2.9 min  ETA 3.9 min
+21:16:22 760/1764  0.2s/pass  elapsed 2.9 min  ETA 3.9 min
+21:16:25 770/1764  0.2s/pass  elapsed 3.0 min  ETA 3.9 min
+21:16:26 780/1764  0.2s/pass  elapsed 3.0 min  ETA 3.8 min
+21:16:28 790/1764  0.2s/pass  elapsed 3.0 min  ETA 3.7 min
+21:16:29 800/1764  0.2s/pass  elapsed 3.1 min  ETA 3.7 min
+21:16:31 810/1764  0.2s/pass  elapsed 3.1 min  ETA 3.6 min
+21:16:33 820/1764  0.2s/pass  elapsed 3.1 min  ETA 3.6 min
+21:16:35 830/1764  0.2s/pass  elapsed 3.2 min  ETA 3.6 min
+21:16:37 840/1764  0.2s/pass  elapsed 3.2 min  ETA 3.5 min
+21:16:40 850/1764  0.2s/pass  elapsed 3.2 min  ETA 3.5 min
+21:16:42 860/1764  0.2s/pass  elapsed 3.3 min  ETA 3.4 min
+21:16:45 870/1764  0.2s/pass  elapsed 3.3 min  ETA 3.4 min
+21:16:47 880/1764  0.2s/pass  elapsed 3.4 min  ETA 3.4 min
+21:16:50 890/1764  0.2s/pass  elapsed 3.4 min  ETA 3.3 min
+21:16:52 900/1764  0.2s/pass  elapsed 3.4 min  ETA 3.3 min
+21:16:55 910/1764  0.2s/pass  elapsed 3.5 min  ETA 3.3 min
+21:16:57 920/1764  0.2s/pass  elapsed 3.5 min  ETA 3.2 min
+21:17:00 930/1764  0.2s/pass  elapsed 3.6 min  ETA 3.2 min
+21:17:03 940/1764  0.2s/pass  elapsed 3.6 min  ETA 3.2 min
+21:17:05 950/1764  0.2s/pass  elapsed 3.7 min  ETA 3.1 min
+21:17:08 960/1764  0.2s/pass  elapsed 3.7 min  ETA 3.1 min
+21:17:11 970/1764  0.2s/pass  elapsed 3.8 min  ETA 3.1 min
+21:17:14 980/1764  0.2s/pass  elapsed 3.8 min  ETA 3.0 min
+21:17:17 990/1764  0.2s/pass  elapsed 3.9 min  ETA 3.0 min
+21:17:20 1000/1764  0.2s/pass  elapsed 3.9 min  ETA 3.0 min
+21:17:23 1010/1764  0.2s/pass  elapsed 4.0 min  ETA 3.0 min
+21:17:26 1020/1764  0.2s/pass  elapsed 4.0 min  ETA 2.9 min
+21:17:29 1030/1764  0.2s/pass  elapsed 4.0 min  ETA 2.9 min
+21:17:32 1040/1764  0.2s/pass  elapsed 4.1 min  ETA 2.9 min
+21:17:34 1050/1764  0.2s/pass  elapsed 4.1 min  ETA 2.8 min
+21:17:38 1060/1764  0.2s/pass  elapsed 4.2 min  ETA 2.8 min
+21:17:40 1070/1764  0.2s/pass  elapsed 4.2 min  ETA 2.8 min
+21:17:44 1080/1764  0.2s/pass  elapsed 4.3 min  ETA 2.7 min
+21:17:46 1090/1764  0.2s/pass  elapsed 4.3 min  ETA 2.7 min
+21:17:50 1100/1764  0.2s/pass  elapsed 4.4 min  ETA 2.7 min
+21:17:53 1110/1764  0.2s/pass  elapsed 4.4 min  ETA 2.6 min
+21:17:56 1120/1764  0.2s/pass  elapsed 4.5 min  ETA 2.6 min
+21:17:59 1130/1764  0.2s/pass  elapsed 4.6 min  ETA 2.6 min
+21:18:02 1140/1764  0.2s/pass  elapsed 4.6 min  ETA 2.5 min
+21:18:05 1150/1764  0.2s/pass  elapsed 4.7 min  ETA 2.5 min
+21:18:08 1160/1764  0.2s/pass  elapsed 4.7 min  ETA 2.5 min
+21:18:11 1170/1764  0.2s/pass  elapsed 4.8 min  ETA 2.4 min
+21:18:14 1180/1764  0.2s/pass  elapsed 4.8 min  ETA 2.4 min
+21:18:16 1190/1764  0.2s/pass  elapsed 4.8 min  ETA 2.3 min
+21:18:19 1200/1764  0.2s/pass  elapsed 4.9 min  ETA 2.3 min
+21:18:21 1210/1764  0.2s/pass  elapsed 4.9 min  ETA 2.3 min
+21:18:24 1220/1764  0.2s/pass  elapsed 5.0 min  ETA 2.2 min
+21:18:27 1230/1764  0.2s/pass  elapsed 5.0 min  ETA 2.2 min
+21:18:30 1240/1764  0.2s/pass  elapsed 5.1 min  ETA 2.1 min
+21:18:34 1250/1764  0.2s/pass  elapsed 5.1 min  ETA 2.1 min
+21:18:36 1260/1764  0.2s/pass  elapsed 5.2 min  ETA 2.1 min
+21:18:40 1270/1764  0.2s/pass  elapsed 5.2 min  ETA 2.0 min
+21:18:42 1280/1764  0.2s/pass  elapsed 5.3 min  ETA 2.0 min
+21:18:46 1290/1764  0.2s/pass  elapsed 5.3 min  ETA 2.0 min
+21:18:49 1300/1764  0.2s/pass  elapsed 5.4 min  ETA 1.9 min
+21:18:52 1310/1764  0.2s/pass  elapsed 5.4 min  ETA 1.9 min
+21:18:55 1320/1764  0.2s/pass  elapsed 5.5 min  ETA 1.8 min
+21:18:57 1330/1764  0.2s/pass  elapsed 5.5 min  ETA 1.8 min
+21:19:00 1340/1764  0.2s/pass  elapsed 5.6 min  ETA 1.8 min
+21:19:02 1350/1764  0.2s/pass  elapsed 5.6 min  ETA 1.7 min
+21:19:04 1360/1764  0.2s/pass  elapsed 5.6 min  ETA 1.7 min
+21:19:06 1370/1764  0.2s/pass  elapsed 5.7 min  ETA 1.6 min
+21:19:09 1380/1764  0.2s/pass  elapsed 5.7 min  ETA 1.6 min
+21:19:12 1390/1764  0.2s/pass  elapsed 5.8 min  ETA 1.6 min
+21:19:14 1400/1764  0.2s/pass  elapsed 5.8 min  ETA 1.5 min
+21:19:17 1410/1764  0.2s/pass  elapsed 5.9 min  ETA 1.5 min
+21:19:19 1420/1764  0.2s/pass  elapsed 5.9 min  ETA 1.4 min
+21:19:21 1430/1764  0.2s/pass  elapsed 5.9 min  ETA 1.4 min
+21:19:24 1440/1764  0.2s/pass  elapsed 6.0 min  ETA 1.3 min
+21:19:26 1450/1764  0.2s/pass  elapsed 6.0 min  ETA 1.3 min
+21:19:29 1460/1764  0.2s/pass  elapsed 6.1 min  ETA 1.3 min
+21:19:31 1470/1764  0.2s/pass  elapsed 6.1 min  ETA 1.2 min
+21:19:35 1480/1764  0.2s/pass  elapsed 6.2 min  ETA 1.2 min
+21:19:37 1490/1764  0.2s/pass  elapsed 6.2 min  ETA 1.1 min
+21:19:41 1500/1764  0.3s/pass  elapsed 6.3 min  ETA 1.1 min
+21:19:43 1510/1764  0.2s/pass  elapsed 6.3 min  ETA 1.1 min
+21:19:46 1520/1764  0.3s/pass  elapsed 6.3 min  ETA 1.0 min
+21:19:48 1530/1764  0.3s/pass  elapsed 6.4 min  ETA 1.0 min
+21:19:52 1540/1764  0.3s/pass  elapsed 6.4 min  ETA 0.9 min
+21:19:54 1550/1764  0.3s/pass  elapsed 6.5 min  ETA 0.9 min
+21:19:58 1560/1764  0.3s/pass  elapsed 6.5 min  ETA 0.9 min
+21:20:00 1570/1764  0.3s/pass  elapsed 6.6 min  ETA 0.8 min
+21:20:04 1580/1764  0.3s/pass  elapsed 6.6 min  ETA 0.8 min
+21:20:07 1590/1764  0.3s/pass  elapsed 6.7 min  ETA 0.7 min
+21:20:10 1600/1764  0.3s/pass  elapsed 6.7 min  ETA 0.7 min
+21:20:13 1610/1764  0.3s/pass  elapsed 6.8 min  ETA 0.6 min
+21:20:15 1620/1764  0.3s/pass  elapsed 6.8 min  ETA 0.6 min
+21:20:18 1630/1764  0.3s/pass  elapsed 6.9 min  ETA 0.6 min
+21:20:20 1640/1764  0.3s/pass  elapsed 6.9 min  ETA 0.5 min
+21:20:23 1650/1764  0.3s/pass  elapsed 7.0 min  ETA 0.5 min
+21:20:25 1660/1764  0.3s/pass  elapsed 7.0 min  ETA 0.4 min
+21:20:28 1670/1764  0.3s/pass  elapsed 7.0 min  ETA 0.4 min
+21:20:30 1680/1764  0.3s/pass  elapsed 7.1 min  ETA 0.4 min
+21:20:33 1690/1764  0.3s/pass  elapsed 7.1 min  ETA 0.3 min
+21:20:35 1700/1764  0.3s/pass  elapsed 7.2 min  ETA 0.3 min
+21:20:39 1710/1764  0.3s/pass  elapsed 7.2 min  ETA 0.2 min
+21:20:41 1720/1764  0.3s/pass  elapsed 7.2 min  ETA 0.2 min
+21:20:44 1730/1764  0.3s/pass  elapsed 7.3 min  ETA 0.1 min
+21:20:46 1740/1764  0.3s/pass  elapsed 7.3 min  ETA 0.1 min
+21:20:49 1750/1764  0.3s/pass  elapsed 7.4 min  ETA 0.1 min
+21:20:52 1760/1764  0.3s/pass  elapsed 7.4 min  ETA 0.0 min
+21:20:53 1764/1764  0.3s/pass  elapsed 7.4 min  ETA 0.0 min
+21:20:53 done: 1764 records written to /home/ec2-user/multimodal-reasoning-project/results/midterm/raw_base_test.jsonl

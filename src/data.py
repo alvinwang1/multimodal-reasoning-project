@@ -66,8 +66,20 @@ def load_subset_ids(cfg):
 
 def decode_audio(audio_field, sr):
     import librosa
-    wav, _ = librosa.load(io.BytesIO(audio_field["bytes"]), sr=sr, mono=True)
+    import soundfile
+    try:
+        wav, _ = librosa.load(io.BytesIO(audio_field["bytes"]), sr=sr, mono=True)
+    except soundfile.LibsndfileError:
+        wav=decode_audio_av(audio_field["bytes"], sr)
     return wav.astype(np.float32)
+
+
+def decode_audio_av(data, sr):
+    import av
+    with av.open(io.BytesIO(data)) as c:
+        rs=av.AudioResampler(format="flt", layout="mono", rate=sr)
+        frames=[f for fr in c.decode(audio=0) for f in rs.resample(fr)]+rs.resample(None)
+    return np.concatenate([f.to_ndarray().reshape(-1) for f in frames])
 
 
 def decode_image(image_field):
