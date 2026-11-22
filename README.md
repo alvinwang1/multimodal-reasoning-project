@@ -93,6 +93,30 @@ python -m src.analysis_c.predict --labels human
 
 Text views: `question`, `q_cap_trans` (question + caption + transcript), `transcript`.
 
+## Midterm baselines (Ideas 1, 3, 4)
+
+Split: `python -m src.midterm.split` → `data/midterm_split.json` (180 train incl. the Assignment-2 subset /
+120 test, balanced by audio type). Same frozen Qwen2.5-Omni-3B and scoring as Analysis A; accuracy is
+averaged over 3 option orders. Full plan and rationale: [plan.md](plan.md).
+
+```bash
+# Model runs (resumable). Idea 1 = 7 base configs on all 300 items; Idea 3 = token-budget grid on test.
+caffeinate -i ./results/midterm/run_chain.sh
+# Idea 4: generate surrogates (Whisper ASR + Qwen captions / audio descriptions), then score them
+caffeinate -i env PYTORCH_ENABLE_MPS_FALLBACK=1 python -m src.midterm.surrogates
+caffeinate -i env PYTORCH_ENABLE_MPS_FALLBACK=1 HF_HUB_OFFLINE=1 python -m src.analysis_a.run \
+  --split test --configs gen_cap_desc gen_cap_asr img_gendesc img_asr gencap_aud --perm-configs all \
+  --surrogates results/midterm/generated_surrogates.json --out results/midterm/raw_surrogate.jsonl
+# Analyses -> results/midterm/idea{1,3,4}/
+python -m src.midterm.idea1_router      # learned router vs. fixed configs, cascades, oracle
+python -m src.midterm.idea3_budget      # image/audio token-budget grid, marginal utility
+python -m src.midterm.idea4_surrogates  # gold vs. generated surrogates, incl. generation cost
+```
+
+Config names understood by the runner: the 7 base configs, `gen_cap_desc`, `gen_cap_asr`, `img_gendesc`,
+`img_asr`, `gencap_aud` (generated surrogates), and `bud_i{r_img}_a{r_aud}` (image downscaled to `r_img` of
+the pixel cap; audio time-stretched to `r_aud` of its tokens; 0 drops the modality).
+
 ## What is (not) committed
 
 Committed: code, configs, `data/subset_ids.json`, `results/analysis_b/assignments.json`, annotation JSONLs,

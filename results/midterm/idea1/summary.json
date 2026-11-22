@@ -1,0 +1,158 @@
+{
+  "n_train": 180,
+  "n_test": 120,
+  "lambdas_tuned_on_train": {
+    "probe": 0.14,
+    "free": 0.025,
+    "probe_noaudio": 0.03,
+    "free_noaudio": 0.065
+  },
+  "oracle_acc": 0.6916666666666667,
+  "oracle_cost": 0.3276481995224168,
+  "best_fixed": {
+    "cost": 0.7776257405324993,
+    "acc": 0.5416666666666666
+  },
+  "results": [
+    {
+      "method": "Image+Audio",
+      "kind": "fixed",
+      "acc": 0.4528,
+      "cost": 1.0,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.5417,
+      "gain_over_hull": -0.0889,
+      "oracle_gap_closed": -0.5926
+    },
+    {
+      "method": "Image+Transcript",
+      "kind": "fixed",
+      "acc": 0.5417,
+      "cost": 0.7776,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.5417,
+      "gain_over_hull": 0.0,
+      "oracle_gap_closed": 0.0
+    },
+    {
+      "method": "Caption+Audio",
+      "kind": "fixed",
+      "acc": 0.4111,
+      "cost": 0.5773,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.4982,
+      "gain_over_hull": -0.0871,
+      "oracle_gap_closed": -0.8704
+    },
+    {
+      "method": "Caption+Transcript",
+      "kind": "fixed",
+      "acc": 0.45,
+      "cost": 0.355,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.45,
+      "gain_over_hull": 0.0,
+      "oracle_gap_closed": -0.6111
+    },
+    {
+      "method": "Image only",
+      "kind": "fixed",
+      "acc": 0.35,
+      "cost": 0.7536,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.5364,
+      "gain_over_hull": -0.1864,
+      "oracle_gap_closed": -1.2778
+    },
+    {
+      "method": "Audio only",
+      "kind": "fixed",
+      "acc": 0.3889,
+      "cost": 0.3634,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.4518,
+      "gain_over_hull": -0.0629,
+      "oracle_gap_closed": -1.0185
+    },
+    {
+      "method": "Question only",
+      "kind": "fixed",
+      "acc": 0.3028,
+      "cost": 0.1169,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.3028,
+      "gain_over_hull": 0.0,
+      "oracle_gap_closed": -1.5926
+    },
+    {
+      "method": "Oracle router",
+      "kind": "oracle",
+      "acc": 0.6917,
+      "cost": 0.3276,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.4331,
+      "gain_over_hull": 0.2586,
+      "oracle_gap_closed": 1.0
+    },
+    {
+      "method": "Cascade -> Image+Transcript (tau=0.65, tuned on train)",
+      "kind": "cascade",
+      "acc": 0.4972,
+      "cost": 0.5696,
+      "escalation": 0.2667,
+      "hull_acc_at_cost": 0.4965,
+      "gain_over_hull": 0.0007,
+      "oracle_gap_closed": -0.2963
+    },
+    {
+      "method": "Cascade -> Image+Audio (tau=0.63, tuned on train)",
+      "kind": "cascade",
+      "acc": 0.4806,
+      "cost": 0.5966,
+      "escalation": 0.2417,
+      "hull_acc_at_cost": 0.5024,
+      "gain_over_hull": -0.0219,
+      "oracle_gap_closed": -0.4074
+    },
+    {
+      "method": "Router (probe) (lambda=0.14, tuned on train)",
+      "kind": "router",
+      "acc": 0.4417,
+      "cost": 0.6544,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.5149,
+      "gain_over_hull": -0.0733,
+      "oracle_gap_closed": -0.6667
+    },
+    {
+      "method": "Router (probe-free) (lambda=0.03, tuned on train)",
+      "kind": "router",
+      "acc": 0.4444,
+      "cost": 0.5711,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.4969,
+      "gain_over_hull": -0.0524,
+      "oracle_gap_closed": -0.6481
+    },
+    {
+      "method": "Router (probe, no audio type) (lambda=0.03, tuned on train)",
+      "kind": "router",
+      "acc": 0.4556,
+      "cost": 0.8366,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.5417,
+      "gain_over_hull": -0.0861,
+      "oracle_gap_closed": -0.5741
+    },
+    {
+      "method": "Router (probe-free, no audio type) (lambda=0.07, tuned on train)",
+      "kind": "router",
+      "acc": 0.45,
+      "cost": 0.5278,
+      "escalation": NaN,
+      "hull_acc_at_cost": 0.4875,
+      "gain_over_hull": -0.0375,
+      "oracle_gap_closed": -0.6111
+    }
+  ]
+}

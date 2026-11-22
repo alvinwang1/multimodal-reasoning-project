@@ -20,3 +20,5 @@ results/analysis_c/*.npz
 
 # Midterm raw model outputs (large)
 results/midterm/raw*.jsonl
+results/midterm/*.npz
+results/midterm_arjun/raw*.jsonl

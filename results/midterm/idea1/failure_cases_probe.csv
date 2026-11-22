@@ -1,0 +1,126 @@
+,chosen,oracle,acc_chosen,acc_best,p_hat_chosen,probe_p1,audio_type,task_type,regret,unsolvable,question
+345,q_only,aud_only,0.0,1.0,0.29445815012658305,0.4668385684490204,speech,Plot Inference,1.0,False,What is this person going to do?
+1020,aud_only,cap_trans,0.0,1.0,0.66796381547454,0.9682095050811768,sound event,Story Description,1.0,False,Why did the woman laugh?
+1047,img_only,cap_trans,0.0,1.0,0.7118110364974418,0.9733919501304626,music,Object Identification and Description,1.0,False,Which type of instrument in can you tell from both the image and audio?
+1119,cap_trans,img_only,0.0,1.0,0.6384062203749087,0.6318457722663879,music,Plot Inference,1.0,False,"Based on the audio of Dvořák's Symphony No. 9 and the provided music score, what can we expect from the violin players in the upcoming section?"
+916,cap_aud,aud_only,0.0,1.0,0.6995088513258028,0.9963723421096802,sound event,Object Identification and Description,1.0,False,What is that in the woman's hand?
+187,img_only,img_trans,0.0,1.0,0.4904921732481471,0.7715118527412415,speech,Story Description,1.0,False,Why is this man chasing the bus?
+888,q_only,cap_trans,0.0,1.0,0.1480048417027213,0.5151455402374268,sound event,Plot Inference,1.0,False,What will happen?
+1112,cap_trans,q_only,0.0,1.0,0.5881799283216684,0.8425397276878357,music,Plot Inference,1.0,False,"After the first pianist finishes her solo, what is the most likely thing to happen next?"
+859,aud_only,cap_trans,0.0,1.0,0.6403015439882733,0.8696704506874084,sound event,Story Description,1.0,False,Why does the woman stand behind man?
+1071,cap_trans,q_only,0.0,1.0,0.5543266833884187,0.6856294870376587,music,Story Description,1.0,False,Why would the audience find the performer very impressive?
+647,img_only,aud_only,0.3333333333333333,1.0,0.46799326761206844,0.7587556838989258,speech,Identity and Relationship,0.6666666666666667,False,Who's the girl be pointed at
+646,img_trans,img_only,0.3333333333333333,1.0,0.5470572287730125,0.5386142730712891,speech,Contextual and Environmental Questions,0.6666666666666667,False,"Where is the boy, and what is he doing?"
+1141,cap_trans,aud_only,0.3333333333333333,1.0,0.6995112386114148,0.6539605259895325,music,Object Identification and Description,0.6666666666666667,False,"Does the audio correspond to the music score shown in the image?
+"
+1067,img_only,q_only,0.3333333333333333,1.0,0.8769364559475147,0.996742308139801,music,Story Description,0.6666666666666667,False,Why would the audience find this performance novel?
+324,q_only,aud_only,0.3333333333333333,1.0,0.5518174175363877,0.5257588624954224,speech,Plot Inference,0.6666666666666667,False,What will happen next?
+931,cap_trans,img_only,0.3333333333333333,1.0,0.45716154149029214,0.8195816278457642,sound event,Contextual and Environmental Questions,0.6666666666666667,False,where this person in white close might be
+873,cap_trans,cap_aud,0.3333333333333333,1.0,0.3941756851987828,0.44623690843582153,sound event,Plot Inference,0.6666666666666667,False,What is likely to happen next?
+1096,cap_trans,cap_aud,0.3333333333333333,1.0,0.36731306189921276,0.5085732936859131,music,Action and Activity,0.6666666666666667,False,"Does the singer in the MRI image and the singer in the recording use the same technique?
+"
+821,cap_trans,aud_only,0.0,0.6666666666666666,0.5404305184771415,0.99107426404953,sound event,Action and Activity,0.6666666666666666,False,What is this person doing?
+394,cap_trans,img_trans,0.0,0.6666666666666666,0.3687902433046114,0.45072242617607117,speech,Plot Inference,0.6666666666666666,False,What will these two do?
+902,cap_aud,img_only,0.0,0.6666666666666666,0.3745275155743237,0.7050727009773254,sound event,Object Identification and Description,0.6666666666666666,False,what could this be
+934,cap_trans,img_trans,0.0,0.6666666666666666,0.6210581080994835,0.7921624183654785,sound event,Contextual and Environmental Questions,0.6666666666666666,False,Where is the scene?
+844,cap_trans,img_trans,0.0,0.6666666666666666,0.37712539354241836,0.9677106142044067,sound event,Story Description,0.6666666666666666,False,Why are there white light?
+685,img_trans,aud_only,0.0,0.6666666666666666,0.41388507862851137,0.49642127752304077,speech,Text and Symbols,0.6666666666666666,False,What is the correct order?
+853,cap_trans,q_only,0.0,0.6666666666666666,0.5480571397559753,0.6907194256782532,sound event,Story Description,0.6666666666666666,False,Why is this man here?
+1100,cap_trans,img_trans,0.0,0.6666666666666666,0.500819611609549,0.3744480013847351,music,Action and Activity,0.6666666666666666,False,Which line is the instrument playing in the audio?
+290,cap_trans,cap_aud,0.6666666666666666,1.0,0.6088027430265902,0.8005886673927307,speech,Plot Inference,0.33333333333333337,False,What will happen next?
+194,aud_only,img_trans,0.6666666666666666,1.0,0.40844373556757096,0.35961759090423584,speech,Story Description,0.33333333333333337,False,Why are they lying on the grass?
+193,aud_only,cap_trans,0.6666666666666666,1.0,0.48696581475804024,0.8178233504295349,speech,Story Description,0.33333333333333337,False,Why is the woman so sad?
+1052,cap_trans,img_trans,0.6666666666666666,1.0,0.6749190368981958,0.8299259543418884,music,Object Identification and Description,0.33333333333333337,False,What do the instrument in the image and the instrument in the audio have in common?
+275,q_only,cap_trans,0.6666666666666666,1.0,0.4897906492356303,0.721459686756134,speech,Plot Inference,0.33333333333333337,False,What is the woman going to do?
+255,aud_only,q_only,0.0,0.3333333333333333,0.3586788759936068,0.35898423194885254,speech,Plot Inference,0.3333333333333333,False,What won't Daddy Pig tell the little pig?
+860,aud_only,cap_trans,0.3333333333333333,0.6666666666666666,0.6370623292519095,0.6474756598472595,sound event,Story Description,0.3333333333333333,False,Why did the man cover his mouth and dare not to make a sound?
+833,cap_trans,q_only,0.0,0.3333333333333333,0.525878969081946,0.9199260473251343,sound event,Action and Activity,0.3333333333333333,False,What is this person doing?
+304,cap_trans,q_only,0.0,0.3333333333333333,0.6131920276830102,0.9360223412513733,speech,Plot Inference,0.3333333333333333,False,What will happen next?
+319,q_only,aud_only,0.0,0.3333333333333333,0.4762495170218595,0.548606812953949,speech,Plot Inference,0.3333333333333333,False,What will she do next?
+200,img_trans,q_only,0.0,0.3333333333333333,0.540793051777887,0.8054522275924683,speech,Story Description,0.3333333333333333,False,Why was the man on the right beaten?
+808,cap_trans,img_only,0.3333333333333333,0.6666666666666666,0.2914070462717287,0.43693116307258606,sound event,Action and Activity,0.3333333333333333,False,What is this person doing?
+1059,cap_trans,q_only,0.3333333333333333,0.6666666666666666,0.5981979020641137,0.6112706065177917,music,Object Identification and Description,0.3333333333333333,False,Are the instrument in the image and the instrument in the audio the same? And why?
+913,aud_only,cap_trans,0.0,0.3333333333333333,0.4371374702388173,0.39258745312690735,sound event,Object Identification and Description,0.3333333333333333,False,What is inside the bag?
+105,full,cap_aud,0.0,0.3333333333333333,0.6342138918286448,0.30601367354393005,speech,Story Description,0.3333333333333333,False,What is the purpose of this aircraft?
+95,img_trans,q_only,0.0,0.3333333333333333,0.4225631020321769,0.5511358976364136,speech,Story Description,0.3333333333333333,False,Why does the bear say he needs air?
+1137,cap_trans,q_only,0.3333333333333333,0.6666666666666666,0.41884336148581375,0.327314168214798,music,Count and Quantity,0.3333333333333333,False,Approximately how many seconds are required to play the music score displayed in the image?
+1027,aud_only,img_trans,0.3333333333333333,0.6666666666666666,0.44576088068844383,0.7612049579620361,sound event,Plot Inference,0.3333333333333333,False,"What is the girl doing, and what will she do?"
+895,cap_trans,q_only,0.3333333333333333,0.6666666666666666,0.4271907056570279,0.6512745022773743,sound event,Object Identification and Description,0.3333333333333333,False,What is the thing that the man is holding?
+827,cap_trans,cap_aud,0.0,0.3333333333333333,0.3265365826766571,0.5897989869117737,sound event,Action and Activity,0.3333333333333333,False,What is this person doing?
+802,cap_trans,q_only,0.0,0.3333333333333333,0.6469172965984904,0.8647895455360413,sound event,Action and Activity,0.3333333333333333,False,What's happening?
+1120,cap_trans,img_trans,0.0,0.3333333333333333,0.6270055440501038,0.7576755881309509,music,Contextual and Environmental Questions,0.3333333333333333,False,"Based on the visual and audio cues from the Peking Opera performance, what can we infer about the period or style of the show?
+"
+436,img_trans,q_only,0.0,0.3333333333333333,0.6605050083329731,0.9914531707763672,speech,Object Identification and Description,0.3333333333333333,False,What's this red thing on the tray?
+1127,img_trans,q_only,0.0,0.3333333333333333,0.7660005682390866,0.7395913600921631,music,Plot Inference,0.3333333333333333,False,"Based on the image of superhearo appearing and the accompanying song, what might the audience expect for the plot development?"
+690,img_only,img_trans,0.3333333333333333,0.6666666666666666,0.306421228571251,0.3626062870025635,speech,Text and Symbols,0.3333333333333333,False,Which option is correct based on a certain pattern?
+1089,img_trans,aud_only,0.0,0.3333333333333333,0.6616845082684216,0.48406046628952026,music,Action and Activity,0.3333333333333333,False,What can we infer from the actor's action in the TV drama screenshot?
+1081,img_only,q_only,0.3333333333333333,0.6666666666666666,0.7767217578014067,0.9965550899505615,music,Object Identification and Description,0.3333333333333333,False,What is the instrument in the image?
+346,q_only,aud_only,0.0,0.3333333333333333,0.30337763928887335,0.3918190598487854,speech,Plot Inference,0.3333333333333333,False,What will the woman do?
+1121,cap_trans,cap_trans,1.0,1.0,0.7803903987906659,0.9931929707527161,music,Plot Inference,0.0,False,"Who is the man on the right in the image, and what might he say after hearing the French horn?"
+1045,cap_trans,cap_trans,1.0,1.0,0.7902664543021027,0.9893056154251099,music,Contextual and Environmental Questions,0.0,False,Do the music shown in the image and the audio (a Chinese Orchestra cover) belong to the same country?
+1049,img_trans,q_only,1.0,1.0,0.7538033905533658,0.5959010720252991,music,Object Identification and Description,0.0,False,What is shown in the image?
+1115,cap_trans,q_only,1.0,1.0,0.6836844030350188,0.8945906758308411,music,Plot Inference,0.0,False,What might be the action before playing the musical phrase in the music recording?
+1051,cap_trans,q_only,1.0,1.0,0.7916130950218714,0.9990726709365845,music,Object Identification and Description,0.0,False,Is the instrument in the audio the same as the one in the image?
+1122,cap_trans,cap_trans,1.0,1.0,0.6145854575253128,0.8365151286125183,music,Plot Inference,0.0,False,"Based on the audio and image from the Peking Opera scene, what action might the character on the left-hand side perform next?
+"
+1117,img_trans,q_only,0.0,0.0,0.7270087652145036,0.831649899482727,music,Plot Inference,0.0,True,"Why does the singer suggest iIt's better to live with remorse doing it than with regret doing nothing, based on the given scenario?"
+1055,cap_trans,q_only,0.6666666666666666,0.6666666666666666,0.8153081244181901,0.9821975231170654,music,Object Identification and Description,0.0,False,"Regarding the timbre, what can be said about the sound in the audio? "
+1058,cap_trans,q_only,1.0,1.0,0.6688626651558742,0.8594014644622803,music,Object Identification and Description,0.0,False,Are the instrument in the image and the instrument in the audio the same? And why?
+1130,img_trans,q_only,0.0,0.0,0.8720608678507195,0.8778650760650635,music,Plot Inference,0.0,True,What might the audience expect to happen next in this cinematic moment after seeing this senario of movie?
+1061,cap_trans,cap_trans,1.0,1.0,0.7409338014513118,0.9151814579963684,music,Object Identification and Description,0.0,False,Are the instrument in the image and the instrument in the audio the same? And why?
+1114,img_trans,q_only,1.0,1.0,0.7730793769172575,0.977493405342102,music,Plot Inference,0.0,False,What might be the next action of the performer playing the erhu in the given setup?
+1111,cap_trans,q_only,0.0,0.0,0.7003559382929648,0.8292261958122253,music,Plot Inference,0.0,True,"After the cello performance in the recording, what is the most likely thing to happen next?"
+1072,cap_trans,cap_trans,1.0,1.0,0.6775078098302691,0.7830834984779358,music,Story Description,0.0,False,Why would the audience find the musical performance impressive?
+1108,cap_trans,cap_trans,1.0,1.0,0.5325075106468016,0.7591542601585388,music,Action and Activity,0.0,False,Is the technique used in the audio and the image the same?
+1062,cap_trans,q_only,0.0,0.0,0.6915322443521043,0.8889834880828857,music,Object Identification and Description,0.0,True,What is the similarity between the instrument in the image and the instrument in the audio?
+1104,img_trans,cap_trans,1.0,1.0,0.6268905283100871,0.9974129796028137,music,Action and Activity,0.0,False,Which technique do the violin players play? 
+1066,cap_trans,q_only,1.0,1.0,0.8090277183150454,0.9932700991630554,music,Story Description,0.0,False,Why would the audience find this performance novel?
+1103,img_trans,q_only,0.3333333333333333,0.3333333333333333,0.620102810518791,0.9889988303184509,music,Action and Activity,0.0,False,Which technique do the violin players play? 
+1128,img_only,q_only,0.0,0.0,0.8281992821632347,0.9678492546081543,music,Plot Inference,0.0,True,"Considering the climactic assembly scene from ""Avengers: Endgame"" paired with the audio, what will audience feel about the portrayal of superheroes?"
+1068,cap_trans,cap_trans,1.0,1.0,0.7929093860394105,0.9974849224090576,music,Story Description,0.0,False,Why would the audience find this performance funny?
+1037,cap_trans,cap_trans,1.0,1.0,0.6721740067546628,0.7706960439682007,music,Contextual and Environmental Questions,0.0,False,"Do the music sheet and the music audio come from the same era?
+"
+1095,cap_trans,cap_trans,1.0,1.0,0.5935495302705756,0.7885726690292358,music,Action and Activity,0.0,False,what can we infer from the flute player?
+1075,cap_trans,cap_trans,1.0,1.0,0.5313078277996632,0.42276111245155334,music,Story Description,0.0,False,Why does the music performance sound impressive to the listener?
+1041,cap_trans,cap_trans,1.0,1.0,0.6848368030201307,0.9373093843460083,music,Contextual and Environmental Questions,0.0,False,Do the instrument in the image and the instrument in the audio belong to the same era?
+13,q_only,q_only,0.6666666666666666,0.6666666666666666,0.5592644796540219,0.7060190439224243,speech,Action and Activity,0.0,False,What is happening?
+1032,cap_aud,cap_trans,1.0,1.0,0.7149719882128014,0.928054928779602,sound event,Contextual and Environmental Questions,0.0,False,Where is this?
+1028,cap_trans,q_only,0.0,0.0,0.46966356781571333,0.49078407883644104,sound event,Plot Inference,0.0,True,What are these two going to do?
+717,cap_trans,q_only,0.0,0.0,0.5324917806991649,0.813927173614502,sound event,Action and Activity,0.0,True,What's he doing?
+654,cap_trans,cap_trans,1.0,1.0,0.422278738389035,0.4396762549877167,speech,Identity and Relationship,0.0,False,What is their relationship?
+613,full,full,1.0,1.0,0.7288637779412108,0.6150673031806946,speech,Contextual and Environmental Questions,0.0,False,Where is this?
+604,full,cap_trans,1.0,1.0,0.8889921912628909,0.9728580713272095,speech,Contextual and Environmental Questions,0.0,False,Where is this?
+592,img_trans,img_only,1.0,1.0,0.5972904101336154,0.47406983375549316,speech,Contextual and Environmental Questions,0.0,False,Where is the man?
+535,img_trans,cap_trans,0.3333333333333333,0.3333333333333333,0.5750182861676577,0.7560396194458008,speech,Object Identification and Description,0.0,False,What is it?
+459,img_trans,q_only,0.0,0.0,0.6669097493350437,0.9995192289352417,speech,Object Identification and Description,0.0,True,What is the squirrel holding in its hand?
+441,cap_aud,q_only,0.0,0.0,0.7183115667656937,0.9873285293579102,speech,Object Identification and Description,0.0,True,What is that in the man's hand?
+427,cap_trans,aud_only,1.0,1.0,0.5440193024975915,0.6801518797874451,speech,Plot Inference,0.0,False,What will these two men do?
+405,img_trans,q_only,0.0,0.0,0.5602879148267838,0.8297897577285767,speech,Plot Inference,0.0,True,What will they do?
+401,cap_trans,cap_trans,0.3333333333333333,0.3333333333333333,0.48989391256033155,0.6658977270126343,speech,Plot Inference,0.0,False,What will they do next?
+351,cap_trans,q_only,0.0,0.0,0.6511553883338489,0.8738378882408142,speech,Plot Inference,0.0,True,What will the man giving the speech do?
+302,img_trans,aud_only,0.6666666666666666,0.6666666666666666,0.6011021639033158,0.7474154829978943,speech,Plot Inference,0.0,False,What will happen next?
+276,cap_trans,q_only,0.0,0.0,0.6858547883965493,0.9580010771751404,speech,Plot Inference,0.0,True,What will the man do next?
+225,aud_only,q_only,0.3333333333333333,0.3333333333333333,0.5077815158898876,0.779278576374054,speech,Story Description,0.0,False,Why is this woman angry?
+135,img_trans,q_only,0.0,0.0,0.5722706796357545,0.6886366605758667,speech,Story Description,0.0,True,Why did the man stop his actions?
+33,img_trans,img_only,0.6666666666666666,0.6666666666666666,0.5978790918588718,0.634842038154602,speech,Action and Activity,0.0,False,What's happening?
+734,cap_trans,cap_trans,1.0,1.0,0.62133114281947,0.8471273183822632,sound event,Action and Activity,0.0,False,What's happening?
+754,cap_trans,cap_trans,1.0,1.0,0.7318833023729312,0.9938672184944153,sound event,Action and Activity,0.0,False,What's happening?
+756,cap_trans,cap_trans,1.0,1.0,0.713855605327375,0.9778919219970703,sound event,Action and Activity,0.0,False,What's happening?
+904,cap_trans,aud_only,1.0,1.0,0.41485076120375824,0.9642493724822998,sound event,Object Identification and Description,0.0,False,What might he have struck?
+1015,cap_trans,cap_trans,1.0,1.0,0.5338340401923309,0.9839879870414734,sound event,Action and Activity,0.0,False,What is this person doing?
+988,full,aud_only,1.0,1.0,0.8536866559825923,0.9020481705665588,speech,Contextual and Environmental Questions,0.0,False,Where is this?
+944,img_trans,img_trans,0.3333333333333333,0.3333333333333333,0.746237263836701,0.9932138919830322,speech,Action and Activity,0.0,False,What is it?
+942,full,q_only,0.0,0.0,0.7402024648932324,0.7480300664901733,sound event,Contextual and Environmental Questions,0.0,True,What is this place?
+929,full,q_only,0.0,0.0,0.6732584350080552,0.8886210918426514,sound event,Contextual and Environmental Questions,0.0,True,where is this house
+925,full,cap_aud,1.0,1.0,0.6697210789571917,0.47131532430648804,sound event,Contextual and Environmental Questions,0.0,False,Where is this scene?
+921,cap_aud,cap_trans,1.0,1.0,0.7970627849431344,0.9905382394790649,sound event,Contextual and Environmental Questions,0.0,False,What is the place?
+896,cap_aud,cap_trans,1.0,1.0,0.4167335638799139,0.7885726690292358,sound event,Object Identification and Description,0.0,False,What is the black object?
+769,cap_trans,q_only,0.0,0.0,0.7548637244430672,0.997742772102356,sound event,Action and Activity,0.0,True,What's happening?
+29,cap_aud,cap_trans,0.6666666666666666,0.6666666666666666,0.46222971312966415,0.7173141241073608,speech,Action and Activity,0.0,False,What is the boy doing?
+883,aud_only,aud_only,0.3333333333333333,0.3333333333333333,0.4120275784472265,0.7041543126106262,sound event,Plot Inference,0.0,False,What will this woman do?
+871,cap_trans,q_only,1.0,1.0,0.6756171509239375,0.996000349521637,sound event,Plot Inference,0.0,False,What is likely to happen next?
+858,aud_only,q_only,1.0,1.0,0.4944861923371217,0.8043757677078247,sound event,Story Description,0.0,False,Why is the man wearing a hat here?
+836,cap_trans,cap_trans,1.0,1.0,0.49336714889673877,0.7276977896690369,sound event,Action and Activity,0.0,False,What's happening
+772,cap_trans,q_only,1.0,1.0,0.4372680159873744,0.8343113660812378,sound event,Action and Activity,0.0,False,What is this person doing?
+770,cap_trans,cap_trans,1.0,1.0,0.5462162660580778,0.9969172477722168,sound event,Action and Activity,0.0,False,What is this person doing?
+894,aud_only,cap_trans,1.0,1.0,0.29272076235650335,0.7072611451148987,sound event,Plot Inference,0.0,False,What will happen to women?

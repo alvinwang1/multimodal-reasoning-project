@@ -1,0 +1,50 @@
+id,alloc,kind,audio_type,acc_full,acc_comp,question
+33,"(0.25,0.25)",lost,speech,0.6666666666666666,0.0,What's happening?
+187,"(0.25,0.25)",lost,speech,0.6666666666666666,0.3333333333333333,Why is this man chasing the bus?
+194,"(0.25,0.25)",lost,speech,0.6666666666666666,0.3333333333333333,Why are they lying on the grass?
+275,"(0.25,0.25)",lost,speech,0.6666666666666666,0.0,What is the woman going to do?
+290,"(0.25,0.25)",lost,speech,1.0,0.0,What will happen next?
+302,"(0.25,0.25)",lost,speech,0.6666666666666666,0.0,What will happen next?
+345,"(0.25,0.25)",lost,speech,0.6666666666666666,0.0,What is this person going to do?
+647,"(0.25,0.25)",lost,speech,1.0,0.3333333333333333,Who's the girl be pointed at
+690,"(0.25,0.25)",lost,speech,0.6666666666666666,0.0,Which option is correct based on a certain pattern?
+808,"(0.25,0.25)",lost,sound event,0.6666666666666666,0.3333333333333333,What is this person doing?
+860,"(0.25,0.25)",lost,sound event,0.6666666666666666,0.3333333333333333,Why did the man cover his mouth and dare not to make a sound?
+925,"(0.25,0.25)",lost,sound event,1.0,0.0,Where is this scene?
+1032,"(0.25,0.25)",lost,sound event,1.0,0.0,Where is this?
+1051,"(0.25,0.25)",lost,music,1.0,0.3333333333333333,Is the instrument in the audio the same as the one in the image?
+1052,"(0.25,0.25)",lost,music,1.0,0.0,What do the instrument in the image and the instrument in the audio have in common?
+1100,"(0.25,0.25)",lost,music,0.6666666666666666,0.0,Which line is the instrument playing in the audio?
+1108,"(0.25,0.25)",lost,music,1.0,0.0,Is the technique used in the audio and the image the same?
+1119,"(0.25,0.25)",lost,music,1.0,0.3333333333333333,"Based on the audio of Dvořák's Symphony No. 9 and the provided music score, what can we expect from the violin players in the upcoming section?"
+345,"(0.1,1)",lost,speech,0.6666666666666666,0.3333333333333333,What is this person going to do?
+646,"(0.1,1)",lost,speech,0.6666666666666666,0.3333333333333333,"Where is the boy, and what is he doing?"
+860,"(0.1,1)",lost,sound event,0.6666666666666666,0.3333333333333333,Why did the man cover his mouth and dare not to make a sound?
+925,"(0.1,1)",lost,sound event,1.0,0.0,Where is this scene?
+1020,"(0.1,1)",lost,sound event,1.0,0.3333333333333333,Why did the woman laugh?
+1100,"(0.1,1)",lost,music,0.6666666666666666,0.3333333333333333,Which line is the instrument playing in the audio?
+1108,"(0.1,1)",lost,music,1.0,0.3333333333333333,Is the technique used in the audio and the image the same?
+33,"(1,0.25)",lost,speech,0.6666666666666666,0.0,What's happening?
+187,"(1,0.25)",lost,speech,0.6666666666666666,0.0,Why is this man chasing the bus?
+275,"(1,0.25)",lost,speech,0.6666666666666666,0.0,What is the woman going to do?
+290,"(1,0.25)",lost,speech,1.0,0.0,What will happen next?
+302,"(1,0.25)",lost,speech,0.6666666666666666,0.0,What will happen next?
+345,"(1,0.25)",lost,speech,0.6666666666666666,0.0,What is this person going to do?
+690,"(1,0.25)",lost,speech,0.6666666666666666,0.3333333333333333,Which option is correct based on a certain pattern?
+808,"(1,0.25)",lost,sound event,0.6666666666666666,0.3333333333333333,What is this person doing?
+860,"(1,0.25)",lost,sound event,0.6666666666666666,0.3333333333333333,Why did the man cover his mouth and dare not to make a sound?
+1032,"(1,0.25)",lost,sound event,1.0,0.0,Where is this?
+1052,"(1,0.25)",lost,music,1.0,0.0,What do the instrument in the image and the instrument in the audio have in common?
+1067,"(1,0.25)",lost,music,0.6666666666666666,0.3333333333333333,Why would the audience find this performance novel?
+1108,"(1,0.25)",lost,music,1.0,0.0,Is the technique used in the audio and the image the same?
+33,"(0.5,0.5)",lost,speech,0.6666666666666666,0.0,What's happening?
+187,"(0.5,0.5)",lost,speech,0.6666666666666666,0.3333333333333333,Why is this man chasing the bus?
+275,"(0.5,0.5)",lost,speech,0.6666666666666666,0.0,What is the woman going to do?
+290,"(0.5,0.5)",lost,speech,1.0,0.0,What will happen next?
+302,"(0.5,0.5)",lost,speech,0.6666666666666666,0.0,What will happen next?
+345,"(0.5,0.5)",lost,speech,0.6666666666666666,0.0,What is this person going to do?
+925,"(0.5,0.5)",lost,sound event,1.0,0.0,Where is this scene?
+1051,"(0.5,0.5)",lost,music,1.0,0.3333333333333333,Is the instrument in the audio the same as the one in the image?
+1052,"(0.5,0.5)",lost,music,1.0,0.0,What do the instrument in the image and the instrument in the audio have in common?
+1072,"(0.5,0.5)",lost,music,0.6666666666666666,0.3333333333333333,Why would the audience find the musical performance impressive?
+1100,"(0.5,0.5)",lost,music,0.6666666666666666,0.3333333333333333,Which line is the instrument playing in the audio?
