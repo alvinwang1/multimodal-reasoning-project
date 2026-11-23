@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 import numpy as np
 
 from src.analysis_a.model import OmniScorer, map_back
-from src.analysis_a.prompts import build_messages, config_spec, permutation, surrogate_texts
+from src.analysis_a.prompts import build_messages, config_spec, permutation, surrogate_fields, surrogate_texts
 from src.common import append_jsonl, load_config, read_jsonl, repo_path, seed_everything
 from src.data import OmniBenchSubset
 
@@ -33,7 +33,8 @@ def parse_args():
                          "idea4 = the final Idea 4 subset")
     ap.add_argument("--surrogates", default=None, help="JSON of generated surrogates (midterm Idea 4)")
     ap.add_argument("--configs", nargs="*", default=None,
-                    help="config names: base configs, gen_* configs, or bud_i{r}_a{r}")
+                    help="config names: base configs, gen_* / Idea 4 configs (add _t<n> for the generation-length "
+                         "ablation, e.g. img_qdesc_t80), or bud_i{r}_a{r}")
     ap.add_argument("--n-perms", type=int, default=None, help="option permutations (incl. original)")
     ap.add_argument("--perm-configs", nargs="*", default=None, help="configs run under all perms ('all')")
     ap.add_argument("--warmup", type=int, default=None)
@@ -80,6 +81,13 @@ def main():
     surrogates = json.loads(repo_path(args.surrogates).read_text()) if args.surrogates else {}
     if args.limit:
         ids = ids[: args.limit]
+    # every generated text these configs read must be in --surrogates (checked before the model loads)
+    missing = sorted({(i, f) for i in ids for c in configs for f in surrogate_fields(c)
+                      if f not in surrogates.get(str(i), {})})
+    if missing:
+        raise SystemExit(f"{len(missing)} surrogate field(s) missing for these configs, e.g. id {missing[0][0]}: "
+                         f"{missing[0][1]!r}. Pass --surrogates with a complete file (final Idea 4: let "
+                         "src.final.idea4_generate finish first).")
 
     done = {(r["id"], r["config"], r["perm"]) for r in read_jsonl(out)}
     todo = [j for i in ids for j in jobs_for(i, configs, perm_configs, n_perms) if j not in done]

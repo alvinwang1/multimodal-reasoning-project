@@ -111,7 +111,9 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 | Idea 3: the other 9 grid cells | 10 | 30,807 | ~2 h |
 | Idea 3: audio-selection cells, centered (`c`) and loudest window (`e`) | 11 | 20,538 | ~1 h |
 | Idea 4: generate the text (Whisper, AST tags, Qwen generic and question-conditioned descriptions) for 242 items, then score 11 configs | 8–9 | 7,986 | ~1.5 h |
-| **Total** | | | **≈ 6.5 L4-hours** |
+| Idea 4: generation-length ablation, 6 configs at 80 and 120 tokens (cut from the 256-token generation) | 9b | 8,712 | ~0.5 h |
+| Idea 4: speech-threshold sweep inputs, the 4 routing branches on every item | 9c | 2,904 | ~0.2 h |
+| **Total** | | | **≈ 7 L4-hours** |
 
 **Grid corners and text cells are not re-run.** The Idea 3 corners (`v768_a1`, `v768_a0`, `v0_a1`, `v0_a0`) and text cells (`v768_atrans`, `vcap_a1`, `vcap_atrans`) are exactly the same inputs as the base configs. Map between the names with `src/idea3/cells.py::A_CONFIG_CELLS`.
 
@@ -246,7 +248,7 @@ Report all of them with bootstrap confidence intervals over items.
 
 **Ablations:** ± routing, ± fallback, ± question conditioning, and which tagger or captioner is used.
 
-**Sweeps:** the generation limit (40/80/160 tokens) against accuracy and cost, and the fallback detector's threshold.
+**Sweeps:** the generation limit (80/120/256 tokens) against accuracy and cost, and the fallback detector's threshold. The 80- and 120-token texts are the first 80/120 tokens of the 256-token generation, which greedy decoding makes identical to a lower limit; the time each limit takes is logged (notebook §8, scored in §9b). The speech threshold (AST P(Speech), 0.5 in the main runs) and the fallback detector are swept afterwards from the bank: notebook §9c scores every item on each routing branch, and `img_asr` and `full` are scored on every item.
 
 **Measuring translation quality:**
 - how often the answer is mentioned in the surrogate;
@@ -345,7 +347,7 @@ Relate both to accuracy.
 **Scope for this week (dropped unless a day frees up):**
 - **Idea 1:** no bandit and no MLP. Keep pairwise vs pointwise, disagreement features, calibration, the budget-cell menu, the learning curve and the λ sweep.
 - **Idea 3:** no FastV comparison and no boosted trees (ridge only). Keep the allocator ± KL features and the audio-selection comparison.
-- **Idea 4:** CLAP tags only (no second captioner); one generation length (80 tokens) instead of a sweep; the subset is the 120 midterm test items plus up to 120 new speech and sound items. Keep routing ± fallback, question conditioning, the masking test and break-even k.
+- **Idea 4:** CLAP tags only (no second captioner); the generation-length sweep 80/120/256, cut from one generation (no extra generation time); the subset is the 120 midterm test items plus up to 120 new speech and sound items. Keep routing ± fallback, question conditioning, the masking test and break-even k.
 
 Every idea must still deliver **new approach vs midterm baseline + ≥2 ablations + 1 sweep + failure cases**.
 

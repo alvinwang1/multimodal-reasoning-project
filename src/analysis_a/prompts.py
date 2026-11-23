@@ -41,8 +41,16 @@ GEN_CONFIGS = {
     "gencap_pipe":  ("gen", "pipe"),
     "img_masked":   ("raw", "masked"),
     "cap_masked":   ("text", "masked"),
+    # Routing branches scored on every item, so the speech threshold can be swept afterwards (notebook §9c):
+    #   tags  = AST audio tags only (what route gives non-speech clips); tagsq = tags + qdesc (what pipe gives them)
+    "img_tags":     ("raw", "tags"),
+    "img_tagsq":    ("raw", "tagsq"),
+    "gencap_tagsq": ("gen", "tagsq"),
 }
 FALLBACK_REPS = {"route_fb", "pipe"}  # these become raw audio for items whose ASR output was flagged as broken
+# Final-report Idea 4 generation-length ablation: <config>_t<n> (e.g. img_qdesc_t80) is <config> with every Qwen-generated
+# text capped at n new tokens (fields <field>_t<n>, written by src/final/idea4_generate.py). Only these reps are generated.
+GEN_LEN_REPS = {"gen", "gen_desc", "qdesc", "pipe", "tagsq"}
 BASE_IMAGE_PIXELS = 602112  # 768 * 28 * 28, the full-resolution cap used everywhere
 
 
@@ -52,6 +60,7 @@ def config_spec(config):
     Budget configs are named bud_i{r_img}_a{r_aud}: the image is resized to r_img of the pixel cap
     (~r_img of the visual tokens) and the audio is time-stretched by 1/r_aud (~r_aud of the audio
     tokens, same content played faster); a ratio of 0 drops that modality.
+    Generation-length configs are named <generated-text config>_t<n>, e.g. img_qdesc_t80 (adds gen_len=n).
     """
     if config in CONFIGS:
         img, aud = CONFIGS[config]
@@ -64,6 +73,14 @@ def config_spec(config):
         ri, ra = float(m.group(1)), float(m.group(2))
         return {"img": "raw" if ri > 0 else None, "aud": "raw" if ra > 0 else None,
                 "img_ratio": ri, "aud_ratio": ra}
+    m = re.fullmatch(r"(\w+)_t(\d+)", config)
+    if m and m.group(1) in GEN_CONFIGS:
+        img, aud = GEN_CONFIGS[m.group(1)]
+        if img not in GEN_LEN_REPS and aud not in GEN_LEN_REPS:
+            raise ValueError(f"{config!r}: {m.group(1)} uses no Qwen-generated text, so a length cap changes nothing")
+        if int(m.group(2)) < 1:
+            raise ValueError(f"{config!r}: the generation length must be at least 1 token")
+        return {"img": img, "aud": aud, "img_ratio": 1.0, "aud_ratio": 1.0, "gen_len": int(m.group(2))}
     raise ValueError(f"unknown config {config!r}")
 
 
@@ -99,13 +116,27 @@ def audio_rep(ex, spec):
     return spec["aud"]
 
 
+def surrogate_fields(config):
+    """Fields this config reads from a --surrogates file (keep in sync with surrogate_texts / audio_rep)."""
+    spec = config_spec(config)
+    t = f"_t{spec['gen_len']}" if "gen_len" in spec else ""
+    img = {"gen": ["gen_caption" + t]}
+    aud = {"gen_desc": ["gen_audio_desc" + t], "asr": ["asr"], "route": ["route_text"],
+           "route_fb": ["route_text", "asr_failed"], "qdesc": ["q_audio_desc" + t],
+           "pipe": ["pipe_text" + t, "asr_failed"], "masked": ["masked_audio_content"], "tags": ["tag_text"],
+           "tagsq": ["tagsq_text" + t]}
+    return img.get(spec["img"], []) + aud.get(spec["aud"], [])
+
+
 def surrogate_texts(ex, config):
     spec = config_spec(config)
-    img_text = {"text": lambda: ex["image content"], "gen": lambda: ex["gen_caption"]}
-    aud_text = {"text": lambda: ex["audio content"], "gen_desc": lambda: ex["gen_audio_desc"],
+    t = f"_t{spec['gen_len']}" if "gen_len" in spec else ""  # length-ablation configs read the capped texts
+    img_text = {"text": lambda: ex["image content"], "gen": lambda: ex["gen_caption" + t]}
+    aud_text = {"text": lambda: ex["audio content"], "gen_desc": lambda: ex["gen_audio_desc" + t],
                 "asr": lambda: ex["asr"], "route": lambda: ex["route_text"], "route_fb": lambda: ex["route_text"],
-                "qdesc": lambda: ex["q_audio_desc"], "pipe": lambda: ex["pipe_text"],
-                "masked": lambda: ex["masked_audio_content"]}
+                "qdesc": lambda: ex["q_audio_desc" + t], "pipe": lambda: ex["pipe_text" + t],
+                "masked": lambda: ex["masked_audio_content"], "tags": lambda: ex["tag_text"],
+                "tagsq": lambda: ex["tagsq_text" + t]}
     parts = []
     if spec["img"] in img_text:
         parts.append(CAPTION_PREFIX + img_text[spec["img"]]().strip())

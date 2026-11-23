@@ -7,6 +7,8 @@ Sources. All final scoring runs use the Colab L4 (bf16), so every idea shares on
             answering cost only: add the generation time from results/final/idea4_surrogates.json (*_ms fields)
   base_mac  7 base configs, M2 Max     results/analysis_a/raw.jsonl      (midterm runs; for comparison only)
 Idea 3 representations are prefixed "i3:" (e.g. "i3:v64_a0.5") and Idea 4 ones "i4:" (e.g. "i4:img_pipe").
+Idea 4 generation-length ablation reps end in _t<tokens> (e.g. "i4:img_qdesc_t80"); the unsuffixed Idea 4 reps use the
+full 256-token generation, i.e. they are the 256 point of that ablation.
 The Idea 3 grid corners and text cells are the same inputs as the base configs, so they are not re-run:
 use src.idea3.cells.A_CONFIG_CELLS to map between the two names.
 

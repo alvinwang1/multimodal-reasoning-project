@@ -6,9 +6,17 @@ For each item in the Idea 4 subset (data/final_idea4_ids.json):
   question-conditioned q_audio_desc: Qwen describes the audio given the question (never the options)
   ASR check           asr_status in {ok, empty, filler, loop}; asr_failed = classified as speech and not ok
   derived texts       route_text = asr if speech else tags; pipe_text = asr if speech else tags + q_audio_desc
+  threshold sweep     tag_text = tags, tagsq_text = tags + q_audio_desc, for every item (the non-speech branches)
   masking test        masked_audio_content = the human audio description with every option word masked
+  generation length   Qwen writes each text once, with at most max(final.idea4_gen_lens) = 256 new tokens: the
+                      fields above. <field>_t<n> (+ _ms, _tok) for each n in idea4_gen_lens is that output cut to its
+                      first n tokens, for gen_caption, gen_audio_desc, q_audio_desc (plus pipe_text_t<n> and
+                      tagsq_text_t<n>). Decoding is greedy, so this is exactly what max_new_tokens=n produces; _ms is
+                      when the n-th token was ready.
+                      Scored as <config>_t<n> (e.g. img_qdesc_t80), the generation-length ablation.
 Scored by src.analysis_a.run (configs img_route, img_route_fb, img_qdesc, img_pipe, gencap_pipe, img_masked,
-cap_masked, plus the midterm img_asr, img_gendesc, gen_cap_desc, gen_cap_asr). Resumable.
+cap_masked, plus the midterm img_asr, img_gendesc, gen_cap_desc, gen_cap_asr; for the threshold sweep img_tags,
+img_tagsq, gencap_tagsq, gencap_aud). Resumable.
 
     python -m src.final.idea4_generate --make-subset      # once, locally: freeze the subset
     python -m src.final.idea4_generate --limit 2          # smoke test
@@ -26,7 +34,7 @@ from src.analysis_a.model import OmniScorer, sync
 from src.common import load_config, repo_path, seed_everything
 from src.data import AUDIO_TYPES, OmniBenchSubset, load_omnibench, text_records
 from src.midterm.idea4_surrogates import asr_status
-from src.midterm.surrogates import AUDIO_PROMPT, CAPTION_PROMPT, describe, transcribe
+from src.midterm.surrogates import AUDIO_PROMPT, CAPTION_PROMPT, STOP_STRINGS, describe, messages, transcribe
 
 AST_MODEL = "MIT/ast-finetuned-audioset-10-10-0.4593"
 ASR_MODEL = "openai/whisper-large-v3-turbo"
@@ -93,6 +101,52 @@ def tag(ast, fe, wav, sr, device):
     return top, float(probs[speech_id]), ms
 
 
+@torch.inference_mode()
+def generate_capped(scorer, media, prompt, max_new_tokens, lens):
+    """Greedy generation with up to max_new_tokens (as src.midterm.surrogates.describe), plus the output at each
+    shorter cap. Greedy decoding picks every token without looking at the limit, so the first n tokens of this
+    output are exactly what max_new_tokens=n would give; a per-token timer gives how long that run would take.
+    -> {n: (text, ms, n_tokens)} for every n in lens and for max_new_tokens."""
+    from transformers import StoppingCriteria, StoppingCriteriaList
+
+    class StepTimer(StoppingCriteria):  # never stops generation; notes when each new token is ready
+        def __init__(self):
+            self.times = []
+
+        def __call__(self, input_ids, scores, **kwargs):
+            sync(scorer.device)
+            self.times.append(time.perf_counter())
+            return torch.zeros(input_ids.shape[0], dtype=torch.bool, device=input_ids.device)
+
+    _, inputs = scorer.prepare(messages(media, prompt))
+    inputs = inputs.to(scorer.device)
+    for k, v in inputs.items():
+        if torch.is_floating_point(v):
+            inputs[k] = v.to(scorer.dtype)
+    n_in = inputs["input_ids"].shape[1]
+    tok = scorer.processor.tokenizer
+    eos = [tok.convert_tokens_to_ids(t) for t in ("<|im_end|>", "<|endoftext|>")]
+    timer = StepTimer()
+    sync(scorer.device)
+    t0 = time.perf_counter()
+    out = scorer.model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=eos,
+                                pad_token_id=eos[1], stop_strings=STOP_STRINGS, tokenizer=tok,
+                                stopping_criteria=StoppingCriteriaList([timer]))
+    sync(scorer.device)
+    total_ms = (time.perf_counter() - t0) * 1000
+    gen = out[0, n_in:]
+    res = {}
+    for n in sorted(set(lens) | {max_new_tokens}):
+        k = min(n, int(gen.numel()))
+        text = tok.decode(gen[:k], skip_special_tokens=True)
+        for s in STOP_STRINGS:
+            text = text.split(s)[0]
+        # cap not reached (or the full run): the capped run is this run; otherwise the time the k-th token was ready
+        ms = total_ms if k == gen.numel() or k > len(timer.times) else (timer.times[k - 1] - t0) * 1000
+        res[n] = (text.strip(), ms, k)
+    return res
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", default=None)
@@ -100,7 +154,9 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--ids", type=int, nargs="*", default=None, help="explicit OmniBench indices (testing)")
     ap.add_argument("--out", default=None)
-    ap.add_argument("--max-new-tokens", type=int, default=160)
+    ap.add_argument("--max-new-tokens", type=int, default=None, help="default: the largest of --gen-lens")
+    ap.add_argument("--gen-lens", type=int, nargs="*", default=None,
+                    help="generation caps for the length ablation (default: final.idea4_gen_lens in the config)")
     ap.add_argument("--device", default="auto")
     ap.add_argument("--dtype", default=None)
     args = ap.parse_args()
@@ -109,12 +165,20 @@ def main():
     if args.make_subset:
         build_subset(cfg)
         return
+    lens = sorted(set(args.gen_lens or cfg["final"]["idea4_gen_lens"]))
+    max_new = args.max_new_tokens or lens[-1]
+    if max_new < lens[-1]:
+        raise SystemExit(f"--max-new-tokens {max_new} is below the largest generation length {lens[-1]}")
 
     ids = args.ids or json.loads(repo_path(cfg["final"]["idea4_ids"]).read_text())["ids"]
     ids = ids[:args.limit] if args.limit else ids
     out = repo_path(args.out or cfg["final"]["idea4_surrogates"])
     res = json.loads(out.read_text()) if out.exists() and out.stat().st_size else {}
-    todo = [i for i in ids if str(i) not in res]
+    required = ["tag_text", "tagsq_text"] + [f"{f}_t{n}" for n in lens for f in
+                                             ("gen_caption", "gen_audio_desc", "q_audio_desc", "pipe_text", "tagsq_text")]
+    # items made with other generation settings, or by an older version missing some fields, are redone
+    todo = [i for i in ids if str(i) not in res or res[str(i)].get("gen_max_new_tokens") != max_new
+            or any(f not in res[str(i)] for f in required)]
     print(f"{len(ids)} items, {len(ids) - len(todo)} done, {len(todo)} to run -> {out}", flush=True)
     if not todo:
         return
@@ -140,10 +204,12 @@ def main():
     for n, idx in enumerate(todo, 1):
         ex = data[idx]
         img, aud = {"type": "image", "image": ex["image"]}, {"type": "audio", "audio": ex["audio"]}
-        cap, cap_ms, cap_tok, _ = describe(scorer, img, CAPTION_PROMPT, args.max_new_tokens)
-        desc, desc_ms, desc_tok, _ = describe(scorer, aud, AUDIO_PROMPT, args.max_new_tokens)
-        qdesc, qdesc_ms, qdesc_tok, _ = describe(scorer, aud, Q_AUDIO_PROMPT.format(q=ex["question"].strip()),
-                                                 args.max_new_tokens)
+        gens = {"gen_caption": generate_capped(scorer, img, CAPTION_PROMPT, max_new, lens),
+                "gen_audio_desc": generate_capped(scorer, aud, AUDIO_PROMPT, max_new, lens),
+                "q_audio_desc": generate_capped(scorer, aud, Q_AUDIO_PROMPT.format(q=ex["question"].strip()),
+                                                max_new, lens)}
+        (cap, cap_ms, cap_tok), (desc, desc_ms, desc_tok), (qdesc, qdesc_ms, qdesc_tok) = (
+            g[max_new] for g in gens.values())
         asr_text, asr_ms, asr_tok = transcribe(asr, ex["audio"], scorer.device)
         tags, p_speech, tag_ms = tag(ast, fe, ex["audio"], sr, scorer.device)
 
@@ -161,9 +227,17 @@ def main():
             "pred_speech": is_speech, "asr_failed": bool(is_speech and status != "ok"),
             "route_text": asr_text if is_speech else tag_text,
             "pipe_text": asr_text if is_speech else f"{tag_text}\n{qdesc}",
+            "tag_text": tag_text, "tagsq_text": f"{tag_text}\n{qdesc}",  # every item, for the threshold sweep
             "masked_audio_content": masked, "n_masked": n_masked,
             "gen_device": str(scorer.device), "asr_model": ASR_MODEL, "ast_model": AST_MODEL,
+            "gen_max_new_tokens": max_new, "gen_lens": lens,
         }
+        rec = res[str(idx)]
+        for lim in lens:  # length ablation: each generated text cut to its first `lim` tokens, and the time that takes
+            for name, g in gens.items():
+                rec[f"{name}_t{lim}"], rec[f"{name}_t{lim}_ms"], rec[f"{name}_t{lim}_tok"] = g[lim]
+            rec[f"tagsq_text_t{lim}"] = f"{tag_text}\n{gens['q_audio_desc'][lim][0]}"
+            rec[f"pipe_text_t{lim}"] = asr_text if is_speech else rec[f"tagsq_text_t{lim}"]
         tmp = out.with_suffix(".tmp")
         tmp.write_text(json.dumps(res, indent=1))
         tmp.replace(out)
