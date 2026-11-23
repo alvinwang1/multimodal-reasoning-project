@@ -28,7 +28,21 @@ GEN_CONFIGS = {
     "img_gendesc":  ("raw", "gen_desc"),
     "img_asr":      ("raw", "asr"),
     "gencap_aud":   ("gen", "raw"),
+    # Final-report Idea 4 (src/final/idea4_generate.py):
+    #   route    = Whisper transcript if the clip is classified as speech, else AST audio tags
+    #   route_fb = route, but raw audio when the Whisper output looks broken (empty / filler / loop)
+    #   qdesc    = Qwen audio description conditioned on the question (not the options)
+    #   pipe     = full pipeline: speech -> Whisper (raw audio if broken); other audio -> AST tags + qdesc
+    #   masked   = the human audio description with every option word masked (answer-leakage test)
+    "img_route":    ("raw", "route"),
+    "img_route_fb": ("raw", "route_fb"),
+    "img_qdesc":    ("raw", "qdesc"),
+    "img_pipe":     ("raw", "pipe"),
+    "gencap_pipe":  ("gen", "pipe"),
+    "img_masked":   ("raw", "masked"),
+    "cap_masked":   ("text", "masked"),
 }
+FALLBACK_REPS = {"route_fb", "pipe"}  # these become raw audio for items whose ASR output was flagged as broken
 BASE_IMAGE_PIXELS = 602112  # 768 * 28 * 28, the full-resolution cap used everywhere
 
 
@@ -78,16 +92,26 @@ def permutation(example_idx, perm_id, seed, n=4, prior=()):
             return p
 
 
+def audio_rep(ex, spec):
+    """The audio representation actually used for this item (fallback configs switch to raw audio)."""
+    if spec["aud"] in FALLBACK_REPS and ex.get("asr_failed"):
+        return "raw"
+    return spec["aud"]
+
+
 def surrogate_texts(ex, config):
     spec = config_spec(config)
     img_text = {"text": lambda: ex["image content"], "gen": lambda: ex["gen_caption"]}
     aud_text = {"text": lambda: ex["audio content"], "gen_desc": lambda: ex["gen_audio_desc"],
-                "asr": lambda: ex["asr"]}
+                "asr": lambda: ex["asr"], "route": lambda: ex["route_text"], "route_fb": lambda: ex["route_text"],
+                "qdesc": lambda: ex["q_audio_desc"], "pipe": lambda: ex["pipe_text"],
+                "masked": lambda: ex["masked_audio_content"]}
     parts = []
     if spec["img"] in img_text:
         parts.append(CAPTION_PREFIX + img_text[spec["img"]]().strip())
-    if spec["aud"] in aud_text:
-        parts.append(TRANSCRIPT_PREFIX + aud_text[spec["aud"]]().strip())
+    aud = audio_rep(ex, spec)
+    if aud in aud_text:
+        parts.append(TRANSCRIPT_PREFIX + aud_text[aud]().strip())
     return parts
 
 
@@ -109,7 +133,7 @@ def build_messages(ex, config, perm):
     if spec["img"] == "raw":
         content.append({"type": "image", "image": ex["image"],
                         "max_pixels": int(spec["img_ratio"] * BASE_IMAGE_PIXELS)})
-    if spec["aud"] == "raw":
+    if audio_rep(ex, spec) == "raw":
         content.append({"type": "audio", "audio": stretched_audio(ex, spec["aud_ratio"])})
     lines = surrogate_texts(ex, config)
     lines.append(f"Question: {ex['question'].strip()}")

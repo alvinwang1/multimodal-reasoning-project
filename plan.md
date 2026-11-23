@@ -6,6 +6,39 @@
 
 Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
+---
+
+## Where we are (as of Sun Nov 22)
+
+> For a full explanation of how each part was done (data, pipeline, every idea's implementation, results, weaknesses, likely TA comments, file map), see **[midterm_explained.md](midterm_explained.md)**.
+
+**Done so far:**
+- **Assignment 2 (Oct 4).** Data and modality analyses on 90 OmniBench items with Qwen2.5-Omni-3B.
+  - Strong answer-position bias: 49% of answers are "D", and the model prefers "B". Because of this, all later results average over 3 option orders.
+  - Caption+transcript matched the full raw input while using 39% of its tokens.
+- **Midterm report (submitted Oct 25).** One baseline per idea, evaluated on held-out items. The report is in `report_midterm/main.tex`.
+  - **Idea 1 (routing).** A per-item oracle reaches 69.2% at cost 0.33. The best fixed input is image+transcript (54.2% at cost 0.78); the full input gets 45.3%. Logistic-regression routers score 44–46% and stay below the fixed-input hull, except for up to +5.9 points around cost 0.2. Why it fails:
+    - its features predict item difficulty, not which modality helps;
+    - it is overconfident (it predicts 0.67 but is right 43% of the time);
+    - its labels are noisy;
+    - it has only 180 training items.
+  - **Idea 3 (budgets).** About 64 visual tokens recover most of the image's value (47.0% vs 50.0% for the full image, not significant). Cutting the audio is safe, but speeding it up breaks speech: accuracy falls 37.5 → 21.7 → 12.5. Image and audio interact strongly on sound events (+1.28), where the image alone causes confident errors. Per-audio-type lookup tables overfit (37.4% vs 47.0% for a single global cell).
+  - **Idea 4 (generated surrogates).** Generated surrogates lose 7.5 points to the reference ones, mostly on music (−21.7), and cost about 25× more time than the raw route. Whisper returns empty, filler or looping text on 52 of 80 non-speech clips. The human audio descriptions often name the answer.
+- **Compute used so far:**
+  - Idea 1: 6,300 passes (M2 Max);
+  - Idea 3: the 10,800-pass budget grid (V100) and the 5,760-pass time-stretch ablation (M2 Max);
+  - Idea 4: 4,320 passes (L4), plus a 1,800-pass replication (M2 Max).
+- **Code fixes made along the way:** a PyAV fallback for one bad audio file, and an end-of-turn stop token for generation.
+- **Repo (Nov 22).** All midterm work is committed. `midterm-report`, `idea3` and `idea4` are merged into `main` and pushed. Everyone now starts from `main`.
+- **Final plan drafted** (this file). Estimated effort: about 95–140 person-hours in total, roughly 25–35 per person.
+
+**Pending:**
+- **TA feedback on the midterm** arrives Mon Nov 23. Add it to §6, then adjust §3.
+- The team needs to agree on the data protocol (§1).
+- Then start the score bank (§2).
+
+---
+
 **What the final report must add over the midterm.** Each idea needs:
 - a **new approach** beyond the midterm baseline, compared directly against that baseline;
 - stated **research questions**, with **ablations** of each new component;
@@ -18,21 +51,31 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
 ## 0. Before anything else (this weekend)
 
-- [ ] **Commit the midterm work and merge the branches.** None of Arjun and Lindy's midterm work is committed yet. `origin/idea3` (Alvin) and `origin/idea4` (Nikkita) are not merged into `main`. Arjun runs:
-  ```bash
-  git checkout -b midterm-report
-  git add .gitignore README.md plan.md plan_midterm.md src/midterm src/midterm_arjun results/midterm results/midterm_arjun \
-          report_midterm/main.tex report_midterm/references_midterm.bib report_midterm/figures
-  git commit -m "Midterm: Idea 1 router, Idea 3 time-stretch ablation, Idea 4 replication, report"
-  git push -u origin midterm-report
-  ```
-  Then open PRs, or merge `midterm-report`, `origin/idea3` and `origin/idea4` into `main`. From here on, everyone branches off `main`. Commit often: graders use the repo history to judge how evenly work was shared.
-- [ ] **Collect the midterm feedback** from the TAs and paste it into §6 below. The final report must address it.
-- [ ] **Agree on the data protocol in §1** before anyone runs anything new.
+- [x] **Commit the midterm work and merge the branches** (done Nov 22).
+  - The midterm work is committed on `midterm-report`.
+  - `midterm-report`, `idea4` and `idea3` are merged into `main` and pushed. The only conflict was in `.gitignore`, resolved by keeping both sides.
+  - From here on, everyone branches off `main` and commits often: graders use the repo history to judge how evenly work was shared.
+- [ ] **Midterm feedback:** the TA gives it on **Mon Nov 23**. Paste it into §6 below; the final report must address it.
+- [x] **Data protocol in §1 agreed** (Nov 22).
+  - Folds are frozen in `data/final_folds.json`.
+  - The shared loader is `src/final/bank.py`.
+  - Both runners now take `--split final`.
+- [ ] Teammates: `git pull` on `main`.
 
 ---
 
-## 1. Data protocol (the main shared decision)
+## 1. Data protocol (agreed Nov 22)
+
+**Status:**
+- **Folds.** `python -m src.final.folds` wrote `data/final_folds.json`: 1,141 items in 5 folds, each with about 154 speech, 53 sound event and 21 music items (seed 2026).
+  - The folds are **frozen**: the script refuses to overwrite them.
+  - The file also lists named groups: `a2_subset`, `midterm_train`, `midterm_test`, `idea3_test`, and `fresh`.
+  - `fresh` is the 787 items nobody has scored or inspected: 643 speech, 142 sound event, 2 music.
+- **Shared loader.** `src/final/bank.py`. `load_bank()` returns one row per item and representation, with:
+  - `acc`, `logp`, `cost` and `latency_s`, averaged over the 3 option orders;
+  - the source: `base` (L4), `idea3` (L4), or `base_mac` (the midterm Mac runs, for comparison).
+  - Helpers: `matrix()`, `load_folds()`, `fold_of()`, `load_groups()`.
+  - Checked: it reproduces the midterm Idea 1 table exactly on the 120 test items.
 
 **The constraint.** OmniBench has 1,141 usable items: 771 speech, 265 sound event and 105 music. We have already used 300 of them (100 per audio type), and only **5 music items** have never been touched. A new balanced held-out test set is therefore not possible. The midterm test sets are also small: 120 items for Ideas 1 and 4, and a different 90 items for Idea 3. That makes our confidence intervals wide.
 
@@ -47,19 +90,54 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
 ---
 
-## 2. Shared score bank (run first)
+## 2. Shared score bank (run first): all on the Colab L4
 
-Every item is run under every configuration below, in all 3 option orders. The rows already store `probs`, so `log p(gold)` comes for free.
+**Compute changed on Nov 22.** PSC is offline, so we now have Arjun's **M2 Max** and his **Colab Pro** credits: an L4, and maybe an A100.
 
-| Configs | Who / where | Passes | Time |
+**Decision: every final scoring run uses the Colab L4 (bf16), from one notebook: `colab/run_final.ipynb` (all 3 ideas).**
+- The L4 is **6.6× faster** than the Mac: 5.1 s vs 33.6 s per item for the 7 base configs × 3 orders.
+- It agrees with the Mac on **97.9%** of predictions (2,520 shared passes; accuracies within 1.4 points).
+- Idea 4 already ran on an L4 at the midterm.
+- With everything on one GPU type, cost and latency are comparable across Ideas 1, 3 and 4. This removes the midterm's mixed-hardware limitation.
+
+**What each machine is for:**
+- **Mac:** development, analysis and small checks. The midterm Mac runs stay in the loader as the `base_mac` source, for comparison only.
+- **A100:** only as a fallback, e.g. for the optional FastV comparison, because it uses compute units much faster.
+
+| Job | Notebook step | Passes | L4 time (est.) |
 |---|---|---|---|
-| 7 base configs: full, img_trans, cap_aud, cap_trans, img_only, aud_only, q_only | Arjun/Lindy, M2 Max | 841 new items × 21 = 17.7k | **≈ 8 h** (overnight) |
-| Cheap probe cells for Ideas 1 and 3: image 64 tok + audio ½ `(64,½)`, image-only 64 `(64,0)`, audio-only ½ `(0,½)` | Alvin, PSC V100 | 1,141 × 9 = 10.3k | ≈ 3 h |
-| Idea 3 grid, the remaining `(b_v,b_a)` cells and the new audio-selection cells (§3.2) | Alvin, PSC V100 | ~1,141 × 16 × 3 | ~1 night |
-| Generated surrogates and their scoring (Idea 4) | Nikkita, L4 | see §3.3 | ~1 night |
+| 7 base configs × 3 orders × 1,141 items (rerunning the 300 midterm items too, for one GPU type) | 6 | 23,961 | ~1.6 h |
+| Idea 3 probe cells `(64,½)`, `(64,0)`, `(0,½)`, which are also Idea 1 features | 7 | 10,269 | ~0.7 h |
+| Idea 3: the other 9 grid cells | 10 | 30,807 | ~2 h |
+| Idea 3: audio-selection cells, centered (`c`) and loudest window (`e`) | 11 | 20,538 | ~1 h |
+| Idea 4: generate the text (Whisper, AST tags, Qwen generic and question-conditioned descriptions) for 242 items, then score 11 configs | 8–9 | 7,986 | ~1.5 h |
+| **Total** | | | **≈ 6.5 L4-hours** |
 
-- **Hardware.** Run each config on a single machine type. Mac and V100 predictions agree on 97.5% of passes, which is fine but must be stated in the report. Never mix machines within one configuration.
-- **Output.** Everything goes into one bank file, `results/final/bank_*.jsonl`, with a loader `src/final/bank.py`. The loader returns a matrix of accuracy, `log p(gold)` and cost for every item × configuration.
+**Grid corners and text cells are not re-run.** The Idea 3 corners (`v768_a1`, `v768_a0`, `v0_a1`, `v0_a0`) and text cells (`v768_atrans`, `vcap_a1`, `vcap_atrans`) are exactly the same inputs as the base configs. Map between the names with `src/idea3/cells.py::A_CONFIG_CELLS`.
+
+**How to run:**
+- Open **`colab/run_final.ipynb`** in Colab, set Runtime → L4, and run the cells top to bottom.
+- Outputs go straight to **`MyDrive/mmml_final/`** through symlinks, so a disconnect loses nothing. Every step is resumable: if the session dies, reconnect and rerun from the top.
+- **Colab Pro has no background execution,** so keep the tab open.
+- **Disconnect safety:**
+  - every log is copied to `MyDrive/mmml_final/logs/`;
+  - timestamped copies of every results file go to `backups/` at the start of each session and every 15 min (the last 3 are kept);
+  - a line cut off by a disconnect is skipped on resume and that pass is re-run (`src/common.py`);
+  - optionally, `CACHE_ON_DRIVE = True` keeps the model and dataset downloads on Drive (about 15 GB).
+- To analyse locally, download the jsonl files from Drive into the matching repo paths:
+  - `results/final/bank_base_l4.jsonl`
+  - `results/idea3/raw_final.jsonl`
+
+  Then call `load_bank()`.
+
+**Compute units.** Colab Pro gives about 100 units a month. An L4 costs roughly 2 units/h and an A100 roughly 10+ units/h; check the exact rates in Colab's Resources panel. About 12 L4-hours is therefore about 25 units, leaving plenty of margin for reruns.
+
+**Who launches what.**
+- **The team reviews the notebook together, then Lindy runs it on behalf of the team.**
+- Outputs land in the runner's own `MyDrive/mmml_final/`, so Lindy shares that folder with the team.
+- Alvin and Nikkita review and commit any changes to their sections (§10–11 and §8–9) *before* the run starts. The notebook always clones the latest `main`.
+
+**`results/final/run_bank_base.sh` (the Mac script) is now only a fallback,** in case Colab is unavailable.
 
 ---
 
@@ -107,6 +185,8 @@ Report all of them with bootstrap confidence intervals over items.
 
 ### 3.2 Idea 3: Marginal utility of modality budgets (owner: **Alvin**)
 
+> **Implemented Nov 23 (first draft, for Alvin to review):** `src/idea3/cells.py` now supports `a<frac>e`, the loudest contiguous window (maximum signal energy, 10 ms steps), next to `a<frac>c` (centered) and plain `a<frac>` (the first part of the clip). Cutting the audio now counts as preprocessing time.
+
 **Midterm baseline:** a lookup table with one budget cell per audio type, chosen on dev. It overfit (37.4% vs 47.0% for a single global cell). Other midterm findings:
 - the image saturates at about 64 tokens;
 - cutting the audio is safe, but speeding it up breaks speech;
@@ -139,6 +219,14 @@ Report all of them with bootstrap confidence intervals over items.
 **Overlap with Idea 1 (must be explicit in the report).** Idea 1 chooses the **type of representation**: raw, text or omitted. Idea 3 chooses **how many tokens each modality gets, and which ones**. They share the cheap-probe features from the bank. The Discussion can then report "Idea 1 + Idea 3 together" as one combined menu.
 
 ### 3.3 Idea 4: Generated text surrogates (owner: **Nikkita**)
+
+> **Implemented Nov 23 (first draft, for Nikkita to review and extend):** `src/final/idea4_generate.py` and the new configs in `src/analysis_a/prompts.py`.
+> - **Changes from the plan below:**
+>   - the tagger is **AST** (Audio Spectrogram Transformer, fine-tuned on AudioSet) instead of CLAP;
+>   - speech vs non-speech uses AST's P(Speech) ≥ 0.5 (the threshold can be swept afterwards);
+>   - the subset is **242 items**: the 120 midterm test items plus 60 fresh speech, 60 fresh sound and the 2 fresh music items.
+> - **Configs:** `img_route`, `img_route_fb`, `img_qdesc`, `img_pipe`, `gencap_pipe`, `img_masked`, `cap_masked`, plus the regenerated midterm baselines.
+> - **Masking is lexical:** it masks every option word (and its singular form). It cannot catch paraphrases such as "fuse burning" for "flare stick"; state this as a limitation.
 
 **Midterm baseline:** surrogates generated without regard to the question: a Qwen caption, a Qwen audio description and Whisper ASR. These lost 7.5 points to the reference surrogates, mostly on music (−21.7). Whisper hallucinated on 52 of 80 non-speech clips. Generation cost about 25× the raw route. The human audio descriptions often name the answer.
 
@@ -195,7 +283,8 @@ Relate both to accuracy.
 
 ## 5. Poster
 
-- **Recommendation: pick the idea by Nov 30, based on whichever result is clearest.**
+- **Recommendation: pick the idea by Wed Nov 25, based on whichever result is clearest.**
+  - *After the TA feedback:* lean towards **Idea 1 + the cheap-first-pass combined system**, which is what the TA liked most, if the router beats the hull.
   - Current leaning: **Idea 4**, because it is self-explanatory to outsiders ("text surrogates look cheap but aren't; human captions leak the answer").
   - The alternative is **Idea 3**, if the item-level allocator clearly beats the table.
 - **Layout:** 3 columns, with the middle one widest.
@@ -207,26 +296,60 @@ Relate both to accuracy.
 
 ---
 
-## 6. Midterm feedback to address
-*(paste TA comments here)*
+## 6. Midterm feedback (TA, received Mon Nov 23) and how we address it
 
----
+**What they liked:**
+- the accuracy-vs-compute analysis showing that more image or audio tokens are not always better;
+- adaptive routing to the cheapest useful input format ("intuitive and promising");
+- a cheap first pass, with extra compute only for difficult questions ("a practical direction").
 
-## 7. Timeline (15 days; Thanksgiving is Thu Nov 26)
+**Implication:** make the **cheap-first-pass → adaptive escalation** story the backbone of the final report. Ideas 1 and 3 both already use a cheap first pass; the combined experiment in item 4 below ties them together.
 
-| Dates | Everyone | Idea 1 (Arjun, Lindy) | Idea 3 (Alvin) | Idea 4 (Nikkita) |
+**Suggestions and questions, with our response:**
+
+| # | TA suggestion | What we do | Where / owner |
+|---|---|---|---|
+| 1 | *Compare routing with fixed formats/budgets, random or confidence routing, and an oracle best-format selector.* | The router baselines become: every **fixed format** (7) and every **fixed budget cell** (Idea 3); **random routing**, both per item from the menu (uniform) and random mixing at matched cost (the hull); **confidence routing** (the midterm cascade, plus a cascade on the cheap first pass); and the **oracle**. One table and one accuracy-cost plot contain all of them. *New: the explicit random router.* | §3.1 Idea 1 (Arjun, Lindy) |
+| 2 | *Report end-to-end latency, preprocessing and router overhead, not only token counts and accuracy.* | The runners now also log **`decode_ms`** (reading the image and audio files). The Idea 3 audio cut is now inside `preproc_ms`. `bank.py` exposes `model_s`, `preproc_s`, `decode_s` and `e2e_s`. **Router overhead** = the cheap passes (measured on the L4) + feature extraction (SBERT, KL) + router inference, timed on CPU and added per item. Every accuracy-cost curve is shown twice, against **tokens** and against **end-to-end seconds**, plus a **latency breakdown** table: decode / preprocess / cheap pass / router / final pass. | All ideas; the bank and code are done; tables in each section |
+| 3 | *Test speech, music, environmental sound and truly cross-modal questions; identify information lost in transcripts.* | **(a)** Every result is broken down by speech / music / sound event (the "environmental sound" category). **(b)** A **"truly cross-modal" subset**, defined from the bank: items the full input answers (≥ ⅔ of orders) while image only and audio only both fail (≤ ⅓). All ideas report on it. **(c)** **Information lost in transcripts:** compare raw audio vs transcript per item (full vs image+transcript; audio only vs caption+transcript). Hand-code the items where raw audio wins into categories: tone or emotion, speaker identity, non-speech sound, instrument or timbre, background events, timing. Also code the reverse case, where the transcript wins (answer leakage). Combine with Idea 4's masking test. | (a, b) all ideas; (c) Idea 4 (Nikkita) + Lindy helps with the coding |
+| 4 | *Evaluate when the cheap pass fails, and whether combining routing with adaptive compute yields actual savings.* | **(a) Cheap-pass failure analysis:** how often the first pass (the caption+transcript probe, and the (64, ½) cell) is **confidently wrong**, by audio type, task type and the cross-modal subset; reliability diagrams before and after temperature scaling. **(b) Combined system:** cheap first pass → the Idea 1 router chooses among formats **and** Idea 3 budget cells → final pass. Compared with the full input at matched accuracy, in **wall-clock seconds including all overhead**. This is the "actual savings" number. | (a) Ideas 1 and 3; (b) a new Discussion subsection "Combined system" (Arjun, Lindy + Alvin) |
+
+**Changes to §3:**
+- **Idea 1:** add the random router. Report latency and overhead. Report results on the cross-modal subset. Lead the combined-system experiment.
+- **Idea 3:** add the cheap-pass failure analysis for the (64, ½) first pass. Report end-to-end latency for each budget cell, since cutting the audio and resizing the image also cost time.
+- **Idea 4:** add the "information lost in transcripts" coding. Report latency end to end (generation time is already included).
+
+**Extra work:** about 6–8 person-hours, mostly the transcript-loss coding and the combined-system run, which reuses the existing bank (no new GPU runs). It fits into Tue–Wed in §7.
+
+## 7. Timeline: finish in ONE week (Mon Nov 23 – Sun Nov 29)
+
+**Goal:** a submittable report by **Sun Nov 29**. That leaves Nov 30 – Dec 6 as a buffer for the poster session and for polishing.
+
+**What makes one week possible:**
+- **The GPU work is small.** About 10–12 L4-hours in total, and the first ~2.5 h can start **today**, without waiting for the TA feedback.
+- **The learned methods are cheap.** Idea 1's router and Idea 3's allocator run on CPU in minutes once the score bank exists, so ablations and sweeps are fast.
+- **The TA feedback changes the writing and priorities,** not the data runs. Don't block the runs on it.
+
+**The cost:** about 75–90 person-hours, i.e. **~20 h each in 7 days**, including Thanksgiving. The reduced scope below is now the **plan**, not the fallback.
+
+| Day | Everyone | Idea 1 (Arjun, Lindy) | Idea 3 (Alvin) | Idea 4 (Nikkita) |
 |---|---|---|---|---|
-| **Sat 11/21 – Sun 11/22** | Merge branches; agree on §1; freeze `final_folds.json` | Start the base-config bank on the Mac (overnight) | Probe cells + grid on PSC | Pick the tagger/captioner; prototype the fallback detector on the 120 midterm items |
-| **Mon 11/23 – Wed 11/25** | Bank loader `src/final/bank.py` | Pairwise router + features; first results on the midterm 300 | Allocator + audio-selection cells | Question-conditioned generation; masking experiment |
-| **Thu 11/26 – Sun 11/29** | (Thanksgiving: light) | Full cross-validation runs, ablations, sweeps | Full cross-validation runs, ablations, sweeps | Full runs on the evaluation subset |
-| **Mon 11/30** | **Results freeze for the poster**; choose the poster idea | Figures | Figures | Figures |
-| **Tue 12/1 – Thu 12/3** | Poster + presentation practice | Write the Idea 1 section | Write the Idea 3 section | Write the Idea 4 section |
-| **Fri 12/4 – Sat 12/5** | Intro, Related Work, Methodology, Conclusion, overview figure; full draft; page check | | | |
-| **Sun 12/6** | Final pass, disclosure page, submit by 8 pm | | | |
+| **Mon 11/23** | Commit and push; **start the Colab notebook** (smoke test → base bank → probe cells, ~2.5 L4-h); TA feedback into §6 | Code the pairwise router + disagreement features, tested on the midterm 300 (Mac data) | Implement the audio-selection cells (centered + energy window) | Set up CLAP tags + the ASR-failure detector, tested on the 120 midterm items |
+| **Tue 11/24** | Notebook: the other 9 grid cells (~2 h) + audio-selection cells (~1 h) | Full 5-fold runs on the bank: pairwise vs pointwise, ± disagreement, ± calibration, learning curve, λ sweep; **random router**; latency/overhead accounting (§6) | Allocator (ridge) on the bank; ± KL features; λ sweep | Generation runs: routed and question-conditioned pipelines (~4 L4-h); masking test (scoring only) |
+| **Wed 11/25** | **Results freeze tonight.** Choose the poster idea. Cross-modal subset results for all ideas (§6.3b) | Figures + failure cases; **combined system** with Alvin (§6.4b) | Figures + failure cases; audio-selection comparison; **cheap-pass failure analysis** (§6.4a) | Analysis, figures, break-even k; **information lost in transcripts** coding, with Lindy (§6.3c) |
+| **Thu 11/26** (Thanksgiving) | Light: each person drafts their idea section (Approach, Setup, Results) | Idea 1 section | Idea 3 section | Idea 4 section |
+| **Fri 11/27** | Intro, Related Work, Problem Statement, Methodology, Conclusion; overview figure | Shared sections + overview figure | Review Ideas 1/4 | Review Ideas 1/3 |
+| **Sat 11/28** | **Full draft**, page-fit to 10 pages; AI disclosure + contributions; start the poster | | | |
+| **Sun 11/29** | Final pass; **report ready to submit**; poster draft; pitch script | | | |
 
-**Fallbacks if we run behind:**
-- **Idea 1:** drop the bandit and the MLP.
-- **Idea 3:** drop the FastV comparison.
-- **Idea 4:** drop the size sweep and use only CLAP tags.
+**Scope for this week (dropped unless a day frees up):**
+- **Idea 1:** no bandit and no MLP. Keep pairwise vs pointwise, disagreement features, calibration, the budget-cell menu, the learning curve and the λ sweep.
+- **Idea 3:** no FastV comparison and no boosted trees (ridge only). Keep the allocator ± KL features and the audio-selection comparison.
+- **Idea 4:** CLAP tags only (no second captioner); one generation length (80 tokens) instead of a sweep; the subset is the 120 midterm test items plus up to 120 new speech and sound items. Keep routing ± fallback, question conditioning, the masking test and break-even k.
 
-Every idea must still finish **new approach vs midterm baseline + ≥2 ablations + 1 sweep**.
+Every idea must still deliver **new approach vs midterm baseline + ≥2 ablations + 1 sweep + failure cases**.
+
+**Biggest risks and their mitigations:**
+- **Idea 4's new models** (CLAP setup). If CLAP isn't working by Tue noon, use Qwen's own question-conditioned description for non-speech audio and keep the fallback.
+- **Colab disconnects.** Every step is resumable; keep the tab open.
+- **Page limit.** Each idea section gets about 2.3 pages. Put the extras in the appendix.

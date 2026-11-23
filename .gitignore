@@ -28,3 +28,7 @@ data/omnibench/data/
 data/omnibench/.cache/
 _local_backup/
 idea3_*.out
+
+# Final-report raw model outputs (large; share via Drive)
+results/idea3/raw_final.jsonl
+results/final/*.jsonl

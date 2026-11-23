@@ -34,16 +34,38 @@ def seed_everything(seed):
 
 
 def read_jsonl(path):
+    """Records from a JSONL file. Lines cut off by a crash or disconnect are skipped with a warning
+    (the runs are resumable, so a skipped pass is simply re-run)."""
     path = Path(path)
     if not path.exists():
         return []
+    out, bad = [], 0
     with open(path) as f:
-        return [json.loads(line) for line in f if line.strip()]
+        for line in f:
+            if line.strip():
+                try:
+                    out.append(json.loads(line))
+                except json.JSONDecodeError:
+                    bad += 1
+    if bad:
+        print(f"warning: skipped {bad} unreadable line(s) in {path}", flush=True)
+    return out
+
+
+_ENDS_CHECKED = set()
 
 
 def append_jsonl(path, record):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path not in _ENDS_CHECKED:  # after a disconnect the file may end mid-line: start a fresh line first
+        _ENDS_CHECKED.add(path)
+        if path.exists() and path.stat().st_size:
+            with open(path, "rb") as f:
+                f.seek(-1, os.SEEK_END)
+                if f.read(1) != b"\n":
+                    with open(path, "a") as g:
+                        g.write("\n")
     with open(path, "a") as f:
         f.write(json.dumps(record) + "\n")
         f.flush()

@@ -33,7 +33,7 @@ ABLATION_CELLS = ["v0_a0.25c", "v0_a0.5c"]
 def parse_args():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", default=None)
-    ap.add_argument("--split", choices=["dev", "test"], required=True)
+    ap.add_argument("--split", choices=["dev", "test", "final"], required=True)
     ap.add_argument("--cells", nargs="*", default=None, help="override the default cells")
     ap.add_argument("--out", default=None, help="output JSONL (default <out_dir>/raw_<split>.jsonl)")
     ap.add_argument("--limit", type=int, default=None)
@@ -78,7 +78,7 @@ def cell_inputs(ex, cell, cfg):
     ex = dict(ex)
     sr = cfg["dataset"]["audio_sr"]
     if aud == "raw":
-        ex["audio"] = truncate_audio(ex["audio"], c["aud"], sr, cfg["idea3"]["min_audio_sec"], c["center"])
+        ex["audio"] = truncate_audio(ex["audio"], c["aud"], sr, cfg["idea3"]["min_audio_sec"], c["window"])
     max_pixels = c["img"] * TOKENS_PER_PATCH if img == "raw" else None
     audio_sec = len(ex["audio"]) / sr if aud == "raw" else 0.0
     return ex, CONFIG_BY_REPS[(img, aud)], max_pixels, audio_sec
@@ -93,7 +93,10 @@ def main():
     seed_everything(seed)
 
     data = OmniBenchSubset(cfg)
-    ids = data.ids if args.split == "dev" else test_ids(cfg, data)
+    if args.split == "final":  # every item in the final-report folds (src/final/folds.py)
+        ids = sorted(i for f in json.loads(repo_path(cfg["final"]["folds"]).read_text())["folds"] for i in f)
+    else:
+        ids = data.ids if args.split == "dev" else test_ids(cfg, data)
     if args.limit:
         ids = ids[: args.limit]
     cells = args.cells or default_cells(cfg, args.split)
@@ -136,15 +139,17 @@ def main():
 
     t_start, n_run = time.time(), 0
     for idx, jobs in by_example.items():
-        ex = data[idx]
+        t0 = time.perf_counter()
+        ex = data[idx]  # decode image bytes + load/resample audio: part of end-to-end latency
+        decode_ms = (time.perf_counter() - t0) * 1000
         perms = {}
         for p in range(n_perms):
             perms[p] = permutation(idx, p, seed, prior=[perms[q] for q in range(p)])
         for (_, cell, p) in jobs:
             perm = perms[p]
+            t0 = time.perf_counter()  # preproc includes cutting the audio to the cell's budget
             ex_c, config, max_pixels, audio_sec = cell_inputs(ex, cell, cfg)
             scorer.max_pixels = max_pixels or default_max_pixels
-            t0 = time.perf_counter()
             _, inputs = scorer.prepare(build_messages(ex_c, config, perm))
             preproc_ms = (time.perf_counter() - t0) * 1000
             res = scorer.score(inputs)
@@ -160,7 +165,7 @@ def main():
                 "probs": probs, "max_prob": float(max(probs)),
                 "letter_logits": res["letter_logits"], "top_vocab_is_letter": res["top_vocab_is_letter"],
                 **scorer.token_counts(inputs, surrogate_texts(ex_c, config)),
-                "latency_ms": res["latency_ms"], "preproc_ms": preproc_ms,
+                "latency_ms": res["latency_ms"], "preproc_ms": preproc_ms, "decode_ms": decode_ms,
                 "peak_mem_mb": res["peak_mem_mb"], "baseline_mem_mb": res["baseline_mem_mb"],
                 "max_pixels": max_pixels, "audio_sec_used": audio_sec,
                 "audio_sec": len(ex["audio"]) / cfg["dataset"]["audio_sr"],

@@ -28,8 +28,9 @@ def parse_args():
     ap.add_argument("--out", default=None, help="output JSONL (default from config)")
     ap.add_argument("--limit", type=int, default=None, help="only the first N subset examples")
     ap.add_argument("--ids", type=int, nargs="*", default=None, help="explicit OmniBench indices")
-    ap.add_argument("--split", choices=["train", "test", "all"], default=None,
-                    help="use the midterm train/test split instead of the Assignment-2 subset")
+    ap.add_argument("--split", choices=["train", "test", "all", "final", "idea4"], default=None,
+                    help="midterm train/test/all split; final = every item in the final-report folds; "
+                         "idea4 = the final Idea 4 subset")
     ap.add_argument("--surrogates", default=None, help="JSON of generated surrogates (midterm Idea 4)")
     ap.add_argument("--configs", nargs="*", default=None,
                     help="config names: base configs, gen_* configs, or bud_i{r}_a{r}")
@@ -69,7 +70,11 @@ def main():
 
     data = OmniBenchSubset(cfg)
     ids = args.ids or data.ids
-    if args.split:
+    if args.split == "final":
+        ids = sorted(i for f in json.loads(repo_path(cfg["final"]["folds"]).read_text())["folds"] for i in f)
+    elif args.split == "idea4":
+        ids = json.loads(repo_path(cfg["final"]["idea4_ids"]).read_text())["ids"]
+    elif args.split:
         split = json.loads(repo_path(cfg["midterm"]["split"]).read_text())
         ids = split["train"] + split["test"] if args.split == "all" else split[args.split]
     surrogates = json.loads(repo_path(args.surrogates).read_text()) if args.surrogates else {}
@@ -101,7 +106,9 @@ def main():
 
     t_start, n_run = time.time(), 0
     for idx, jobs in by_example.items():
-        ex = data[idx]
+        t0 = time.perf_counter()
+        ex = data[idx]  # decode image bytes + load/resample audio: part of end-to-end latency
+        decode_ms = (time.perf_counter() - t0) * 1000
         ex.update(surrogates.get(str(idx), {}))
         perms = {}
         for p in range(n_perms):
@@ -125,7 +132,7 @@ def main():
                 "probs_display": res["probs_display"], "letter_logits": res["letter_logits"],
                 "top_vocab_token": res["top_vocab_token"], "top_vocab_is_letter": res["top_vocab_is_letter"],
                 **scorer.token_counts(inputs, surrogate_texts(ex, config)),
-                "latency_ms": res["latency_ms"], "preproc_ms": preproc_ms,
+                "latency_ms": res["latency_ms"], "preproc_ms": preproc_ms, "decode_ms": decode_ms,
                 "peak_mem_mb": res["peak_mem_mb"], "baseline_mem_mb": res["baseline_mem_mb"],
                 "audio_sec": len(ex["audio"]) / cfg["dataset"]["audio_sr"],
                 "device": str(scorer.device), "dtype": str(scorer.dtype).replace("torch.", ""),

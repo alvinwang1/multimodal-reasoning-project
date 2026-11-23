@@ -51,6 +51,17 @@ analysis_c:
   tsne_perplexity: 15
   cv_folds: 5
 
+final:
+  folds: data/final_folds.json   # 5 stratified folds over all usable items (src/final/folds.py)
+  n_folds: 5
+  fold_seed: 2026
+  out_dir: results/final
+  base_out: results/final/bank_base_l4.jsonl   # 7 base configs on the Colab L4 (all scoring runs use one GPU type)
+  idea4_ids: data/final_idea4_ids.json         # Idea 4 subset: midterm test items + fresh speech/sound items
+  idea4_n_fresh_per_type: 60
+  idea4_surrogates: results/final/idea4_surrogates.json
+  idea4_out: results/final/raw_idea4_l4.jsonl
+
 midterm:
   split: data/midterm_split.json
   n_train_per_type: 60     # includes the 30/type Assignment-2 subset (already scored)
