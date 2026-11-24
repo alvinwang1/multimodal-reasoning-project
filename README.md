@@ -144,6 +144,9 @@ Follow-ups for the report:
 python -m src.final.stats                                # CPU: 95% CIs and paired tests -> results/final/stats/
 modal run scripts/modal_run.py --sections router         # Idea 1 router study (CPU on Modal, ~10 min)
 modal volume get --force mmml-final results/final/idea1_results.tar.gz . && tar xzf idea1_results.tar.gz
+modal run scripts/modal_run.py --sections text           # OmniBench's text fields -> results/final/omnibench_text.json
+python -m src.final.idea3_allocator                      # Idea 3 allocator + analyses -> results/final/idea3/ (~2 min)
+python -m src.final.idea4_analysis                       # Idea 4 analyses + coding sheet -> results/final/idea4/
 modal run scripts/modal_run.py --sections protocol --limit 2          # protocol check, 2 items first (~5 min)
 modal run --detach scripts/modal_run.py --sections protocol          # all items (~1 h): no image cap, written
                                                                      # answers, original vs shuffled option order

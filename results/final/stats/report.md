@@ -94,6 +94,101 @@ Letters the model picks with the full input: order 0: A 22%, B 32%, C 21%, D 26%
 
 n items: speech 771, sound event 265, music 105
 
+## The truly cross-modal items (n=83; plan §6.3b)
+
+Items the full input answers (>= 2 of 3 option orders) while image only and audio only both fail (<= 1 of 3). Image + audio, image only and audio only define the subset, so their numbers here are not evidence of anything. Idea 4 configs are on the subset's items that are also in the 242-item Idea 4 set.
+
+| rep | items | accuracy on the subset | accuracy, all items |
+|---|---|---|---|
+| full (defines the subset) | 83 | 80.7 [77.1, 84.3] | 42.3 |
+| img_trans | 83 | 70.3 [63.1, 77.1] | 46.6 |
+| cap_aud | 83 | 49.4 [40.6, 58.2] | 37.4 |
+| cap_trans | 83 | 53.8 [45.4, 62.2] | 41.0 |
+| img_only (defines the subset) | 83 | 12.9 [9.2, 16.5] | 32.2 |
+| aud_only (defines the subset) | 83 | 16.9 [13.3, 20.5] | 32.0 |
+| q_only | 83 | 13.7 [9.2, 18.5] | 24.6 |
+| i3:v0_a0.25 | 83 | 15.3 [10.8, 20.1] | 27.9 |
+| i3:v0_a0.25c | 83 | 19.3 [14.1, 24.9] | 29.2 |
+| i3:v0_a0.25e | 83 | 16.9 [12.0, 22.1] | 28.8 |
+| i3:v0_a0.5 | 83 | 18.9 [14.1, 24.1] | 30.3 |
+| i3:v0_a0.5c | 83 | 19.3 [14.5, 24.1] | 30.5 |
+| i3:v0_a0.5e | 83 | 19.3 [14.5, 24.1] | 30.5 |
+| i3:v256_a0 | 83 | 18.5 [12.4, 24.9] | 32.7 |
+| i3:v256_a0.25 | 83 | 38.2 [30.5, 45.8] | 37.2 |
+| i3:v256_a0.5 | 83 | 42.2 [34.5, 49.8] | 38.5 |
+| i3:v256_a1 | 83 | 66.3 [59.0, 73.5] | 42.8 |
+| i3:v64_a0 | 83 | 20.5 [14.5, 26.9] | 29.5 |
+| i3:v64_a0.25 | 83 | 41.4 [33.7, 49.4] | 34.4 |
+| i3:v64_a0.25e | 83 | 47.0 [39.0, 55.0] | 35.1 |
+| i3:v64_a0.5 | 83 | 47.4 [39.8, 55.0] | 36.6 |
+| i3:v64_a0.5e | 83 | 51.4 [43.4, 59.4] | 37.8 |
+| i3:v64_a1 | 83 | 61.0 [53.4, 68.7] | 40.5 |
+| i3:v768_a0.25 | 83 | 38.2 [30.5, 46.2] | 35.8 |
+| i3:v768_a0.5 | 83 | 46.6 [39.0, 54.2] | 37.8 |
+| i4:cap_masked | 14 | 42.9 [21.4, 64.3] | 35.4 |
+| i4:gen_cap_asr | 14 | 47.6 [23.8, 71.4] | 28.1 |
+| i4:gen_cap_asr_t120 | 14 | 50.0 [23.8, 73.8] | 28.7 |
+| i4:gen_cap_asr_t80 | 14 | 47.6 [26.2, 71.4] | 30.7 |
+| i4:gen_cap_desc | 14 | 54.8 [31.0, 78.6] | 31.0 |
+| i4:gen_cap_desc_t120 | 14 | 64.3 [42.9, 83.3] | 31.3 |
+| i4:gen_cap_desc_t80 | 14 | 52.4 [28.6, 76.2] | 32.1 |
+| i4:gencap_aud | 14 | 71.4 [50.0, 90.5] | 36.8 |
+| i4:gencap_pipe | 14 | 64.3 [42.9, 83.3] | 32.2 |
+| i4:gencap_pipe_t120 | 14 | 64.3 [40.5, 85.7] | 33.1 |
+| i4:gencap_pipe_t80 | 14 | 59.5 [38.1, 81.0] | 36.5 |
+| i4:gencap_tagsq | 14 | 47.6 [28.6, 66.7] | 30.6 |
+| i4:img_asr | 14 | 57.1 [38.1, 73.8] | 40.6 |
+| i4:img_gendesc | 14 | 64.3 [45.2, 81.0] | 37.6 |
+| i4:img_gendesc_t120 | 14 | 64.3 [45.2, 81.0] | 37.5 |
+| i4:img_gendesc_t80 | 14 | 64.3 [45.2, 81.0] | 36.8 |
+| i4:img_masked | 14 | 61.9 [45.2, 78.6] | 41.7 |
+| i4:img_pipe | 14 | 71.4 [54.8, 85.7] | 41.9 |
+| i4:img_pipe_t120 | 14 | 71.4 [54.8, 85.7] | 41.9 |
+| i4:img_pipe_t80 | 14 | 71.4 [54.8, 85.7] | 41.9 |
+| i4:img_qdesc | 14 | 64.3 [45.2, 83.3] | 38.6 |
+| i4:img_qdesc_t120 | 14 | 64.3 [45.2, 83.3] | 38.6 |
+| i4:img_qdesc_t80 | 14 | 64.3 [45.2, 83.3] | 38.6 |
+| i4:img_route | 14 | 69.0 [54.8, 81.0] | 39.8 |
+| i4:img_route_fb | 14 | 69.0 [54.8, 81.0] | 39.9 |
+| i4:img_tags | 14 | 52.4 [35.7, 69.0] | 33.9 |
+| i4:img_tagsq | 14 | 66.7 [47.6, 83.3] | 38.7 |
+
+## How much of the per-item ceiling is luck?
+
+*Oracle, 3 orders*: the per-item best representation, as reported (it sees all three option orders). *Pick on order 0, score on orders 1-2*: choose each item's representation using only the original option order (ties: fewest tokens), then score that choice on the two shuffled orders, which played no part in the choice. What survives is the part of the ceiling a router could in principle learn; the rest is chance. *vs best single*: against the best single representation, also chosen on order 0 and scored on orders 1-2 (paired over items).
+
+| menu | items | oracle, 3 orders | oracle, order 0 on itself | pick on order 0, score on orders 1-2 | best single (orders 1-2) | pick - best single (pts) | tokens of the pick |
+|---|---|---|---|---|---|---|---|
+| Idea 1 menu (7 formats + 3 budget cells) | 1141 | 70.2 | 68.4 | 49.7 | img_trans: 47.5 | +2.1 [-0.5, +4.7] | 0.23 |
+| Idea 3 grid (16 budget cells) | 1141 | 66.1 | 64.9 | 45.0 | i3:v256_a1: 43.5 | +1.5 [-1.0, +3.9] | 0.19 |
+| all 25 representations | 1141 | 73.9 | 72.9 | 49.2 | img_trans: 47.5 | +1.6 [-1.1, +4.3] | 0.19 |
+
+## Combined system: the fastest way to match the full input (plan §6.4b)
+
+For each method, the fastest of its operating points (out-of-fold, from results/final/idea1/ and idea3/) whose accuracy is at least the full input's 42.3%, in ms per item on the L4 including every cheap pass, the question embedding and the router. Reading the curve this way picks the point after the fact, so treat small differences as noise (e.g. v256_a1 vs the full input: see the Idea 3 comparisons above). Adaptive methods that never reach the full input show their best accuracy; fixed inputs that never reach it are left out. *Human text*: the method can answer from OmniBench's human-written caption or transcript, which leak answers (Idea 4) and do not exist at deployment.
+
+| method | kind | human text | matches I+A | accuracy | tokens | ms/item | speedup vs I+A |
+|---|---|---|---|---|---|---|---|
+| Cascade C+T -> I+T (midterm) | adaptive | yes | yes | 42.7 | 0.45 | 107 | 4.06x |
+| Midterm router | adaptive | yes | yes | 42.6 | 0.47 | 137 | 3.18x |
+| Best cell per audio type | adaptive | no | yes | 42.3 | 0.53 | 257 | 1.69x |
+| Allocator, no first pass (meta only) | adaptive | no | yes | 42.6 | 0.53 | 259 | 1.68x |
+| v256_a1 | fixed | no | yes | 42.8 | 0.57 | 268 | 1.62x |
+| Best single cell | adaptive | no | yes | 42.8 | 0.57 | 268 | 1.62x |
+| New router, no cheap passes | adaptive | yes | yes | 43.2 | 0.50 | 278 | 1.56x |
+| Allocator, no first pass (question + meta) | adaptive | no | yes | 42.7 | 0.61 | 311 | 1.40x |
+| I+T | fixed | yes | yes | 46.6 | 0.82 | 347 | 1.25x |
+| Allocator, no KL passes | adaptive | no | yes | 42.4 | 0.82 | 429 | 1.01x |
+| I+A | fixed | no | yes | 42.3 | 1.00 | 435 | 1.00x |
+| Cascade v64_a0.5 -> v256_a1 | adaptive | no | yes | 42.8 | 0.84 | 436 | 1.00x |
+| New router | adaptive | yes | yes | 42.4 | 1.10 | 601 | 0.72x |
+| Allocator | adaptive | no | yes | 42.4 | 1.20 | 632 | 0.69x |
+| Allocator, log p target | adaptive | no | no | 37.6 | 0.92 | 519 | 0.84x |
+| Allocator, + audio type | adaptive | no | no | 41.7 | 1.04 | 569 | 0.76x |
+| New router, no human text | adaptive | no | no | 40.5 | 1.04 | 590 | 0.74x |
+| Cascade v64_a0.5 -> I+A | adaptive | no | no | 42.2 | 1.28 | 602 | 0.72x |
+| Allocator, boosted trees | adaptive | no | no | 38.9 | 1.20 | 632 | 0.69x |
+
 ## Accuracy of every representation
 
 ### all items (n=1141)

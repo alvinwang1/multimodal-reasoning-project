@@ -8,12 +8,14 @@ section of colab/run_final.ipynb, in order, with the same commands and config li
     python -m src.final.run_all --dry-run          # print the commands only
     python -m src.final.run_all --sections protocol  # only when named: why accuracy is below Qwen's published score
     python -m src.final.run_all --sections router    # only when named: the Idea 1 router study (CPU)
+    python -m src.final.run_all --sections text      # only when named: export OmniBench's text fields (CPU)
 
 Sections: preflight (CPU: every item loads and builds its prompts), smoke (2 items, plus 1 item through the Idea 3 and
 Idea 4 code, into results/final/smoke/), then 6, 7, 8, 9, 9b, 9c, 10, 11 as in the notebook, and report (score-bank
 coverage, progress, and results/final/final_results.tar.gz with the 4 result files and the logs, to copy back).
 protocol (src/final/protocol_check.py, ~1 h, GPU) and router (src/final/idea1_router.py, CPU: the Idea 1 study on the
-score bank, after computing the question embeddings) are not part of the default run and not in the notebook: name them.
+score bank, after computing the question embeddings) and text (src/final/export_text.py, CPU: the questions, options and
+human texts for the analyses) are not part of the default run and not in the notebook: name them.
 
 Resumable: after a crash, a reboot or Ctrl-C, run the same command again; finished passes are skipped. The run stops at
 the first section that fails (--keep-going moves on to the next one). Output is shown live and appended to
@@ -49,9 +51,9 @@ NOISE = r"UNEXPECTED|^token2wav|^talker|Model config|^Key |^-+\+|^Notes:|can be 
 FILTER = re.compile(NOISE)                                       # same filter as the notebook
 FILTER_GEN = re.compile(NOISE + r"|warn|^\[transformers\]")      # idea4_generate (Whisper/AST warnings)
 SMOKE_DIR, LOG_DIR, BUNDLE = "results/final/smoke", "results/final/logs", "results/final/final_results.tar.gz"
-ORDER = ["preflight", "smoke", "6", "7", "8", "9", "9b", "9c", "10", "11", "protocol", "router", "report"]
-DEFAULT = [s for s in ORDER if s not in ("protocol", "router")]  # these run only when named
-CPU_SECTIONS = {"preflight", "router", "report"}  # no GPU needed
+ORDER = ["preflight", "smoke", "6", "7", "8", "9", "9b", "9c", "10", "11", "protocol", "text", "router", "report"]
+DEFAULT = [s for s in ORDER if s not in ("protocol", "text", "router")]  # these run only when named
+CPU_SECTIONS = {"preflight", "text", "router", "report"}  # no GPU needed
 ROUTER_DIR, ROUTER_BUNDLE = "results/final/idea1", "results/final/idea1_results.tar.gz"
 PROTOCOL_OUT, PROTOCOL_MD = "results/final/protocol_check.jsonl", "results/final/protocol_check.md"
 ALIASES = {"5": "smoke", "12": "report"}
@@ -93,6 +95,8 @@ def sections(cfg, limit):
         "11": ("11_idea3_audio_select", "Idea 3: centered and loudest audio windows (~1 h)", [idea3(SELECT_CELLS)]),
         "protocol": ("13_protocol_check", "protocol check: no image cap and written answers, original and shuffled "
                      "order (~1 h)", [py + ["src.final.protocol_check"] + lim]),
+        "text": ("15_export_text", "export OmniBench's text fields for the analyses (CPU)",
+                 [py + ["src.final.export_text"]]),
         "router": ("14_idea1_router", "Idea 1 router study on the score bank (CPU; question embeddings first)",
                    [py + ["src.final.idea1_router"]]),
         "report": ("12_coverage", "score-bank coverage and the results bundle", [py + ["src.final.bank"]]),

@@ -11,6 +11,7 @@ One-time, on your machine:   pip install modal   then   modal setup   (opens the
     modal run --detach scripts/modal_run.py --sections protocol   # why accuracy is below Qwen's published score (~1 h);
                                                              # try --limit 2 first (~5 min)
     modal run scripts/modal_run.py --sections router         # Idea 1 router study on the score bank (CPU, ~10 min)
+    modal run scripts/modal_run.py --sections text           # OmniBench's text fields for the analyses (CPU, ~3 min)
     modal volume get mmml-final results/final/final_results.tar.gz .    # the results, when it has finished
     tar xzf final_results.tar.gz                             # in the repo root: files land in results/
 
@@ -30,7 +31,7 @@ import modal
 
 APP_NAME, VOLUME_NAME, GPU = "mmml-final", "mmml-final", "L4"
 REPO_DIR, VOL_DIR = "/repo", "/vol"  # inside the container: the code, and the Volume (results + downloads)
-CPU_ONLY = {"preflight", "report", "router"}  # sections that need no GPU
+CPU_ONLY = {"preflight", "report", "router", "text"}  # sections that need no GPU
 SKIP_PACKAGES = re.compile(r"^(gradio|empath)\b")  # annotation tool / Empath: Assignment 2 analyses B and C only
 LOCAL_REPO = Path(__file__).resolve().parents[1]
 IGNORE = ["**/__pycache__", "**/*.pyc", "**/.DS_Store"]
@@ -111,6 +112,9 @@ def main(sections: str = "", limit: int = 0, progress: bool = False):
         print(f"\nDone. Download the protocol check (its summary is also in the output above):\n"
               f"  modal volume get --force {VOLUME_NAME} results/final/protocol_check.jsonl results/final/\n"
               f"  modal volume get --force {VOLUME_NAME} results/final/protocol_check.md results/final/")
+    if not rc and "text" in names:
+        print(f"\nDone. Download the text fields:\n"
+              f"  modal volume get --force {VOLUME_NAME} results/final/omnibench_text.json results/final/")
     if not rc and "router" in names:
         print(f"\nDone. Download the Idea 1 results (report, tables, figures, question embeddings):\n"
               f"  modal volume get --force {VOLUME_NAME} results/final/idea1_results.tar.gz .\n"

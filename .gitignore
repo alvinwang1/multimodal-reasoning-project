@@ -37,3 +37,7 @@ results/final/idea4_surrogates.json
 results/final/final_results.tar.gz
 results/final/idea1_results.tar.gz
 results/final/question_emb.npz
+results/final/omnibench_text.json
+
+# iCloud Drive conflict copies ("file 2.ext"), moved here; safe to delete
+_to_delete/

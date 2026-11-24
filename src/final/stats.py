@@ -8,6 +8,11 @@ Outputs (results/final/stats/):
   by_audio_type.csv  the 7 base configs per audio type
   option_order.csv   the base configs in OmniBench's original option order vs the two shuffled orders
   comparisons.csv    the paired comparisons the report relies on (A - B on the same items)
+  cross_modal.csv    every representation on the "truly cross-modal" items (plan §6.3b)
+  ceiling.csv        how much of the per-item best ("oracle") accuracy survives choosing on one option order and
+                     scoring on the other two, i.e. how much of that ceiling is luck
+  combined_system.csv  (needs results/final/idea1/ and idea3/curves.csv) the fastest operating point of each method
+                     that matches the full input's accuracy, in ms per item on the L4 (plan §6.4b)
   report.md          all of the above as markdown tables
 
 Method. The unit is the item: an item's accuracy is the mean over its 3 option orders, so the orders of one item are
@@ -200,6 +205,80 @@ def main():
     cmp_tab["clear"] = cmp_tab.p_holm < 0.05
     cmp_tab.to_csv(out_dir / "comparisons.csv", index=False)
 
+    # ---- the "truly cross-modal" items (plan §6.3b): the full input answers them (>= 2/3 of orders) while
+    # image only and audio only both fail (<= 1/3). The three configs that define the subset are degenerate on it.
+    cm = acc.index[(acc["full"] > 0.6) & (acc["img_only"] < 0.4) & (acc["aud_only"] < 0.4)]
+    i3_reps = sorted(c for c in acc.columns if c.startswith("i3:"))
+    i4_reps = sorted(c for c in acc.columns if c.startswith("i4:"))
+    rows = []
+    for rep in BASE + i3_reps + i4_reps:
+        v = acc.loc[cm, rep].dropna()
+        if len(v) < 2:
+            continue
+        lo, hi = sampler(len(v)).ci(v.to_numpy())
+        rows.append({"rep": rep, "n_items": len(v), "acc": v.mean(), "lo": lo, "hi": hi,
+                     "acc_all_items": acc[rep].dropna().mean(), "defines_subset": rep in ("full", "img_only", "aud_only")})
+    cm_tab = pd.DataFrame(rows)
+    cm_tab.to_csv(out_dir / "cross_modal.csv", index=False)
+
+    # ---- how much of the per-item ceiling is luck: pick each item's best representation on option order 0 only
+    # (ties: the fewest tokens), then score that pick on orders 1 and 2, which played no part in choosing it
+    raw3 = pd.DataFrame([{"id": r["id"], "config": "i3:" + r["cell"], "perm": r["perm"], "correct": r["correct"]}
+                         for r in read_jsonl(repo_path(f"{cfg['idea3']['out_dir']}/raw_final.jsonl"))])
+    per = pd.concat([raw[["id", "config", "perm", "correct"]], raw3]).drop_duplicates(["id", "config", "perm"], keep="last")
+    per = per.pivot_table(index="id", columns=["config", "perm"], values="correct", aggfunc="mean")
+    cost = matrix(bank, "cost", complete=False)
+    grid = ["q_only", "i3:v0_a0.25", "i3:v0_a0.5", "aud_only", "i3:v64_a0", "i3:v64_a0.25", "i3:v64_a0.5", "i3:v64_a1",
+            "i3:v256_a0", "i3:v256_a0.25", "i3:v256_a0.5", "i3:v256_a1", "img_only", "i3:v768_a0.25", "i3:v768_a0.5", "full"]
+    menus = {"Idea 1 menu (7 formats + 3 budget cells)": BASE + ["i3:v256_a1", "i3:v64_a1", "i3:v64_a0.5"],
+             "Idea 3 grid (16 budget cells)": grid, "all 25 representations": BASE + i3_reps}
+    rows = []
+    for name, reps in menus.items():
+        items = per.index[per[[(r, p) for r in reps for p in range(3)]].notna().all(axis=1)]
+        c0 = per.loc[items, [(r, 0) for r in reps]].to_numpy()
+        later = per.loc[items, [(r, p) for r in reps for p in (1, 2)]].to_numpy().reshape(len(items), len(reps), 2).mean(axis=2)
+        acc3 = acc.loc[items, reps].to_numpy()
+        tok = cost.loc[items, reps].to_numpy()
+        choice = np.array([np.lexsort((t, -c))[0] for c, t in zip(c0, tok)])  # max correct on order 0, then fewest tokens
+        rows_i = np.arange(len(items))
+        honest = later[rows_i, choice]
+        best_fixed = int(np.argmax(c0.mean(axis=0)))  # the best single representation, also chosen on order 0
+        d = honest - later[:, best_fixed]
+        dl, dh = sampler(len(items)).ci(d)
+        rows.append({"menu": name, "items": len(items), "oracle_3_orders": acc3.max(axis=1).mean(),
+                     "oracle_order0_on_order0": c0.max(axis=1).mean(), "pick_on_order0_score_orders12": honest.mean(),
+                     "best_fixed_rep": reps[best_fixed], "best_fixed_on_orders12": later[:, best_fixed].mean(),
+                     "pick_minus_best_fixed": d.mean(), "pmb_lo": dl, "pmb_hi": dh, "tokens_of_pick": tok[rows_i, choice].mean()})
+    ceil_tab = pd.DataFrame(rows)
+    ceil_tab.to_csv(out_dir / "ceiling.csv", index=False)
+
+    # ---- combined system (plan §6.4b): the fastest operating point of each method that matches the full input
+    curves = []
+    for path, skip_fixed in (("results/final/idea1/curves.csv", False), ("results/final/idea3/curves.csv", True)):
+        if repo_path(path).exists():
+            c = pd.read_csv(repo_path(path))
+            curves.append(c[c.point != "fixed"] if skip_fixed else c)
+    comb_tab = pd.DataFrame()
+    if curves:
+        cur = pd.concat(curves)
+        cur = cur[(cur.method != "Oracle") & cur.seconds.notna()]
+        target = acc["full"].mean()
+        full_s = cur[(cur.method == "I+A") & (cur.point == "fixed")].seconds.iloc[0]
+        rows = []
+        for m, g in cur.groupby("method", sort=False):
+            ok = g[g.acc >= target - 1e-12]
+            best = ok.loc[ok.seconds.idxmin()] if len(ok) else g.loc[g.acc.idxmax()]
+            rows.append({"method": m, "kind": "fixed" if (g.point == "fixed").all() else "adaptive",
+                         "matches_full": bool(len(ok)), "acc": best.acc, "tokens": best.tokens,
+                         "ms": 1000 * best.seconds, "speedup": full_s / best.seconds})
+        comb_tab = pd.DataFrame(rows)
+        human = {"I+T", "C+A", "C+T", "Midterm router", "New router", "New router, no cheap passes",
+                 "Cascade C+T -> I+T (midterm)"}  # their menus include OmniBench's human-written caption/transcript
+        comb_tab["human_text"] = comb_tab.method.isin(human)
+        comb_tab = comb_tab[comb_tab.matches_full | (comb_tab.kind == "adaptive")]
+        comb_tab = comb_tab.sort_values(["matches_full", "ms"], ascending=[False, True])
+        comb_tab.to_csv(out_dir / "combined_system.csv", index=False)
+
     # ---- report.md
     n = len(full0)
     md = [f"# Confidence intervals ({args.n_boot:,} bootstrap resamples over items; 95% CIs in brackets)\n",
@@ -229,6 +308,43 @@ def main():
         acc=[with_ci(*v) for v in zip(type_tab.acc, type_tab.lo, type_tab.hi)]).pivot(
         index="rep", columns="audio_type", values="acc").reindex(BASE).reset_index().rename(columns={"rep": "config"})),
         "", "n items: " + ", ".join(f"{t} {type_tab[type_tab.audio_type == t].n_items.iloc[0]}" for t in AUDIO_TYPES), ""]
+    md += [f"## The truly cross-modal items (n={len(cm)}; plan §6.3b)\n",
+           "Items the full input answers (>= 2 of 3 option orders) while image only and audio only both fail (<= 1 "
+           "of 3). Image + audio, image only and audio only define the subset, so their numbers here are not "
+           "evidence of anything. Idea 4 configs are on the subset's items that are also in the 242-item Idea 4 set.\n",
+           md_table(pd.DataFrame({
+               "rep": cm_tab.rep + np.where(cm_tab.defines_subset, " (defines the subset)", ""), "items": cm_tab.n_items,
+               "accuracy on the subset": [with_ci(*v) for v in zip(cm_tab.acc, cm_tab.lo, cm_tab.hi)],
+               "accuracy, all items": cm_tab.acc_all_items.map(pct)})), ""]
+    md += ["## How much of the per-item ceiling is luck?\n",
+           "*Oracle, 3 orders*: the per-item best representation, as reported (it sees all three option orders). "
+           "*Pick on order 0, score on orders 1-2*: choose each item's representation using only the original "
+           "option order (ties: fewest tokens), then score that choice on the two shuffled orders, which played no "
+           "part in the choice. What survives is the part of the ceiling a router could in principle learn; the rest "
+           "is chance. *vs best single*: against the best single representation, also chosen on order 0 and scored "
+           "on orders 1-2 (paired over items).\n",
+           md_table(pd.DataFrame({
+               "menu": ceil_tab.menu, "items": ceil_tab["items"], "oracle, 3 orders": ceil_tab.oracle_3_orders.map(pct),
+               "oracle, order 0 on itself": ceil_tab.oracle_order0_on_order0.map(pct),
+               "pick on order 0, score on orders 1-2": ceil_tab.pick_on_order0_score_orders12.map(pct),
+               "best single (orders 1-2)": [f"{r.best_fixed_rep}: {pct(r.best_fixed_on_orders12)}" for r in ceil_tab.itertuples()],
+               "pick - best single (pts)": [with_ci(*v, signed=True) for v in zip(ceil_tab.pick_minus_best_fixed, ceil_tab.pmb_lo, ceil_tab.pmb_hi)],
+               "tokens of the pick": ceil_tab.tokens_of_pick.map(lambda v: f"{v:.2f}")})), ""]
+    if len(comb_tab):
+        md += ["## Combined system: the fastest way to match the full input (plan §6.4b)\n",
+               f"For each method, the fastest of its operating points (out-of-fold, from results/final/idea1/ and "
+               f"idea3/) whose accuracy is at least the full input's {pct(acc['full'].mean())}%, in ms per item on the "
+               "L4 including every cheap pass, the question embedding and the router. Reading the curve this way picks "
+               "the point after the fact, so treat small differences as noise (e.g. v256_a1 vs the full input: see the "
+               "Idea 3 comparisons above). Adaptive methods that never reach the full input show their best accuracy; "
+               "fixed inputs that never reach it are left out. *Human text*: the method can answer from OmniBench's "
+               "human-written caption or transcript, which leak answers (Idea 4) and do not exist at deployment.\n",
+               md_table(pd.DataFrame({
+                   "method": comb_tab.method, "kind": comb_tab.kind,
+                   "human text": comb_tab.human_text.map({True: "yes", False: "no"}),
+                   "matches I+A": comb_tab.matches_full.map({True: "yes", False: "no"}), "accuracy": comb_tab.acc.map(pct),
+                   "tokens": comb_tab.tokens.map(lambda v: f"{v:.2f}"), "ms/item": comb_tab.ms.map(lambda v: f"{v:.0f}"),
+                   "speedup vs I+A": comb_tab.speedup.map(lambda v: f"{v:.2f}x")})), ""]
     md += ["## Accuracy of every representation\n"]
     for items, g in acc_tab.groupby("items", sort=False):
         md += [f"### {items} (n={g.n_items.iloc[0]})\n", md_table(pd.DataFrame({
@@ -236,7 +352,8 @@ def main():
             "token cost vs full": g.cost.map(lambda c: f"{c:.2f}")})), ""]
     (out_dir / "report.md").write_text("\n".join(md))
     print("\n".join(md))
-    print(f"\nwritten: {out_dir}/report.md, accuracy.csv, by_audio_type.csv, option_order.csv, comparisons.csv")
+    print(f"\nwritten: {out_dir}/report.md, accuracy.csv, by_audio_type.csv, option_order.csv, comparisons.csv, "
+          "cross_modal.csv, ceiling.csv" + (", combined_system.csv" if len(comb_tab) else ""))
 
 
 if __name__ == "__main__":
