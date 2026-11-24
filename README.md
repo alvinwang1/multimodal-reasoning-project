@@ -117,6 +117,30 @@ Config names understood by the runner: the 7 base configs, `gen_cap_desc`, `gen_
 `img_asr`, `gencap_aud` (generated surrogates), and `bud_i{r_img}_a{r_aud}` (image downscaled to `r_img` of
 the pixel cap; audio time-stretched to `r_aud` of its tokens; 0 drops the modality).
 
+## Final report runs on AWS (Ideas 1, 3, 4)
+
+Every model pass for the final report runs on one NVIDIA L4 (bf16): an AWS **g6.2xlarge** (1x L4, 8 vCPU, 32 GiB;
+about $1/h on demand, about 8 h in all). Launch it from an AWS Deep Learning AMI that includes the NVIDIA driver, with
+at least 100 GB of disk. If the launch is refused, raise "Running On-Demand G and VT instances" to at least 8 vCPUs in
+Service Quotas. Then, on the instance:
+
+```bash
+git clone https://github.com/alvinwang1/multimodal-reasoning-project.git && cd multimodal-reasoning-project
+bash scripts/aws_setup.sh                 # Python 3.12 + pinned packages, GPU check, model/dataset download (once)
+tmux new -s run                           # keeps running after you disconnect (detach: Ctrl-b d; back: tmux attach -t run)
+source .venv/bin/activate
+python -m src.final.run_all               # preflight, smoke test, sections 6-11, report; resumable
+python -m src.final.run_all --progress    # from another terminal: how far each section has got
+```
+
+`src/final/run_all.py` runs the same sections and config lists as `colab/run_final.ipynb` (the Colab fallback):
+the base bank (6), Idea 3 probe cells (7), Idea 4 generation and scoring (8, 9, 9b length ablation, 9c threshold
+sweep), and the rest of the Idea 3 grid (10, 11). It checks that the GPU is an L4, logs every section to
+`results/final/logs/`, stops at the first failure, and resumes where it stopped when run again. The last step writes
+`results/final/final_results.tar.gz` (the 4 result files and the logs): copy it to your machine, unpack it in the repo
+root, and load it with `src.final.bank.load_bank()`. **Stop** the instance when done (stopping keeps the disk;
+terminating deletes the results).
+
 ## What is (not) committed
 
 Committed: code, configs, `data/subset_ids.json`, `results/analysis_b/assignments.json`, annotation JSONLs,

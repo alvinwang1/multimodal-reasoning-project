@@ -32,3 +32,6 @@ idea3_*.out
 # Final-report raw model outputs (large; share via Drive)
 results/idea3/raw_final.jsonl
 results/final/*.jsonl
+results/final/smoke/
+results/final/idea4_surrogates.json
+results/final/final_results.tar.gz

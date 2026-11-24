@@ -78,6 +78,8 @@ def main():
     elif args.split:
         split = json.loads(repo_path(cfg["midterm"]["split"]).read_text())
         ids = split["train"] + split["test"] if args.split == "all" else split[args.split]
+    if args.surrogates and not repo_path(args.surrogates).exists():
+        raise SystemExit(f"--surrogates file not found: {args.surrogates} (final Idea 4: run src.final.idea4_generate first)")
     surrogates = json.loads(repo_path(args.surrogates).read_text()) if args.surrogates else {}
     if args.limit:
         ids = ids[: args.limit]
