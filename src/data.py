@@ -76,10 +76,23 @@ def decode_audio(audio_field, sr):
 
 def decode_audio_av(data, sr):
     import av
+    frames, corrupt = [], False
     with av.open(io.BytesIO(data)) as c:
         rs=av.AudioResampler(format="flt", layout="mono", rate=sr)
-        frames=[f for fr in c.decode(audio=0) for f in rs.resample(fr)]+rs.resample(None)
-    return np.concatenate([f.to_ndarray().reshape(-1) for f in frames])
+        try:
+            for fr in c.decode(audio=0):
+                frames += rs.resample(fr)
+        except av.error.InvalidDataError:
+            # A few OmniBench MP3s (ids 687-689) contain non-audio bytes partway through, which neither libsndfile nor
+            # FFmpeg can decode past: keep the audio decoded before them (files that decode fully are unaffected).
+            if not frames:
+                raise
+            corrupt = True
+        frames += rs.resample(None)
+    wav = np.concatenate([f.to_ndarray().reshape(-1) for f in frames])
+    if corrupt:
+        print(f"warning: corrupt audio data after {len(wav) / sr:.1f} s; using the audio decoded before it", flush=True)
+    return wav
 
 
 def decode_image(image_field):
