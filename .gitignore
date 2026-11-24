@@ -35,3 +35,5 @@ results/final/*.jsonl
 results/final/smoke/
 results/final/idea4_surrogates.json
 results/final/final_results.tar.gz
+results/final/idea1_results.tar.gz
+results/final/question_emb.npz

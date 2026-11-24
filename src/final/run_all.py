@@ -6,10 +6,14 @@ section of colab/run_final.ipynb, in order, with the same commands and config li
     python -m src.final.run_all --limit 2          # quick end-to-end pass: the first 2 items of every section
     python -m src.final.run_all --progress         # passes done per section (safe while a run is going)
     python -m src.final.run_all --dry-run          # print the commands only
+    python -m src.final.run_all --sections protocol  # only when named: why accuracy is below Qwen's published score
+    python -m src.final.run_all --sections router    # only when named: the Idea 1 router study (CPU)
 
 Sections: preflight (CPU: every item loads and builds its prompts), smoke (2 items, plus 1 item through the Idea 3 and
 Idea 4 code, into results/final/smoke/), then 6, 7, 8, 9, 9b, 9c, 10, 11 as in the notebook, and report (score-bank
 coverage, progress, and results/final/final_results.tar.gz with the 4 result files and the logs, to copy back).
+protocol (src/final/protocol_check.py, ~1 h, GPU) and router (src/final/idea1_router.py, CPU: the Idea 1 study on the
+score bank, after computing the question embeddings) are not part of the default run and not in the notebook: name them.
 
 Resumable: after a crash, a reboot or Ctrl-C, run the same command again; finished passes are skipped. The run stops at
 the first section that fails (--keep-going moves on to the next one). Output is shown live and appended to
@@ -45,7 +49,11 @@ NOISE = r"UNEXPECTED|^token2wav|^talker|Model config|^Key |^-+\+|^Notes:|can be 
 FILTER = re.compile(NOISE)                                       # same filter as the notebook
 FILTER_GEN = re.compile(NOISE + r"|warn|^\[transformers\]")      # idea4_generate (Whisper/AST warnings)
 SMOKE_DIR, LOG_DIR, BUNDLE = "results/final/smoke", "results/final/logs", "results/final/final_results.tar.gz"
-ORDER = ["preflight", "smoke", "6", "7", "8", "9", "9b", "9c", "10", "11", "report"]
+ORDER = ["preflight", "smoke", "6", "7", "8", "9", "9b", "9c", "10", "11", "protocol", "router", "report"]
+DEFAULT = [s for s in ORDER if s not in ("protocol", "router")]  # these run only when named
+CPU_SECTIONS = {"preflight", "router", "report"}  # no GPU needed
+ROUTER_DIR, ROUTER_BUNDLE = "results/final/idea1", "results/final/idea1_results.tar.gz"
+PROTOCOL_OUT, PROTOCOL_MD = "results/final/protocol_check.jsonl", "results/final/protocol_check.md"
 ALIASES = {"5": "smoke", "12": "report"}
 
 
@@ -83,6 +91,10 @@ def sections(cfg, limit):
         "9c": ("09c_idea4_threshold", "Idea 4: speech-threshold sweep inputs (~12 min)", [score_i4(IDEA4_THR_CONFIGS)]),
         "10": ("10_idea3_grid", "Idea 3: the other 9 budget-grid cells (~2 h)", [idea3(OTHER_CELLS)]),
         "11": ("11_idea3_audio_select", "Idea 3: centered and loudest audio windows (~1 h)", [idea3(SELECT_CELLS)]),
+        "protocol": ("13_protocol_check", "protocol check: no image cap and written answers, original and shuffled "
+                     "order (~1 h)", [py + ["src.final.protocol_check"] + lim]),
+        "router": ("14_idea1_router", "Idea 1 router study on the score bank (CPU; question embeddings first)",
+                   [py + ["src.final.idea1_router"]]),
         "report": ("12_coverage", "score-bank coverage and the results bundle", [py + ["src.final.bank"]]),
     }
 
@@ -110,6 +122,10 @@ def progress(cfg):
             ("9c idea4 threshold", sum(i4[c] for c in IDEA4_THR_CONFIGS), n_i4 * len(IDEA4_THR_CONFIGS) * pa),
             ("10 idea3 grid", sum(i3[c] for c in OTHER_CELLS), n_items * len(OTHER_CELLS) * p3),
             ("11 audio selection", sum(i3[c] for c in SELECT_CELLS), n_items * len(SELECT_CELLS) * p3)]
+    pp = repo_path(PROTOCOL_OUT)
+    if pp.exists():  # only shown once the protocol check has been started
+        rows.append(("protocol check", len({(r["id"], r["image_cap"], r["perm"]) for r in read_jsonl(pp)
+                                            if {"id", "image_cap", "perm"} <= r.keys()}), n_items * 4))
     for name, n, total in rows:
         print(f"  {name:22s} {n:>7,} / {total:>7,}  {100 * n / total:5.1f}%")
     return rows
@@ -141,7 +157,7 @@ def commit():
 
 def run_cmd(cmd, log_path):
     """Run one command: filtered output live on screen and appended to the section log. Returns the exit code."""
-    flt = FILTER_GEN if "src.final.idea4_generate" in cmd else FILTER
+    flt = FILTER_GEN if {"src.final.idea4_generate", "src.final.protocol_check"} & set(cmd) else FILTER
     shown = "python " + " ".join(cmd[1:])
     with open(log_path, "a") as log:
         log.write(f"\n=== {datetime.now():%Y-%m-%d %H:%M:%S}  {shown}\n")
@@ -167,7 +183,7 @@ def bundle(cfg):
     """The result files and logs in one archive, to copy back (unpack it in the repo root)."""
     f = cfg["final"]
     parts = [f["base_out"], f"{cfg['idea3']['out_dir']}/raw_final.jsonl", f["idea4_out"], f["idea4_surrogates"],
-             LOG_DIR]
+             PROTOCOL_OUT, PROTOCOL_MD, LOG_DIR]  # the protocol files only if that section has run
     out = repo_path(BUNDLE)
     with tarfile.open(out, "w:gz") as tar:
         for rel in parts:
@@ -178,10 +194,23 @@ def bundle(cfg):
           f"then unpack it in the repo root:  tar xzf final_results.tar.gz", flush=True)
 
 
+def bundle_router(cfg):
+    """The Idea 1 report, tables and figures, and the question embeddings, in one archive."""
+    out = repo_path(ROUTER_BUNDLE)
+    with tarfile.open(out, "w:gz") as tar:
+        for rel in (ROUTER_DIR, "results/final/question_emb.npz"):
+            if repo_path(rel).exists():
+                tar.add(repo_path(rel), arcname=rel)
+    print(f"bundle: {out} ({out.stat().st_size / 2**20:.1f} MB). From Modal:\n"
+          f"  modal volume get --force mmml-final {ROUTER_BUNDLE} .\n"
+          f"then unpack it in the repo root:  tar xzf idea1_results.tar.gz", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", default=None)
-    ap.add_argument("--sections", nargs="*", default=None, help=f"any of: {' '.join(ORDER)} (default: all)")
+    ap.add_argument("--sections", nargs="*", default=None,
+                    help=f"any of: {' '.join(ORDER)} (default: all but protocol)")
     ap.add_argument("--limit", type=int, default=None, help="only the first N items of each section (a quick pass)")
     ap.add_argument("--gpu", default="L4", help="the GPU the runs must use (substring of its name; default L4)")
     ap.add_argument("--any-gpu", action="store_true", help="skip the GPU check")
@@ -194,7 +223,7 @@ def main():
         progress(cfg)
         return
 
-    wanted = [ALIASES.get(s, s) for s in (args.sections or ORDER)]
+    wanted = [ALIASES.get(s, s) for s in (args.sections or DEFAULT)]
     unknown = [s for s in wanted if s not in ORDER]
     if unknown:
         ap.error(f"unknown section(s) {unknown}; choose from {' '.join(ORDER)}")
@@ -208,7 +237,7 @@ def main():
         return
 
     gpu = gpu_name()
-    if any(s not in ("preflight", "report") for s in todo) and not args.any_gpu \
+    if any(s not in CPU_SECTIONS for s in todo) and not args.any_gpu \
             and (gpu is None or args.gpu.lower() not in gpu.lower()):
         raise SystemExit(f"GPU check: these runs must use an {args.gpu}, but this machine has "
                          f"{gpu or 'no GPU that nvidia-smi can see'}. Run it on an L4 (scripts/modal_run.py asks "
@@ -235,6 +264,8 @@ def main():
                     break
             if s == "report" and not rc:
                 bundle(cfg)
+            if s == "router" and not rc:
+                bundle_router(cfg)
             print(f"===== {s}: {'done' if not rc else f'FAILED (exit code {rc})'} in "
                   f"{(time.time() - t0) / 60:.1f} min", flush=True)
             if rc:

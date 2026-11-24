@@ -1,0 +1,1142 @@
+id,audio_type,fold,Midterm router | accuracy-tuned,Midterm router | cost 0.5,New router | accuracy-tuned,New router | cost 0.5,"New router, no cheap passes | accuracy-tuned","New router, no cheap passes | cost 0.5","New router, no human text | accuracy-tuned","New router, no human text | cost 0.5"
+0,speech,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+1,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+2,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+3,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+4,speech,4,full,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+5,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+6,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+7,speech,1,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+8,speech,4,cap_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+9,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+10,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+11,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+12,speech,0,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+13,speech,4,cap_trans,cap_trans,full,i3:v64_a0,img_trans,img_trans,full,i3:v64_a0
+14,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+15,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+16,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+17,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+18,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+19,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+20,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+21,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+22,speech,3,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+23,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+24,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+25,speech,0,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+26,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+27,speech,0,full,cap_trans,aud_only,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+28,speech,0,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+29,speech,1,full,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+30,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+31,speech,1,full,full,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+32,speech,4,cap_aud,cap_trans,cap_aud,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+33,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+34,speech,3,img_trans,cap_aud,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+35,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+36,speech,1,full,cap_trans,i3:v64_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0
+37,speech,0,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+38,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+39,speech,3,full,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+40,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+41,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+42,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+43,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+44,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+45,speech,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+46,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+47,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+48,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+49,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+50,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+51,speech,0,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+52,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+53,speech,3,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+54,speech,2,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+55,speech,2,cap_aud,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+56,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+57,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+58,speech,4,cap_aud,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+59,speech,3,full,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+60,speech,3,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+61,speech,4,cap_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+62,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+63,speech,2,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+64,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+65,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+66,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+67,speech,4,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+68,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+69,speech,2,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+70,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+71,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+72,speech,1,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+73,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+74,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+75,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+76,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+77,speech,0,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+78,speech,4,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v64_a0.5
+79,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+80,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+81,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+82,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+83,speech,2,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+84,speech,2,img_trans,cap_trans,cap_aud,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+85,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+86,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+87,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+88,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+89,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+90,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+91,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+92,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+93,speech,2,img_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+94,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+95,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+96,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+97,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+98,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+99,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+100,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+101,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+102,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+103,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+104,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+105,speech,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+106,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5
+107,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+108,speech,0,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+109,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+110,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+111,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+112,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+113,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+114,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+115,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+116,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+117,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+118,speech,2,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+119,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+120,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+121,speech,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+122,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+123,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+124,speech,3,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+125,speech,3,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a0.5,i3:v0_a0.5
+126,speech,2,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+127,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+128,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+129,speech,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+130,speech,3,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+131,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+132,speech,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+133,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+134,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+135,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+136,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v64_a0.5
+137,speech,4,img_trans,img_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+138,speech,4,cap_trans,cap_trans,cap_aud,i3:v0_a0.5,img_trans,cap_trans,aud_only,i3:v0_a0.5
+139,speech,4,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v64_a0.5
+140,speech,2,full,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+141,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+142,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+143,speech,3,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+144,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+145,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+146,speech,4,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,q_only,i3:v64_a0.5
+147,speech,2,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+148,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v0_a0.5
+149,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+150,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+151,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+152,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+153,speech,3,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+154,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+155,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+156,speech,1,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a0.5,i3:v64_a0.5
+157,speech,0,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+158,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+159,speech,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+160,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+161,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+162,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+163,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+164,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+165,speech,1,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,i3:v64_a1,q_only,i3:v64_a0.5
+166,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+167,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+168,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a0.5,i3:v64_a0.5
+169,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+170,speech,0,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+171,speech,1,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+172,speech,3,full,cap_aud,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a0.5,i3:v64_a0
+173,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+174,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+175,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+176,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+177,speech,3,img_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+178,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+179,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+180,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+181,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+182,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+183,speech,3,img_trans,cap_trans,cap_aud,i3:v64_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v64_a0.5
+184,speech,3,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+185,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v768_a0.5,i3:v64_a0
+186,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+187,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+188,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+189,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+190,speech,1,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+191,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+192,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+193,speech,3,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,cap_trans,full,i3:v64_a0
+194,speech,4,full,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+195,speech,0,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+196,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+197,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+198,speech,0,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+199,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,full,i3:v64_a0
+200,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+201,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+202,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a0.5,i3:v64_a0
+203,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v0_a0.5
+204,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+205,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+206,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+207,speech,2,img_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+208,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+209,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+210,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+211,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+212,speech,3,cap_trans,cap_trans,cap_aud,i3:v64_a0.5,img_trans,img_trans,q_only,i3:v64_a0.5
+213,speech,2,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+214,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+215,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+216,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+217,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+218,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+219,speech,4,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a0.5,i3:v64_a0.5
+220,speech,3,cap_trans,cap_trans,cap_aud,i3:v64_a0.5,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5
+221,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+222,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+223,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+224,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+225,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+226,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+227,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+228,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+229,speech,4,cap_aud,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a0.5,i3:v0_a0.5
+230,speech,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+231,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+232,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+233,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+234,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+235,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+236,speech,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+237,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+238,speech,3,img_trans,cap_trans,cap_aud,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+239,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+240,speech,4,cap_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+241,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+242,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+243,speech,4,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+244,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+245,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+246,speech,1,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+247,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+248,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+249,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+250,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+251,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+252,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+253,speech,0,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+254,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+255,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+256,speech,0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+257,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+258,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+259,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+260,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+261,speech,4,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+262,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+263,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v0_a0.5
+264,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+265,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+266,speech,4,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+267,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+268,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+269,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+270,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+271,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+272,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+273,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+274,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+275,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+276,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+277,speech,4,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+278,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+279,speech,3,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+280,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+281,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+282,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+283,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+284,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+285,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+286,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+287,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+288,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+289,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+290,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+291,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+292,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+293,speech,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+294,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+295,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+296,speech,1,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+297,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+298,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+299,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+300,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+301,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+302,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+303,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+304,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+305,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+306,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+307,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+308,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+309,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+310,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+311,speech,0,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+312,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+313,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+314,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+315,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+316,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+317,speech,3,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+318,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+319,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+320,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+321,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+322,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+323,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+324,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+325,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+326,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+327,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+328,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+329,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+330,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+331,speech,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+332,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+333,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+334,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+335,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+336,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+337,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+338,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+339,speech,3,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+340,speech,2,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+341,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+342,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+343,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v0_a0.5
+344,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+345,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+346,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+347,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+348,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+349,speech,4,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+350,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+351,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+352,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+353,speech,3,img_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,cap_trans,full,i3:v64_a0
+354,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+355,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+356,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+357,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+358,speech,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0
+359,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v768_a0.5,i3:v64_a0.5
+360,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+361,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+362,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+363,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+364,speech,3,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+365,speech,3,img_trans,img_trans,i3:v64_a0,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+366,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+367,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+368,speech,2,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+369,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+370,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+371,speech,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+372,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+373,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+374,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+375,speech,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+376,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+377,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+378,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+379,speech,1,full,full,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+380,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+381,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+382,speech,2,img_trans,cap_trans,full,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+383,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+384,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+385,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+386,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+387,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+388,speech,4,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+389,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v64_a0.5
+390,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+391,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+392,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+393,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+394,speech,2,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+395,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+396,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+397,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+398,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+399,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+400,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+401,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+402,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+403,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+404,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+405,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v256_a1,full,i3:v64_a0
+406,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+407,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+408,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+409,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+410,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+411,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+412,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+413,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v0_a0.5
+414,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+415,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+416,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+417,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+418,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+419,speech,1,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+420,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+421,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+422,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+423,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+424,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+425,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+426,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+427,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+428,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+429,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+430,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+431,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v0_a0.5
+432,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+433,speech,1,img_trans,cap_trans,cap_aud,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+434,speech,0,cap_aud,cap_aud,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+435,speech,4,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+436,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+437,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+438,speech,2,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+439,speech,1,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+440,speech,3,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,img_only,i3:v64_a0
+441,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+442,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+443,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+444,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+445,speech,4,img_trans,img_trans,full,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+446,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+447,speech,4,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+448,speech,4,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+449,speech,0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+450,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+451,speech,1,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+452,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+453,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+454,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+455,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+456,speech,2,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+457,speech,0,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+458,speech,0,img_trans,img_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+459,speech,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+460,speech,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+461,speech,4,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+462,speech,1,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+463,speech,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+464,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+465,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+466,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+467,speech,0,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+468,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+469,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+470,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+471,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+472,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+473,speech,4,cap_aud,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+474,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+475,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+476,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+477,speech,4,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+478,speech,3,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+479,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+480,speech,1,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+481,speech,0,img_trans,cap_aud,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+482,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+483,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+484,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+485,speech,1,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+486,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+487,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+488,speech,2,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+489,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+490,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+491,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+492,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+493,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+494,speech,1,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+495,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+496,speech,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+497,speech,1,cap_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+498,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+499,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+500,speech,3,img_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+501,speech,3,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+502,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+503,speech,1,img_trans,cap_trans,full,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+504,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v64_a0.5
+505,speech,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+506,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+507,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+508,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+509,speech,4,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+510,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+511,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+512,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+513,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+514,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+515,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+516,speech,0,img_trans,img_trans,q_only,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+517,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+518,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+519,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+520,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+521,speech,2,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+522,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+523,speech,1,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+524,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+525,speech,3,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+526,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+527,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+528,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+529,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+530,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+531,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+532,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+533,speech,3,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+534,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+535,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v64_a0.5
+536,speech,2,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+537,speech,2,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+538,speech,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+539,speech,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+540,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+541,speech,1,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+542,speech,4,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+543,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+544,speech,0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+545,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+546,speech,4,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+547,speech,1,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+548,speech,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+549,speech,2,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+550,speech,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+551,speech,3,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+552,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+553,speech,1,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+554,speech,2,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+555,speech,2,img_trans,img_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+556,speech,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+557,speech,4,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+558,speech,1,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+559,speech,2,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+560,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+561,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+562,speech,1,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+563,speech,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+564,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+565,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+566,speech,0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+567,speech,1,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+568,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+569,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+570,speech,0,img_trans,img_trans,q_only,i3:v0_a0.5,img_trans,img_trans,q_only,i3:v0_a0.5
+571,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+572,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+573,speech,1,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+574,speech,0,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+575,speech,1,full,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+576,speech,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+577,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+578,speech,2,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v0_a0.5
+579,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+580,speech,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+581,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+582,speech,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+583,speech,3,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+584,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+585,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+586,speech,0,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+587,speech,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+588,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+589,speech,3,img_trans,img_trans,full,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+590,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+591,speech,0,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+592,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+593,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+594,speech,3,cap_aud,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+595,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+596,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+597,speech,0,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+598,speech,0,full,cap_trans,full,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+599,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+600,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+601,speech,3,full,full,full,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+602,speech,2,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+603,speech,2,full,cap_trans,full,i3:v64_a0,img_trans,i3:v256_a1,full,i3:v64_a0
+604,speech,2,full,cap_trans,full,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v0_a0.5
+605,speech,2,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+606,speech,4,cap_trans,cap_trans,full,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+607,speech,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+608,speech,3,full,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+609,speech,4,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+610,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+611,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+612,speech,1,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+613,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+614,speech,3,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+615,speech,2,full,cap_aud,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+616,speech,0,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+617,speech,3,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+618,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+619,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+620,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+621,speech,0,cap_aud,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,full,i3:v64_a0
+622,speech,1,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+623,speech,3,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+624,speech,2,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+625,speech,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+626,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+627,speech,3,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+628,speech,1,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+629,speech,3,full,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+630,speech,4,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+631,speech,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+632,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+633,speech,3,cap_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+634,speech,2,cap_aud,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+635,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+636,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+637,speech,2,img_trans,img_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+638,speech,1,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a1,i3:v64_a0
+639,speech,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+640,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+641,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+642,speech,1,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+643,speech,4,cap_aud,cap_trans,cap_aud,i3:v64_a0.5,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5
+644,speech,3,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+645,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+646,speech,1,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+647,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+648,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+649,speech,4,img_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,i3:v64_a1,i3:v64_a0,i3:v64_a0
+650,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,img_only,i3:v64_a0
+651,speech,4,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+652,speech,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+653,speech,1,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+654,speech,1,full,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+655,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+656,speech,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+657,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+658,speech,4,cap_trans,cap_trans,i3:v64_a0,i3:v64_a0,img_trans,q_only,q_only,i3:v64_a0
+659,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+660,speech,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+661,speech,1,full,cap_trans,aud_only,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+662,speech,3,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+663,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+664,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+665,speech,4,full,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+666,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+667,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,full,i3:v64_a0
+668,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+669,speech,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+670,speech,4,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a0.5,i3:v64_a0
+671,speech,4,cap_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+672,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+673,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+674,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,full,i3:v0_a0.5
+675,speech,3,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+676,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+677,speech,2,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+678,speech,1,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+679,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+680,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+681,speech,3,img_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+682,speech,0,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+683,speech,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a0.5,i3:v64_a0.5
+684,speech,1,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+685,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+686,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+687,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+688,speech,0,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+689,speech,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+690,speech,2,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+691,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+692,speech,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+693,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+694,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+695,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+696,speech,0,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+697,speech,2,img_trans,cap_trans,cap_aud,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+698,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+699,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+700,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+701,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+702,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+703,speech,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+704,sound event,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+705,sound event,1,aud_only,aud_only,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+706,sound event,3,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+707,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+708,sound event,3,img_trans,img_trans,aud_only,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+709,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+710,sound event,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+711,sound event,4,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+712,sound event,1,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+713,sound event,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+714,sound event,3,cap_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+715,sound event,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+716,sound event,4,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+717,sound event,0,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+718,sound event,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+719,sound event,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+720,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+721,sound event,1,full,aud_only,i3:v64_a1,i3:v64_a0.5,i3:v64_a1,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+722,sound event,0,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+723,sound event,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+724,sound event,1,aud_only,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+725,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+726,sound event,2,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+727,sound event,2,aud_only,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+728,sound event,0,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+729,sound event,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+730,sound event,4,cap_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+731,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+732,sound event,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+733,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+734,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+735,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+736,sound event,0,cap_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+737,sound event,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+738,sound event,4,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+739,sound event,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+740,sound event,1,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+741,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+742,sound event,0,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+743,sound event,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+744,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+745,sound event,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+746,sound event,1,full,cap_trans,i3:v64_a1,i3:v0_a0.5,i3:v64_a1,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+747,sound event,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+748,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+749,sound event,1,full,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+750,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+751,sound event,1,full,aud_only,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+752,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+753,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+754,sound event,1,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+755,sound event,0,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+756,sound event,3,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+757,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+758,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+759,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+760,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+761,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+762,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+763,sound event,2,aud_only,aud_only,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+764,sound event,2,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+765,sound event,2,aud_only,aud_only,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+766,sound event,1,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+767,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+768,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+769,sound event,4,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+770,sound event,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+771,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+772,sound event,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+773,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+774,sound event,0,img_trans,cap_trans,q_only,i3:v64_a0.5,img_trans,img_trans,q_only,i3:v64_a0.5
+775,sound event,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+776,sound event,3,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+777,sound event,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+778,sound event,1,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+779,sound event,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+780,sound event,0,cap_trans,cap_trans,q_only,q_only,img_trans,i3:v64_a1,q_only,q_only
+781,sound event,0,full,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+782,sound event,0,img_trans,aud_only,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+783,sound event,1,aud_only,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+784,sound event,1,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,i3:v64_a1,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+785,sound event,1,full,cap_trans,q_only,i3:v64_a0.5,i3:v64_a1,i3:v64_a1,q_only,i3:v64_a0.5
+786,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+787,sound event,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+788,sound event,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+789,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+790,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+791,sound event,1,full,cap_trans,i3:v64_a1,i3:v0_a0.5,i3:v64_a1,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+792,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+793,sound event,3,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+794,sound event,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+795,sound event,1,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+796,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+797,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+798,sound event,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+799,sound event,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+800,sound event,2,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+801,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+802,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+803,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+804,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+805,sound event,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+806,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+807,sound event,4,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+808,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+809,sound event,2,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+810,sound event,3,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+811,sound event,4,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+812,sound event,0,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+813,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+814,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+815,sound event,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+816,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+817,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+818,sound event,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+819,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+820,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+821,sound event,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+822,sound event,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+823,sound event,3,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+824,sound event,0,cap_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+825,sound event,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+826,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+827,sound event,4,full,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+828,sound event,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+829,sound event,2,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+830,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+831,sound event,1,full,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+832,sound event,2,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+833,sound event,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+834,sound event,0,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+835,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+836,sound event,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+837,sound event,2,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+838,sound event,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+839,sound event,1,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+840,sound event,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+841,sound event,0,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+842,sound event,2,aud_only,aud_only,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+843,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+844,sound event,0,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+845,sound event,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+846,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+847,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+848,sound event,0,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+849,sound event,1,aud_only,aud_only,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+850,sound event,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+851,sound event,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+852,sound event,2,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+853,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+854,sound event,3,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+855,sound event,2,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+856,sound event,0,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+857,sound event,3,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v64_a0.5
+858,sound event,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+859,sound event,3,aud_only,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+860,sound event,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+861,sound event,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+862,sound event,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+863,sound event,2,img_trans,aud_only,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+864,sound event,0,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+865,sound event,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+866,sound event,1,full,aud_only,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+867,sound event,3,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+868,sound event,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+869,sound event,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+870,sound event,0,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+871,sound event,4,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+872,sound event,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+873,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+874,sound event,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+875,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+876,sound event,3,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+877,sound event,4,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+878,sound event,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0
+879,sound event,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+880,sound event,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+881,sound event,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+882,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+883,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+884,sound event,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+885,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+886,sound event,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+887,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+888,sound event,2,img_trans,aud_only,i3:v64_a0.5,i3:v64_a0.5,img_trans,q_only,i3:v64_a0.5,i3:v64_a0.5
+889,sound event,2,aud_only,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,q_only,i3:v64_a1,i3:v64_a0.5
+890,sound event,4,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+891,sound event,1,img_trans,aud_only,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+892,sound event,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,i3:v64_a1,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+893,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+894,sound event,3,cap_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+895,sound event,1,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+896,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,q_only,i3:v64_a1,i3:v0_a0.5
+897,sound event,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+898,sound event,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+899,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+900,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+901,sound event,1,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+902,sound event,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,i3:v64_a1,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+903,sound event,1,full,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+904,sound event,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+905,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+906,sound event,4,img_trans,aud_only,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+907,sound event,1,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+908,sound event,3,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+909,sound event,4,cap_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+910,sound event,2,img_trans,aud_only,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+911,sound event,1,img_trans,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+912,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+913,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+914,sound event,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+915,sound event,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+916,sound event,2,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+917,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+918,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+919,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,q_only,i3:v0_a0.5,i3:v0_a0.5
+920,sound event,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+921,sound event,0,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+922,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+923,sound event,0,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+924,sound event,2,full,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+925,sound event,4,cap_trans,cap_trans,q_only,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+926,sound event,3,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+927,sound event,2,cap_aud,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+928,sound event,2,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+929,sound event,0,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+930,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+931,sound event,4,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+932,sound event,4,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+933,sound event,1,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+934,sound event,1,aud_only,aud_only,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+935,sound event,3,img_trans,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+936,sound event,0,cap_trans,cap_trans,q_only,i3:v64_a0.5,img_trans,i3:v64_a1,q_only,i3:v64_a0.5
+937,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+938,sound event,0,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+939,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+940,sound event,3,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+941,sound event,3,cap_aud,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+942,sound event,0,cap_aud,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+943,speech,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+944,speech,0,cap_aud,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,q_only,i3:v0_a0.5
+945,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+946,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+947,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+948,speech,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+949,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+950,speech,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+951,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+952,speech,4,img_trans,img_trans,i3:v256_a1,i3:v64_a0,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0
+953,speech,2,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+954,speech,1,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,i3:v64_a1,i3:v256_a0.5,i3:v64_a0
+955,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+956,speech,1,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+957,speech,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+958,speech,4,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+959,speech,4,cap_aud,cap_trans,cap_aud,i3:v64_a0.5,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5
+960,speech,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v64_a1,i3:v64_a0.5
+961,speech,2,cap_aud,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+962,speech,3,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+963,speech,2,cap_aud,cap_aud,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+964,speech,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+965,speech,0,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+966,speech,2,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+967,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+968,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+969,speech,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+970,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,q_only,i3:v0_a0.5
+971,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+972,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+973,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+974,speech,2,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+975,speech,3,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+976,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+977,speech,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+978,speech,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+979,speech,3,full,cap_trans,full,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+980,speech,0,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+981,speech,2,full,cap_trans,full,i3:v0_a0.5,img_trans,i3:v64_a1,full,i3:v0_a0.5
+982,speech,4,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+983,speech,2,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+984,speech,1,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+985,speech,3,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+986,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+987,speech,3,full,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v0_a0.5
+988,speech,3,full,cap_trans,full,i3:v64_a0,img_trans,i3:v64_a1,full,i3:v64_a0
+989,speech,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+990,speech,2,full,cap_aud,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v256_a1,i3:v256_a1,i3:v64_a0.5
+991,speech,3,cap_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+992,speech,2,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v256_a1,full,i3:v64_a0.5
+993,speech,2,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+994,speech,4,img_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+995,speech,1,full,cap_aud,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+996,speech,0,cap_aud,cap_aud,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+997,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+998,speech,1,full,cap_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+999,speech,0,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1000,speech,3,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,i3:v256_a1,i3:v0_a0.5,i3:v0_a0.5
+1001,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1002,speech,2,full,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1003,speech,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1004,speech,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1005,speech,3,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1006,speech,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1007,speech,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1008,speech,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1009,speech,4,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1010,sound event,3,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1011,sound event,3,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1012,sound event,4,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1013,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a1,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1014,sound event,4,full,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1015,sound event,4,cap_trans,cap_trans,i3:v256_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v64_a0.5
+1016,sound event,0,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+1017,sound event,1,aud_only,aud_only,img_trans,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+1018,sound event,1,full,aud_only,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+1019,sound event,0,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1020,sound event,2,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1021,sound event,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1022,sound event,3,aud_only,aud_only,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1023,sound event,4,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1024,sound event,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1025,sound event,1,img_trans,cap_trans,i3:v64_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v0_a0.5
+1026,sound event,3,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1027,sound event,4,img_trans,cap_trans,aud_only,i3:v0_a0.5,img_trans,i3:v64_a1,aud_only,i3:v0_a0.5
+1028,sound event,1,full,cap_trans,full,i3:v64_a0.5,img_trans,i3:v64_a1,full,i3:v64_a0.5
+1029,sound event,1,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1030,sound event,4,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+1031,sound event,4,img_trans,cap_trans,i3:v256_a1,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v256_a1,i3:v0_a0.5
+1032,sound event,4,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+1033,sound event,3,cap_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1034,sound event,4,cap_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1035,sound event,0,full,cap_trans,i3:v0_a0.5,i3:v0_a0.5,img_trans,i3:v64_a1,i3:v0_a0.5,i3:v0_a0.5
+1036,music,3,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1037,music,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1038,music,3,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1039,music,4,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v64_a0.5
+1040,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5
+1041,music,0,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1042,music,4,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+1043,music,1,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1044,music,2,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,q_only,i3:v64_a0.5
+1045,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1046,music,2,cap_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1047,music,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1048,music,0,cap_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1049,music,4,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a0.5,i3:v64_a0.5
+1050,music,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1051,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+1052,music,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1053,music,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1054,music,1,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1055,music,1,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,q_only,i3:v64_a0.5
+1056,music,4,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v768_a0.5,i3:v64_a0
+1057,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+1058,music,0,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1059,music,3,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5
+1060,music,0,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1061,music,1,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1062,music,3,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,i3:v64_a0,i3:v64_a0
+1063,music,3,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,q_only,i3:v64_a0.5
+1064,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1065,music,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v768_a0.5,i3:v64_a0.5
+1066,music,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1067,music,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1068,music,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1069,music,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1070,music,3,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1071,music,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1072,music,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1073,music,0,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1074,music,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1075,music,3,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1076,music,4,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1077,music,3,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1078,music,0,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,i3:v256_a1,i3:v64_a0
+1079,music,1,cap_trans,cap_trans,cap_trans,i3:v64_a0,img_trans,img_trans,full,i3:v64_a0.5
+1080,music,0,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1081,music,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1082,music,3,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1083,music,2,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1084,music,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1085,music,0,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,q_only,i3:v0_a0.5
+1086,music,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1087,music,0,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1088,music,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1089,music,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+1090,music,4,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1092,music,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+1093,music,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1094,music,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+1095,music,0,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1096,music,0,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1097,music,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1098,music,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1099,music,4,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1100,music,0,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1101,music,4,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1102,music,2,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1103,music,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1104,music,3,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1105,music,0,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1106,music,3,img_trans,cap_trans,i3:v64_a0.5,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a0.5,i3:v64_a0.5
+1107,music,0,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1108,music,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1109,music,1,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1110,music,1,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1111,music,1,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1112,music,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1113,music,1,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,i3:v64_a1,i3:v64_a1,i3:v64_a0.5
+1114,music,0,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+1115,music,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5
+1116,music,1,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1117,music,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,full,i3:v64_a0
+1118,music,2,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+1119,music,2,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1120,music,4,img_trans,img_trans,img_trans,i3:v64_a0,img_trans,img_trans,img_only,i3:v64_a0.5
+1121,music,2,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1122,music,1,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v64_a1,i3:v0_a0.5
+1123,music,3,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,cap_trans,aud_only,i3:v0_a0.5
+1124,music,1,cap_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,aud_only,i3:v0_a0.5
+1125,music,3,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5
+1126,music,4,cap_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5
+1127,music,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,cap_trans,i3:v0_a0.5,i3:v0_a0.5
+1128,music,2,img_trans,cap_trans,img_trans,i3:v64_a0,img_trans,img_trans,full,i3:v64_a0
+1129,music,1,img_trans,cap_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1130,music,4,img_trans,cap_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+1131,music,3,img_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1132,music,3,img_trans,img_trans,img_trans,i3:v64_a0.5,img_trans,img_trans,i3:v256_a1,i3:v64_a0.5
+1133,music,2,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,full,i3:v0_a0.5
+1134,music,4,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1135,music,2,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,full,i3:v64_a0.5
+1136,music,4,img_trans,cap_trans,cap_trans,i3:v0_a0.5,img_trans,img_trans,i3:v0_a0.5,i3:v0_a0.5
+1137,music,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1138,music,1,img_trans,cap_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1139,music,1,full,img_trans,i3:v64_a1,i3:v64_a0.5,img_trans,img_trans,i3:v64_a1,i3:v64_a0.5
+1140,music,3,img_trans,img_trans,img_trans,i3:v0_a0.5,img_trans,img_trans,i3:v256_a1,i3:v0_a0.5
+1141,music,1,cap_trans,cap_trans,cap_trans,i3:v64_a0.5,img_trans,img_trans,i3:v64_a0.5,i3:v64_a0.5

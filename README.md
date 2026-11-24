@@ -138,6 +138,26 @@ sweep), and the rest of the Idea 3 grid (10, 11). It checks that the GPU is an L
 `results/final/logs/`, stops at the first failure, and resumes where it stopped when run again. The last step writes
 `results/final/final_results.tar.gz` (the 4 result files and the logs); load them with `src.final.bank.load_bank()`.
 
+Follow-ups for the report:
+
+```bash
+python -m src.final.stats                                # CPU: 95% CIs and paired tests -> results/final/stats/
+modal run scripts/modal_run.py --sections router         # Idea 1 router study (CPU on Modal, ~10 min)
+modal volume get --force mmml-final results/final/idea1_results.tar.gz . && tar xzf idea1_results.tar.gz
+modal run scripts/modal_run.py --sections protocol --limit 2          # protocol check, 2 items first (~5 min)
+modal run --detach scripts/modal_run.py --sections protocol          # all items (~1 h): no image cap, written
+                                                                     # answers, original vs shuffled option order
+```
+
+`src.final.idea1_router` trains the Idea 1 routers (pointwise and pairwise, several feature sets and menus) on the
+score bank with the 5 frozen folds, against fixed inputs, random mixing (the hull), cascades and the oracle, and writes
+`results/final/idea1/report.md` with every table and figure. It needs SBERT question embeddings, which it computes
+first (sentence-transformers and the OmniBench download, both on the Modal Volume); locally, `--no-question` skips them.
+`src.final.stats` bootstraps over items (an item's accuracy is the mean over its option orders) and runs sign-flip
+tests for the comparisons the report relies on. `src.final.protocol_check` asks why the full-input accuracy is below
+Qwen's published OmniBench score: it writes `results/final/protocol_check.jsonl` and a summary,
+`results/final/protocol_check.md` (download both with `modal volume get`, as printed at the end of the run).
+
 ## What is (not) committed
 
 Committed: code, configs, `data/subset_ids.json`, `results/analysis_b/assignments.json`, annotation JSONLs,

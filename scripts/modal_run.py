@@ -8,6 +8,9 @@ One-time, on your machine:   pip install modal   then   modal setup   (opens the
     modal run scripts/modal_run.py --sections "9 9b"         # only some sections
     modal run scripts/modal_run.py --limit 2                 # quick end-to-end pass on 2 items per section
     modal run scripts/modal_run.py --progress                # passes done per section (CPU, ~1 min)
+    modal run --detach scripts/modal_run.py --sections protocol   # why accuracy is below Qwen's published score (~1 h);
+                                                             # try --limit 2 first (~5 min)
+    modal run scripts/modal_run.py --sections router         # Idea 1 router study on the score bank (CPU, ~10 min)
     modal volume get mmml-final results/final/final_results.tar.gz .    # the results, when it has finished
     tar xzf final_results.tar.gz                             # in the repo root: files land in results/
 
@@ -27,7 +30,7 @@ import modal
 
 APP_NAME, VOLUME_NAME, GPU = "mmml-final", "mmml-final", "L4"
 REPO_DIR, VOL_DIR = "/repo", "/vol"  # inside the container: the code, and the Volume (results + downloads)
-CPU_ONLY = {"preflight", "report"}  # sections that need no GPU
+CPU_ONLY = {"preflight", "report", "router"}  # sections that need no GPU
 SKIP_PACKAGES = re.compile(r"^(gradio|empath)\b")  # annotation tool / Empath: Assignment 2 analyses B and C only
 LOCAL_REPO = Path(__file__).resolve().parents[1]
 IGNORE = ["**/__pycache__", "**/*.pyc", "**/.DS_Store"]
@@ -59,7 +62,8 @@ def _run(args, commit):
         os.symlink(f"{VOL_DIR}/results", f"{REPO_DIR}/results")
     cmd = [sys.executable, "-m", "src.final.run_all", *args]
     print("$ python " + " ".join(cmd[1:]), flush=True)
-    rc = subprocess.run(cmd, cwd=REPO_DIR, env={**os.environ, "MMML_COMMIT": commit}).returncode
+    env = {**os.environ, "MMML_COMMIT": commit, "MMML_JOBS": "4"}  # MMML_JOBS: worker processes (both functions: 4 CPUs)
+    rc = subprocess.run(cmd, cwd=REPO_DIR, env=env).returncode
     volume.commit()  # background commits already run every few seconds; this is the final one
     return rc
 
@@ -103,6 +107,14 @@ def main(sections: str = "", limit: int = 0, progress: bool = False):
     if rc:
         print(f"\nThe run stopped with exit code {rc}: the error is in the output above (and in results/final/logs/ "
               f"on the Volume). Run the same command again after fixing it; finished passes are skipped.")
-    elif not names or "report" in names:
+    if not rc and "protocol" in names:
+        print(f"\nDone. Download the protocol check (its summary is also in the output above):\n"
+              f"  modal volume get --force {VOLUME_NAME} results/final/protocol_check.jsonl results/final/\n"
+              f"  modal volume get --force {VOLUME_NAME} results/final/protocol_check.md results/final/")
+    if not rc and "router" in names:
+        print(f"\nDone. Download the Idea 1 results (report, tables, figures, question embeddings):\n"
+              f"  modal volume get --force {VOLUME_NAME} results/final/idea1_results.tar.gz .\n"
+              f"then unpack them in the repo root:  tar xzf idea1_results.tar.gz")
+    if not rc and (not names or "report" in names):
         print(f"\nDone. Download the results:\n  modal volume get {VOLUME_NAME} results/final/final_results.tar.gz .\n"
               f"then unpack them in the repo root:  tar xzf final_results.tar.gz")
