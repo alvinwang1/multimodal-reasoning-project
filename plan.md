@@ -90,11 +90,13 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
 ---
 
-## 2. Shared score bank (run first): all on the Colab L4
+## 2. Shared score bank (run first): all on one L4 (Modal)
 
 **Compute changed on Nov 22.** PSC is offline, so we now have Arjun's **M2 Max** and his **Colab Pro** credits: an L4, and maybe an A100.
 
-**Decision: every final scoring run uses the Colab L4 (bf16), from one notebook: `colab/run_final.ipynb` (all 3 ideas).**
+**And again on Nov 23:** Colab could not allocate an L4 (it fell back to a T4), and AWS had no L4 capacity either, so the runs moved to an **L4 on Modal** (serverless GPUs, billed per second). The Colab notebook stays as a fallback.
+
+**Decision: every final scoring run uses one NVIDIA L4 (bf16), on Modal, from one command: `modal run --detach scripts/modal_run.py`, which runs `python -m src.final.run_all` in an L4 container (all 3 ideas; the same sections and config lists as `colab/run_final.ipynb`).**
 - The L4 is **6.6× faster** than the Mac: 5.1 s vs 33.6 s per item for the 7 base configs × 3 orders.
 - It agrees with the Mac on **97.9%** of predictions (2,520 shared passes; accuracies within 1.4 points).
 - Idea 4 already ran on an L4 at the midterm.
@@ -104,7 +106,7 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 - **Mac:** development, analysis and small checks. The midterm Mac runs stay in the loader as the `base_mac` source, for comparison only.
 - **A100:** only as a fallback, e.g. for the optional FastV comparison, because it uses compute units much faster.
 
-| Job | Notebook step | Passes | L4 time (est.) |
+| Job | Section | Passes | L4 time (est.) |
 |---|---|---|---|
 | 7 base configs × 3 orders × 1,141 items (rerunning the 300 midterm items too, for one GPU type) | 6 | 23,961 | ~1.6 h |
 | Idea 3 probe cells `(64,½)`, `(64,0)`, `(0,½)`, which are also Idea 1 features | 7 | 10,269 | ~0.7 h |
@@ -117,8 +119,14 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
 **Grid corners and text cells are not re-run.** The Idea 3 corners (`v768_a1`, `v768_a0`, `v0_a1`, `v0_a0`) and text cells (`v768_atrans`, `vcap_a1`, `vcap_atrans`) are exactly the same inputs as the base configs. Map between the names with `src/idea3/cells.py::A_CONFIG_CELLS`.
 
-**How to run:**
-- Open **`colab/run_final.ipynb`** in Colab, set Runtime → L4, and run the cells top to bottom.
+**How to run (Modal):** the commands are in the README, "Final report runs on Modal".
+- `pip install modal` and `modal setup` once; then `modal run scripts/modal_run.py --sections preflight` (CPU check) and `modal run --detach scripts/modal_run.py` (everything). With `--detach` it keeps running after the laptop is closed.
+- It uploads the local `src/`, `configs/` and `data/`, refuses to start unless the GPU is an L4, logs every section to `results/final/logs/`, and records the commit and GPU of every run in `results/final/logs/runs.log`.
+- Results, logs and the model/dataset downloads are on the Modal Volume `mmml-final`. It stops at the first failed section; every section is resumable: run the same command again.
+- The last step writes `results/final/final_results.tar.gz` (the 4 result files and the logs). Download it with `modal volume get mmml-final results/final/final_results.tar.gz .`, unpack it in the repo root, then call `load_bank()`.
+
+**Colab fallback (`colab/run_final.ipynb`):**
+- Open it in Colab, set Runtime → L4, and run the cells top to bottom.
 - Outputs go straight to **`MyDrive/mmml_final/`** through symlinks, so a disconnect loses nothing. Every step is resumable: if the session dies, reconnect and rerun from the top.
 - **Colab Pro has no background execution,** so keep the tab open.
 - **Disconnect safety:**
@@ -132,12 +140,12 @@ Earlier plans: `plan_midterm.md`, `plan_assignment2.md`.
 
   Then call `load_bank()`.
 
-**Compute units.** Colab Pro gives about 100 units a month. An L4 costs roughly 2 units/h and an A100 roughly 10+ units/h; check the exact rates in Colab's Resources panel. About 12 L4-hours is therefore about 25 units, leaving plenty of margin for reruns.
+**Cost.** On Modal an L4 is about $0.80/h plus CPU and memory, about $10 for the whole run, which the Starter plan's $30 of monthly credits covers. On the Colab fallback, Colab Pro gives about 100 units a month. An L4 costs roughly 2 units/h and an A100 roughly 10+ units/h; check the exact rates in Colab's Resources panel. About 12 L4-hours is therefore about 25 units, leaving plenty of margin for reruns.
 
 **Who launches what.**
-- **The team reviews the notebook together, then Lindy runs it on behalf of the team.**
-- Outputs land in the runner's own `MyDrive/mmml_final/`, so Lindy shares that folder with the team.
-- Alvin and Nikkita review and commit any changes to their sections (§10–11 and §8–9) *before* the run starts. The notebook always clones the latest `main`.
+- **Lindy runs it on Modal on behalf of the team** (the same sections as the notebook).
+- The last step writes `results/final/final_results.tar.gz`; Lindy shares it with the team, and everyone unpacks it in the repo root.
+- Alvin and Nikkita review and commit any changes to their sections (§10–11 and §8–9) *before* the run starts. Modal runs the code in Lindy's checkout at launch, and `results/final/logs/runs.log` records its commit.
 
 **`results/final/run_bank_base.sh` (the Mac script) is now only a fallback,** in case Colab is unavailable.
 
