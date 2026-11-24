@@ -117,29 +117,26 @@ Config names understood by the runner: the 7 base configs, `gen_cap_desc`, `gen_
 `img_asr`, `gencap_aud` (generated surrogates), and `bud_i{r_img}_a{r_aud}` (image downscaled to `r_img` of
 the pixel cap; audio time-stretched to `r_aud` of its tokens; 0 drops the modality).
 
-## Final report runs on AWS (Ideas 1, 3, 4)
+## Final report runs on Modal (Ideas 1, 3, 4)
 
-Every model pass for the final report runs on one NVIDIA L4 (bf16): an AWS **g6.2xlarge** (1x L4, 8 vCPU, 32 GiB;
-about $1/h on demand, about 8 h in all). Launch it from an AWS Deep Learning AMI that includes the NVIDIA driver, with
-at least 100 GB of disk. If the launch is refused, raise "Running On-Demand G and VT instances" to at least 8 vCPUs in
-Service Quotas. Then, on the instance:
+Every model pass for the final report runs on one NVIDIA L4 (bf16) on [Modal](https://modal.com) (serverless GPUs,
+billed per second; about $10 for the whole run, about 8 h). `scripts/modal_run.py` runs `src/final/run_all.py` in an
+L4 container, with the code uploaded from your checkout and the results on the Modal Volume `mmml-final`.
 
 ```bash
-git clone https://github.com/alvinwang1/multimodal-reasoning-project.git && cd multimodal-reasoning-project
-bash scripts/aws_setup.sh                 # Python 3.12 + pinned packages, GPU check, model/dataset download (once)
-tmux new -s run                           # keeps running after you disconnect (detach: Ctrl-b d; back: tmux attach -t run)
-source .venv/bin/activate
-python -m src.final.run_all               # preflight, smoke test, sections 6-11, report; resumable
-python -m src.final.run_all --progress    # from another terminal: how far each section has got
+pip install modal && modal setup                         # once: install the client and log in
+modal run scripts/modal_run.py --sections preflight      # CPU check: every item loads and builds its prompts
+modal run --detach scripts/modal_run.py                  # everything; keeps going if you close the laptop
+modal run scripts/modal_run.py --progress                # how far each section has got
+modal volume get mmml-final results/final/final_results.tar.gz .   # when it has finished
+tar xzf final_results.tar.gz                             # in the repo root: the files land in results/
 ```
 
 `src/final/run_all.py` runs the same sections and config lists as `colab/run_final.ipynb` (the Colab fallback):
 the base bank (6), Idea 3 probe cells (7), Idea 4 generation and scoring (8, 9, 9b length ablation, 9c threshold
 sweep), and the rest of the Idea 3 grid (10, 11). It checks that the GPU is an L4, logs every section to
 `results/final/logs/`, stops at the first failure, and resumes where it stopped when run again. The last step writes
-`results/final/final_results.tar.gz` (the 4 result files and the logs): copy it to your machine, unpack it in the repo
-root, and load it with `src.final.bank.load_bank()`. **Stop** the instance when done (stopping keeps the disk;
-terminating deletes the results).
+`results/final/final_results.tar.gz` (the 4 result files and the logs); load them with `src.final.bank.load_bank()`.
 
 ## What is (not) committed
 

@@ -1,5 +1,5 @@
-"""Final-report GPU runs on one machine, e.g. an AWS g6.2xlarge (1x NVIDIA L4): every section of
-colab/run_final.ipynb, in order, with the same commands and config lists (the notebook is the Colab fallback).
+"""Final-report GPU runs on one NVIDIA L4 (on Modal: scripts/modal_run.py runs this inside an L4 container): every
+section of colab/run_final.ipynb, in order, with the same commands and config lists (the notebook is the Colab fallback).
 
     python -m src.final.run_all                    # everything (~8 h on an L4); resumable
     python -m src.final.run_all --sections 6 7     # only some sections (always run in the order below)
@@ -126,6 +126,9 @@ def gpu_name():
 
 
 def commit():
+    if os.environ.get("MMML_COMMIT"):  # set by scripts/modal_run.py (the container has no .git)
+        return os.environ["MMML_COMMIT"]
+
     def git(*a):
         return subprocess.run(["git", *a], cwd=REPO_ROOT, capture_output=True, text=True).stdout.strip()
     try:
@@ -170,8 +173,8 @@ def bundle(cfg):
         for rel in parts:
             if repo_path(rel).exists():
                 tar.add(repo_path(rel), arcname=rel)
-    print(f"bundle: {out} ({out.stat().st_size / 2**20:.1f} MB). Copy it to your Mac with\n"
-          f"  scp -i <your-key.pem> <user>@<instance-address>:{out} .\n"
+    print(f"bundle: {out} ({out.stat().st_size / 2**20:.1f} MB). Copy it to your machine (from Modal:\n"
+          f"  modal volume get mmml-final {BUNDLE} .)\n"
           f"then unpack it in the repo root:  tar xzf final_results.tar.gz", flush=True)
 
 
@@ -208,8 +211,8 @@ def main():
     if any(s not in ("preflight", "report") for s in todo) and not args.any_gpu \
             and (gpu is None or args.gpu.lower() not in gpu.lower()):
         raise SystemExit(f"GPU check: these runs must use an {args.gpu}, but this machine has "
-                         f"{gpu or 'no GPU that nvidia-smi can see'}. Use the right instance type (g6.2xlarge for "
-                         "an L4), or --gpu NAME if the whole run uses another GPU.")
+                         f"{gpu or 'no GPU that nvidia-smi can see'}. Run it on an L4 (scripts/modal_run.py asks "
+                         "Modal for one), or pass --gpu NAME if the whole run uses another GPU.")
     logs = repo_path(LOG_DIR)
     logs.mkdir(parents=True, exist_ok=True)
     repo_path(SMOKE_DIR).mkdir(parents=True, exist_ok=True)

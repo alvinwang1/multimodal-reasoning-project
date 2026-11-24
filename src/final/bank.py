@@ -1,6 +1,6 @@
 """Shared score bank for the final report: one row per (item, representation), averaged over option orders.
 
-Sources. All final scoring runs use one NVIDIA L4 (bf16; AWS g6.2xlarge via src.final.run_all, or the Colab notebook
+Sources. All final scoring runs use one NVIDIA L4 (bf16; on Modal via scripts/modal_run.py, or the Colab notebook
 colab/run_final.ipynb as a fallback), so every idea shares one GPU type:
   base      7 base configs, L4         results/final/bank_base_l4.jsonl  (src.final.run_all section 6)
   idea3     Idea 3 budget cells, L4    results/idea3/raw_final.jsonl     (python -m src.idea3.run --split final)
